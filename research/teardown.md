@@ -141,6 +141,8 @@ in DLD data, which Property Finder shows back as "Transactions").
   "Post-handover plans", "Highest appreciation potential", "Emaar & DAMAC launches", "Ready in 2027
   under 2M". A "Market Pulse" strip shows New Launches This Month, Avg Down Payment 13%, Hottest
   Community "Dubai South (24 hot projects)", Off-Plan Momentum 67%, and Primary Market Share 58%.
+- **O:** Even with the main site signed in, Scout's own session call (`/scout/auth/pf/session`)
+  returned 401, so Scout keeps its own login. Quick-search chips did nothing while logged out.
 - **O:** Logged out, a typed query (a renter's question) would not send. The sidebar says "Log in to
   explore UAE property values, trends, and personalised recommendations". **I did not get to test a
   conversation. Try it yourself while logged in.**
@@ -176,16 +178,41 @@ in DLD data, which Property Finder shows back as "Transactions").
   available through the browser tool I used. Open propertyfinder.ae on your phone for 5 minutes; you
   don't need to install an emulator.
 
-### Bayut (competitor), from public press only
-- **O:** bayut.com showed a human-verification check, so I didn't go further. Public sources say
-  Bayut has **BayutGPT** (a conversational assistant, from about 2023-24), **TruEstimate** (an AI
-  valuation on DLD data, Jun 2024, on web and app), and **AI Search** (conversational search with
-  follow-up refinement, Aug 2026, which it bills as the only one in the UAE). Its roadmap mentions
-  property search inside ChatGPT.
-- **Opinion:** Bayut shipped valuation on the web about 18 months before Property Finder's app-only
-  launch. Property Finder looks ahead on DLD-backed data placed in context (building-level
-  transactions on the listing page, the AI summary on Transactions) and on fintech (Rent in 12).
-  Conversational search for everyday renters looks like the competitive gap.
+### Bayut (competitor), observed first-hand
+- **O, home:** the tagline is "Real homes live here / Real Data. Real Brokers. Real Properties." The
+  nav has `TruEstimate™` and `Dubai Transactions`. Hero tabs: Properties, New Projects,
+  Transactions, TruEstimate™ (New), Agents. Under the search box: "Want to find out more about UAE
+  real estate using AI? **Try BayutGPT**". There are tiles for **"Search 2.0: Find homes by drive
+  time"**, Map View, "Find a TruBroker™" and "TruEstimate™: Find out how much your property is
+  worth". TruEstimate runs on the **web**; Property Finder's valuation is app-only.
+- **O, search** (rent, Dubai Marina, 5,199 apartments): toggles for **"TruBroker™ listings first"**
+  and **"TruCheck™ listings first"**, a floating BayutGPT (BETA) button, a "TruBroker™ Stories"
+  popup (short videos made by agents), and building chips with counts.
+- **O, listing page:** a "TruCheck™ on 4 November 2026" badge on the photo. "Similar Property
+  Transactions" lists DLD rents in the same building with date, **duration, NEW/RENEWAL tag**, area
+  and rent. There's a "Rental Price Trend" chart and an "Avg. annual rent/sqft" histogram with the
+  asking price marked on it. I saw no text verdict on the listing page itself.
+- **O, BayutGPT** (works logged out). I sent it "2 bedroom apartment for rent in Dubai Marina under
+  150k, family friendly, 4 cheques". It answered in about 15 seconds with 3 listings, each with metro
+  proximity, features, and a **per-listing price verdict from TruEstimate**: "TruEstimate rent price:
+  AED 150,000 (matches asking), so it is priced right for the market" and "TruEstimate rent price is
+  AED 118,000 (so asking is slightly above valuation…)". Then a community snapshot ("average ROI of
+  about 5.70% and average rent around AED 136.6k"), deep links ("Browse all 2BR … under AED 150k
+  (currently 1,099 properties available)"), and a clarifying question ("furnished or unfurnished …
+  close to a specific metro station?").
+- **O:** It could not handle the cheques constraint. It said "Multiple cheques mentioned in a similar
+  unit in the same building" and "4 cheques is usually negotiable". It treated "family friendly" as
+  "kids play area" in the description text.
+- **Public press:** BayutGPT has been live since about 2023-24, TruEstimate since Jun 2024, and **AI
+  Search** (conversational search across the platform) since Aug 2026. The roadmap mentions search
+  inside ChatGPT.
+- **Opinion:** Bayut is **ahead** on conversational search for renters and on putting a
+  fair-price verdict inside the answer, and its trust branding (TruCheck, TruBroker) speaks directly
+  to the fake-listing complaints in Property Finder's app reviews. Property Finder is **ahead** on
+  fintech (Rent in 12), on the upfront-cost breakdown, and on showing DLD transactions on the listing
+  page (Bayut does this too, but Property Finder also shows sold prices). Bayut's weak spot is
+  structured constraints (cheques, furnishing) that the model can't check against inventory data.
+  Its answers sound confident even when they're vague.
 
 ## Opportunities (ranked)
 
@@ -219,6 +246,12 @@ funnel. Re-rank once you've read it.
   typed in by hand.
 - **Proved wrong if:** the held-out range coverage is poor (say under 70% of actual rents fall inside
   the band), or most listings land at "fair" so the verdict tells nobody anything.
+- **Competitive note:** BayutGPT already gives a per-listing TruEstimate verdict inside chat (see the
+  Bayut section). So for Property Finder this is **catching up**, not a new idea. What would set it
+  apart is being transparent: show the comparables (same building, NEW vs RENEWAL, size band) and a
+  confidence level, where Bayut gives a single number. **Data check:** the DLD rents export has
+  `ROOMS` empty in 96% of rows. Size (`ACTUAL_AREA`, sqm) and `PROJECT_EN` (filled for 41% of
+  residential flats) have to stand in for bedrooms.
 
 **2. Scout for renters: natural-language search into structured filters**
 - **Problem:** Scout leans to off-plan. Renters' needs ("2-bed near Dubai Internet City, school

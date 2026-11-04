@@ -68,8 +68,8 @@ uv run python -c "from dotenv import load_dotenv; load_dotenv(); import anthropi
 
 ## Google Drive (supporting files)
 
-- ⬜ Create an empty Drive folder now, with link sharing set to "anyone with the link can view".
-  Paste the link into the submission at the end.
+- ✅ Drive folder created: "Property Finder Product Builder - supporting files" (My Drive).
+  ⬜ Turn on link sharing ("anyone with the link can view") at submission time, then paste the link.
 - ⬜ Plan to export AI chats. Claude Code transcripts are JSONL files under your Claude Code projects
   directory (for example `~/.claude-dir/projects/<this-repo>/`). Copy the session files for the
   6-hour window, or write a short markdown "decision log" as you go. The rules say "the thinking and
@@ -86,7 +86,23 @@ uv run python -c "from dotenv import load_dotenv; load_dotenv(); import anthropi
 | Kaggle UAE listing sets | About 5k listings, **scraped from portals** | Needs a Kaggle login | Terms risk; avoid |
 | propertyfinder.ae | Listings | robots.txt disallows search URLs, map-search, transactions-with-query and APIs. **Do not scrape** | n/a |
 
-- ⬜ **Before Start (10 min, by hand, in a normal browser):** on the DLD Open Data page, export one
+- ✅ **Done 4 Nov 2026** (you ticked the captcha, I exported). Both files are in `data/raw/dld/`
+  (ignored by git, so if you work in worktrees, copy them in):
+  - `transactions_2026-10-04_2026-11-04.csv`: 17,866 rows, 4.4 MB, 22 columns (`INSTANCE_DATE`,
+    `GROUP_EN` Sales/Mortgage/Gifts, `PROCEDURE_EN`, `IS_OFFPLAN_EN`, `AREA_EN`, `PROP_SB_TYPE_EN`,
+    `TRANS_VALUE`, `ACTUAL_AREA` in sqm, `ROOMS_EN`, `NEAREST_METRO_EN`, `PROJECT_EN`, …). 11,686
+    Sales and 8,840 sales of flats. The **Mortgage count is exactly 5,000, which may be an export
+    cap.** No names or other personal data.
+  - `rents_2026-10-04_2026-11-04.csv`: 112,403 rows, 27 MB, 20 columns (`REGISTRATION_DATE`,
+    `START_DATE`, `END_DATE`, `VERSION_EN` New/Renewed, `AREA_EN`, `ANNUAL_AMOUNT`,
+    `ACTUAL_AREA`, `PROP_SUB_TYPE_EN`, `ROOMS`, `USAGE_EN`, `NEAREST_METRO_EN`, `PROJECT_EN`, …).
+    66,253 rows are residential, single-unit flats. **`ROOMS` is empty in 96% of rows**, and
+    `PROJECT_EN` is filled for 41% of flats. Median annual rent for flats: New 70,000 vs Renewed
+    60,059. Marsa Dubai has 2,461 contracts, median 115,000.
+  - The DLD reCAPTCHA shows "This site is exceeding the reCAPTCHA Enterprise free quota"
+    (evidence: `scratch/evidence/dld-recaptcha-quota-warning.png`). After Start, assume you **can't**
+    re-export, so work from these files.
+- Previous plan: **Before Start (10 min, by hand, in a normal browser):** on the DLD Open Data page, export one
   recent month of **Rents** and one of **Transactions** for Dubai (you'll need to tick the captcha
   yourself). Keep the files in `data/raw/`, which is ignored. Note the row count and the columns.
   This is the only realistic real-data path for ideas #1 and #5 in the teardown. If the brief comes
@@ -103,7 +119,7 @@ uv run python -c "from dotenv import load_dotenv; load_dotenv(); import anthropi
   off-plan query. Note what it answers well and badly. I couldn't test it logged out.
 - ⬜ Spend 5 minutes in the **app** (Home Valuation, Rent in 12) and on **mobile web** on your phone.
   I didn't test mobile web.
-- ⬜ Optional: look at bayut.com yourself. It showed a human-verification check to my browser.
+- ✅ Bayut reviewed first-hand after you cleared its check (see the teardown).
 - ⬜ Turn off notifications. The challenge page logs tab switches, so keep it in its own window.
 
 ## 3-hour plan (inside the 6-hour window)
