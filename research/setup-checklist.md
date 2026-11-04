@@ -51,11 +51,16 @@ You'll choose between two options once you've read the task.
   **decided not to grant it**. Plan: make the submission repo public at the end, then deploy.
 - ✅ A throwaway repo `Dhruv-Kapri/streamlit-smoke` (private, with `app.py` and `requirements.txt`)
   exists for testing the deploy.
-- ⬜ To test the flow: `! gh repo edit Dhruv-Kapri/streamlit-smoke --visibility public
-  --accept-visibility-change-consequences`. Then deploy it from share.streamlit.io/deploy
-  (repo `Dhruv-Kapri/streamlit-smoke`, branch `main`, file `app.py`). Delete it afterwards with
-  `! gh repo delete Dhruv-Kapri/streamlit-smoke --yes` (needs the `delete_repo` scope:
-  `gh auth refresh -s delete_repo`).
+- ✅ **Deploy tested on 4 Nov 2026.** `streamlit-smoke` was made public, deployed from
+  share.streamlit.io/deploy (repo, branch `main`, file `app.py`), and went live at
+  `https://<random>.streamlit.app/` within about a minute. An anonymous visitor goes through a
+  `/-/login` cookie hop and then gets HTTP 200, so no sign-in is needed. Gotcha: the form keeps
+  stale "does not exist" errors until you click outside the field. You can set a custom subdomain
+  under "App URL (optional)".
+- ⬜ Clean up after the challenge: delete the app in share.streamlit.io, then
+  `! gh auth refresh -s delete_repo && gh repo delete Dhruv-Kapri/streamlit-smoke --yes`.
+- Flow after Start: build in the submission repo, make it public when the first demoable version
+  exists (check that `scratch/`, `.env` and `data/raw/` are ignored first), then deploy.
 - Free tier (third-party sources, not confirmed): apps sleep after about 12 h idle, about 1 GB RAM.
   Fine for a demo. Secrets go in App settings → Secrets as TOML (`ANTHROPIC_API_KEY = "..."`), read
   through `st.secrets`.
