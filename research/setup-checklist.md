@@ -1,0 +1,134 @@
+# Setup checklist (before pressing Start)
+
+Checked on this machine on 4 Nov 2026. ✅ = verified here, ⬜ = you need to do it, ❓ = unverified.
+
+## Submission needs three links
+
+The challenge asks for a GitHub repo, a **live prototype link** and a **Google Drive link** with
+supporting files (strategy, thinking, AI chats). Every item below serves one of those three.
+
+## GitHub
+
+- ✅ `gh auth status`: logged in as the repo owner, with token scopes `repo` and `workflow`. You can
+  create repos and push.
+- ✅ This repo has an `origin` on GitHub and is **private**. The challenge allows a private repo
+  ("I will give access if asked").
+- ⬜ **Decide: reuse this repo or start a new one.** My recommendation is to reuse it and rename it
+  at the end (`gh repo rename <name>`). The scaffold, the agent workflow and this research are your own
+  preparation, the rules allow preparation, and the history shows how you work. Start a new repo only
+  if you want a history that begins at Start.
+- ⬜ Know how to grant access fast: `gh api -X PUT repos/<owner>/<repo>/collaborators/<user>`, or make
+  the repo public with `gh repo edit --visibility public --accept-visibility-change-consequences` if
+  the deploy needs it.
+
+## Toolchain
+
+| Tool | Status |
+|---|---|
+| uv | ✅ 0.11.31 |
+| Python 3.12 | ✅ managed by uv (`~/.local/share/uv/python/cpython-3.12`). System `python3` is 3.9.6, so always use `uv run` |
+| Node / npm | ✅ v26.7.0 / 11.19.0 (only needed if you choose a JS front end) |
+| git / gh | ✅ 2.50.1 / 2.100.0 |
+| Docker | ✅ 29.7.2 (not needed for this build) |
+| ruff | ⬜ not on PATH. Add it as a dev dependency in wave 0 (`uv add --dev ruff pytest`) |
+| Streamlit | ⬜ not installed. Add it in wave 0 (`uv add streamlit`); no global install |
+| Machine | 8 GB RAM. Keep to at most 5-6 light sessions, one browser agent |
+
+**Pre-warm the cache now (5 min, saves install time after Start):**
+
+```sh
+cd /tmp && uv init warm && cd warm && uv python pin 3.12 && uv add streamlit pandas anthropic pydantic pytest ruff && uv run streamlit --version
+```
+
+## Live prototype (deploy)
+
+- **Recommended: Streamlit Community Cloud** (share.streamlit.io). You sign in with GitHub and deploy
+  from a repo branch with `app.py`; it takes about 5 minutes. Secrets go in the app's "Secrets" panel,
+  not the repo. ❓ Private-repo support is limited on the free tier (I believe it allows one private
+  app). Check this when you sign in.
+- Fallbacks: Hugging Face Spaces (needs an HF account; free CPU; Streamlit or Gradio), Vercel (needs
+  an account; JS only).
+- ⬜ **Sign in to Streamlit Cloud with GitHub before Start**, and deploy a hello-world from a throwaway
+  repo to confirm the flow, the URL format and how secrets work.
+- Keep the LLM key out of the deployed app, or put a spending cap on the key. A public demo link with
+  a live key can be abused.
+
+## LLM API
+
+- ✅ Checked: **no LLM API key is set in the environment**, and there is no `.env` file yet.
+- ⬜ Create an Anthropic API key (console.anthropic.com), set a **monthly spend limit**, and save it in
+  `.env` as `ANTHROPIC_API_KEY=...`. Add the name, with no value, to `.env.example`.
+- Model: `claude-sonnet-5-5` (fast and cheap for parsing and explanations), or `claude-opus-5-5` for
+  harder reasoning.
+- One-line smoke test (after `uv add anthropic python-dotenv` in a project):
+
+```sh
+uv run python -c "from dotenv import load_dotenv; load_dotenv(); import anthropic; print(anthropic.Anthropic().messages.create(model='claude-sonnet-5-5', max_tokens=20, messages=[{'role':'user','content':'Say OK'}]).content[0].text)"
+```
+
+## Google Drive (supporting files)
+
+- ⬜ Create an empty Drive folder now, with link sharing set to "anyone with the link can view".
+  Paste the link into the submission at the end.
+- ⬜ Plan to export AI chats. Claude Code transcripts are JSONL files under your Claude Code projects
+  directory (for example `~/.claude-dir/projects/<this-repo>/`). Copy the session files for the
+  6-hour window, or write a short markdown "decision log" as you go. The rules say "the thinking and
+  the decisions must be mine", so a running decision log is probably worth more than raw transcripts.
+
+## Public data (for the top ideas)
+
+| Source | What | Login-free download? | Licence |
+|---|---|---|---|
+| DLD Open Data, https://dubailand.gov.ae/en/open-data/real-estate-data/ | Transactions, Rents (Ejari), Projects, Valuations, Units, Brokers, Developers | No login, but **every search needs a captcha** and a date range. Export only by hand; no direct file URLs. The current year may be the only one available | Not stated (page footer: "© Dubai Land Department, All Rights Reserved") ❓ |
+| Dubai Pulse, https://www.dubaipulse.gov.ae/organisation/dld | The same DLD datasets as CSV/API (`dld_transactions-open`, `dld_rent_contracts-open`, …) | ❓ Probably login- or request-gated; timed out from my tools. Last updated about Apr 2024 | ❓ |
+| data.dubai, https://data.dubai/ | Successor portal for older DLD years | ❓ blocked automated checks | ❓ |
+| DLD Rental Index, https://dubailand.gov.ae/en/eservices/rental-index/rental-index/ | Official rent-range calculator | Interactive only, no file | n/a |
+| Kaggle UAE listing sets | About 5k listings, **scraped from portals** | Needs a Kaggle login | Terms risk; avoid |
+| propertyfinder.ae | Listings | robots.txt disallows search URLs, map-search, transactions-with-query and APIs. **Do not scrape** | n/a |
+
+- ⬜ **Before Start (10 min, by hand, in a normal browser):** on the DLD Open Data page, export one
+  recent month of **Rents** and one of **Transactions** for Dubai (you'll need to tick the captcha
+  yourself). Keep the files in `data/raw/`, which is ignored. Note the row count and the columns.
+  This is the only realistic real-data path for ideas #1 and #5 in the teardown. If the brief comes
+  with its own data, use that instead.
+- Fallback: a small synthetic fixture shaped like the DLD columns, clearly labelled as synthetic in
+  the README.
+- ❓ Licence: DLD doesn't publish open-data terms on the page. In the README, say "public DLD open data,
+  terms not published; a small sample is used for a non-commercial prototype", and commit only an
+  aggregated or small sample.
+
+## Do before Start
+
+- ⬜ Try **Scout** while logged in (`propertyfinder.ae/scout/v2`), with one renter query and one
+  off-plan query. Note what it answers well and badly. I couldn't test it logged out.
+- ⬜ Spend 5 minutes in the **app** (Home Valuation, Rent in 12) and on **mobile web** on your phone.
+  I didn't test mobile web.
+- ⬜ Optional: look at bayut.com yourself. It showed a human-verification check to my browser.
+- ⬜ Turn off notifications. The challenge page logs tab switches, so keep it in its own window.
+
+## 3-hour plan (inside the 6-hour window)
+
+| Clock | Wave | Output |
+|---|---|---|
+| 0:00-0:20 | Read the task, choose the idea, write a decision log | Problem, user, one metric, what would prove it wrong (in Drive) |
+| 0:20-0:40 | Wave 0, contracts | `pyproject` deps, data model and function stubs, committed fixture, 3-4 tickets |
+| 0:40-2:10 | Wave 1, parallel build | Data loader, core logic, LLM call, Streamlit UI; each with a seam test |
+| 2:10-2:30 | Wave 2, integrate | Merge, wire end to end, `uv run pytest` once |
+| 2:30-2:50 | Measure and deploy | Run the evaluation (e.g. held-out coverage), deploy to Streamlit Cloud, check the live link |
+| 2:50-3:20 | Wave 3, write-up | README, Drive folder, submit all three links |
+| 3:20-6:00 | Buffer | Fixes, never new features. **Submit a first version by 3:30 and update it later** |
+
+## Write-up structure (README)
+
+The brief doesn't prescribe one. Based on "submit what you have and explain what is missing":
+
+1. **Live link, repo and the one-line pitch**
+2. **Numbers first:** the metric and the evaluation result (e.g. "the fair-price band contains the
+   actual rent in 78% of 200 held-out contracts")
+3. **Problem and user:** what you saw on propertyfinder.ae, with screenshots from the teardown
+4. **What I built**, and the key decisions with the reasons for each
+5. **What works / what doesn't / what's missing**, and what you'd need to finish it
+6. **Assumptions**, and **what would prove this wrong**
+7. **Data:** source, licence and size; AI tools used, and how
+8. **Cut:** what you dropped for time
+9. **Next steps:** how Property Finder would ship and A/B test it (metric, guardrail)
