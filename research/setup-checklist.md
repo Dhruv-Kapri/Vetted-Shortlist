@@ -34,10 +34,13 @@ supporting files (strategy, thinking, AI chats). Every item below serves one of 
 | Streamlit | ⬜ not installed. Add it in wave 0 (`uv add streamlit`); no global install |
 | Machine | 8 GB RAM. Keep to at most 5-6 light sessions, one browser agent |
 
+**Gotcha:** a bare `uv init` picks up miniforge Python 3.14 (`requires-python >=3.14`). Always run
+`uv init --python 3.12`.
+
 **Pre-warm the cache now (5 min, saves install time after Start):**
 
 ```sh
-cd /tmp && uv init warm && cd warm && uv python pin 3.12 && uv add streamlit pandas anthropic pydantic pytest ruff && uv run streamlit --version
+cd /tmp && uv init --python 3.12 warm && cd warm && uv add streamlit pandas anthropic pydantic pytest ruff && uv run streamlit --version
 ```
 
 ## Live prototype (deploy)
