@@ -60,8 +60,8 @@ You'll choose between two options once you've read the task.
   `/-/login` cookie hop and then gets HTTP 200, so no sign-in is needed. Gotcha: the form keeps
   stale "does not exist" errors until you click outside the field. You can set a custom subdomain
   under "App URL (optional)".
-- ⬜ Clean up after the challenge: delete the app in share.streamlit.io, then
-  `! gh auth refresh -s delete_repo && gh repo delete Dhruv-Kapri/streamlit-smoke --yes`.
+- ✅ Cleaned up on 4 Nov 2026: the Streamlit app and the local copy are deleted. The GitHub repo is
+  deleted once `gh auth refresh -s delete_repo` has been run.
 - Flow after Start: build in the submission repo, make it public when the first demoable version
   exists (check that `scratch/`, `.env` and `data/raw/` are ignored first), then deploy.
 - Free tier (third-party sources, not confirmed): apps sleep after about 12 h idle, about 1 GB RAM.
