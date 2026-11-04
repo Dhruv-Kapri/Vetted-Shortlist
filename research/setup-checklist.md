@@ -42,14 +42,56 @@ cd /tmp && uv init warm && cd warm && uv python pin 3.12 && uv add streamlit pan
 
 ## Live prototype (deploy)
 
-- **Recommended: Streamlit Community Cloud** (share.streamlit.io). You sign in with GitHub and deploy
-  from a repo branch with `app.py`; it takes about 5 minutes. Secrets go in the app's "Secrets" panel,
-  not the repo. ❓ Private-repo support is limited on the free tier (I believe it allows one private
-  app). Check this when you sign in.
-- Fallbacks: Hugging Face Spaces (needs an HF account; free CPU; Streamlit or Gradio), Vercel (needs
-  an account; JS only).
-- ⬜ **Sign in to Streamlit Cloud with GitHub before Start**, and deploy a hello-world from a throwaway
-  repo to confirm the flow, the URL format and how secrets work.
+You'll choose between two options once you've read the task.
+
+**Option 1: Streamlit Community Cloud with a public repo**
+- ✅ Account exists (GitHub `dhruv-kapri`, email login). It currently has **public-repo access only**.
+  Settings say "Streamlit does not have access to private repos on this GitHub account". Granting
+  private access means OAuth with full `repo` scope (read and write on all private repos), and we
+  **decided not to grant it**. Plan: make the submission repo public at the end, then deploy.
+- ✅ A throwaway repo `Dhruv-Kapri/streamlit-smoke` (private, with `app.py` and `requirements.txt`)
+  exists for testing the deploy.
+- ⬜ To test the flow: `! gh repo edit Dhruv-Kapri/streamlit-smoke --visibility public
+  --accept-visibility-change-consequences`. Then deploy it from share.streamlit.io/deploy
+  (repo `Dhruv-Kapri/streamlit-smoke`, branch `main`, file `app.py`). Delete it afterwards with
+  `! gh repo delete Dhruv-Kapri/streamlit-smoke --yes` (needs the `delete_repo` scope:
+  `gh auth refresh -s delete_repo`).
+- Free tier (third-party sources, not confirmed): apps sleep after about 12 h idle, about 1 GB RAM.
+  Fine for a demo. Secrets go in App settings → Secrets as TOML (`ANTHROPIC_API_KEY = "..."`), read
+  through `st.secrets`.
+
+**Option 2: Hugging Face Spaces**
+- ✅ Free: CPU Basic is 2 vCPU, 16 GB RAM, 50 GB disk, $0. It sleeps after 48 h idle and wakes on
+  visit (HF docs). The repo on GitHub can stay private; the Space is a separate git repo on HF.
+- ✅ The `hf` CLI 2.4.0 is installed (`uv tool install huggingface_hub`).
+- ⬜ You: create an HF account (huggingface.co/join), then a **write** token (Settings → Access
+  Tokens). Run `! hf auth login` and paste the token there; don't paste it into chat.
+- Note: HF **deprecated the built-in Streamlit SDK** (changelog, 2025-04-30). Use the Docker SDK
+  with this Dockerfile and README front-matter:
+
+```dockerfile
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8501
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+```
+
+```yaml
+---
+title: <app name>
+sdk: docker
+app_port: 8501
+---
+```
+
+  Deploy (flags checked against `hf` 2.4.0): `hf repos create <user>/<name> --type space --sdk
+  docker --flavor cpu-basic --secrets-file .env`, then `hf upload <user>/<name> . --repo-type
+  space`. Secrets can also go in Space Settings → Variables and secrets; the app reads them as
+  environment variables.
+- Vercel: not considered (JS only, and we're building in Python).
 - Keep the LLM key out of the deployed app, or put a spending cap on the key. A public demo link with
   a live key can be abused.
 
