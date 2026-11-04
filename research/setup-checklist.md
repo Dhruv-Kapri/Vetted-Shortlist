@@ -113,16 +113,18 @@ app_port: 8501
 
 ## LLM API
 
-- ✅ Checked: **no LLM API key is set in the environment**, and there is no `.env` file yet.
-- ⬜ Create an Anthropic API key (console.anthropic.com), set a **monthly spend limit**, and save it in
-  `.env` as `ANTHROPIC_API_KEY=...`. Add the name, with no value, to `.env.example`.
-- Model: `claude-sonnet-5-5` (fast and cheap for parsing and explanations), or `claude-opus-5-5` for
-  harder reasoning.
-- One-line smoke test (after `uv add anthropic python-dotenv` in a project):
-
-```sh
-uv run python -c "from dotenv import load_dotenv; load_dotenv(); import anthropic; print(anthropic.Anthropic().messages.create(model='claude-sonnet-5-5', max_tokens=20, messages=[{'role':'user','content':'Say OK'}]).content[0].text)"
-```
+- ✅ **Working (4 Nov 2026).** The key lives in `.env` as `ANTHROPIC_API_KEY` (git-ignored; the name
+  is listed in `.env.example`). It belongs to Console workspace **`sandbox`**, which has a **$2/month
+  spend limit** (change it under Settings → Spend limits → Workspace limits → "Adjust limit"). The
+  limit resets on the 1st, UTC. The Default workspace has no keys.
+- Billing: the org's monthly API credits come from a linked plan ($200/month, expiring at the end of
+  each cycle). No card is on file, so spending can't go past the credits.
+- Smoke test passed: `cd /tmp/pf-smoke && uv run python smoke.py` printed `OK` (`claude-sonnet-5-5`).
+- Model choice: `claude-sonnet-5-5` for parsing and explanations; `claude-opus-5-5` only if the
+  reasoning is hard. $2 is plenty for development. If the deployed demo gets traffic, cache
+  responses or add a per-session call cap so the limit doesn't cut the demo off mid-review.
+- For the deploy, put the key in Streamlit's Secrets (TOML: `ANTHROPIC_API_KEY = "..."`) and read
+  it with `st.secrets` or the environment. Never commit it.
 
 ## Google Drive (supporting files)
 
