@@ -60,14 +60,22 @@ You'll choose between two options once you've read the task.
   Fine for a demo. Secrets go in App settings → Secrets as TOML (`ANTHROPIC_API_KEY = "..."`), read
   through `st.secrets`.
 
-**Option 2: Hugging Face Spaces**
-- ✅ Free: CPU Basic is 2 vCPU, 16 GB RAM, 50 GB disk, $0. It sleeps after 48 h idle and wakes on
-  visit (HF docs). The repo on GitHub can stay private; the Space is a separate git repo on HF.
+**Option 2: Hugging Face Spaces, which can't host a free Streamlit app (checked 4 Nov 2026)**
+- ⚠️ On the new-Space form for this free account, **Docker shows a "Paid" lock** and **CPU Basic is
+  greyed out**. The only free combination is **Gradio + ZeroGPU**. **Protected** Spaces (public app,
+  private code) also need PRO. Evidence: `scratch/evidence/hf-docker-paid-cpu-basic-disabled.jpg`.
+  This contradicts HF's docs, which still list CPU Basic as free.
+- So on the free tier, option 2 means: **write the UI in Gradio, not Streamlit**, make the Space
+  **public** (a private Space can't be opened by reviewers), and accept ZeroGPU's daily quota. If you
+  choose this, decide it in wave 0, because the UI ticket changes.
+- The GitHub repo can still stay private; the Space is a separate git repo on HF, and its code is
+  public.
 - ✅ The `hf` CLI 2.4.0 is installed (`uv tool install huggingface_hub`).
-- ⬜ You: create an HF account (huggingface.co/join), then a **write** token (Settings → Access
+- ✅ HF account exists (Dhruv-Kapri, signed in in Chrome).
+- ⬜ You: create a **write** token (Settings → Access
   Tokens). Run `! hf auth login` and paste the token there; don't paste it into chat.
-- Note: HF **deprecated the built-in Streamlit SDK** (changelog, 2025-04-30). Use the Docker SDK
-  with this Dockerfile and README front-matter:
+- Note: HF **deprecated the built-in Streamlit SDK** (changelog, 2025-04-30). A Docker setup is
+  kept here for the case where you have PRO:
 
 ```dockerfile
 FROM python:3.12-slim
