@@ -42,7 +42,7 @@ uv run pytest                           # once, at integration
 - **Tickets are vertical but thin** (30-45 min each): one user-visible behaviour, built against the
   fixture, with its seam test. Typical wave-1 split: data loading/cleaning, core logic or model, AI/LLM
   call, UI. Mock the neighbour at the seam, don't wait for it.
-- **At most 3 sessions at once** (8 GB Apple Silicon), plus at most one browser agent.
+- **Up to 5-6 light ticket sessions at once** (worked on this 8 GB Mac with other sessions stopped); fewer if a ticket runs anything heavy (big data, model training). At most one browser agent.
 - Dependencies a ticket needs are added in wave 0, so worktrees don't race on `uv.lock`.
 
 ## Parallel sessions
