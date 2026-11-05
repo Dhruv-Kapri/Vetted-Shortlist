@@ -6,6 +6,7 @@ Read-only, one request every 3 s. Output: data/raw/pf/details.json (git-ignored)
 
 import json
 import re
+import sys
 import time
 from pathlib import Path
 from urllib.error import HTTPError
@@ -21,13 +22,13 @@ def in_audit(p: dict) -> bool:
     return str(p["bedrooms"]) == "2" and SIZE_RANGE[0] <= (p["size"]["value"] or 0) <= SIZE_RANGE[1]
 
 
-def main() -> None:
+def main(everything: bool) -> None:
     out_path = RAW / "details.json"
     details: dict[str, dict] = json.loads(out_path.read_text()) if out_path.exists() else {}
     for offering in ("rent", "sale"):
         for p in {x["id"]: x for x in json.loads((RAW / f"princess_tower_{offering}.json").read_text())}.values():
             lid = str(p["id"])
-            if not in_audit(p) or lid in details:
+            if (not everything and not in_audit(p)) or lid in details:
                 continue
             url = "https://www.propertyfinder.ae" + p["details_path"]
             try:
@@ -54,4 +55,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    main(everything="--all" in sys.argv)

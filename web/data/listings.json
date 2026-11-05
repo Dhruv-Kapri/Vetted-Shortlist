@@ -4,6 +4,17 @@
   {
    "group_id": "G1",
    "listing_ids": [
+    "146425500",
+    "147762008"
+   ],
+   "price_min_aed": 135000,
+   "price_max_aed": 150000,
+   "agencies": 2,
+   "keep_id": "146425500"
+  },
+  {
+   "group_id": "G2",
+   "listing_ids": [
     "16024503",
     "142855746"
    ],
@@ -53,6 +64,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -91,6 +107,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -133,6 +154,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -156,6 +182,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -202,7 +233,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -262,6 +293,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -300,6 +336,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -342,6 +383,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -365,6 +411,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -411,7 +462,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -463,6 +514,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -501,6 +557,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -543,6 +604,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -566,6 +632,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -612,7 +683,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -623,7 +694,7 @@
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G1",
+    "duplicate_group": "G2",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -671,6 +742,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -709,6 +785,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -751,6 +832,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -774,6 +860,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -820,7 +911,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -872,6 +963,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -910,6 +1006,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -952,6 +1053,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -975,6 +1081,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -1021,7 +1132,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -1073,6 +1184,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -1111,6 +1227,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -1153,6 +1274,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -1176,6 +1302,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -1222,7 +1353,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -1274,6 +1405,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -1312,6 +1448,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -1354,6 +1495,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -1377,6 +1523,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -1423,7 +1574,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -1483,6 +1634,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -1521,6 +1677,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -1563,6 +1724,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -1586,6 +1752,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -1632,7 +1803,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -1684,6 +1855,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -1722,6 +1898,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -1764,6 +1945,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -1787,6 +1973,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -1833,7 +2024,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -1851,7 +2042,7 @@
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G1",
+    "duplicate_group": "G2",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
      "Is the unit still available, and from what date?",
@@ -1900,6 +2091,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -1938,6 +2134,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -1980,6 +2181,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -2003,6 +2209,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -2049,7 +2260,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -2109,6 +2320,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -2147,6 +2363,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -2189,6 +2410,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -2212,6 +2438,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -2258,7 +2489,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -2267,9 +2498,16 @@
       "title": "Said 'available' 86 days ago",
       "reason": "The agent listed it as available from 2026-08-11. Units in this tower usually let faster, so it may be gone.",
       "ask_agent": "Is the unit still available, and when can I view it?"
+     },
+     {
+      "rule_id": "R2",
+      "severity": "info",
+      "title": "Same flat listed 2 times",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 135,000 to 150,000). We kept this one: it has the strongest proof.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G1",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
      "Is the unit still available, and from what date?",
@@ -2318,6 +2556,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -2356,6 +2599,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -2398,6 +2646,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -2421,6 +2674,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -2467,7 +2725,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -2527,6 +2785,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -2565,6 +2828,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -2607,6 +2875,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -2630,6 +2903,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -2676,7 +2954,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -2728,6 +3006,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -2766,6 +3049,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -2808,6 +3096,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -2831,6 +3124,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -2877,7 +3175,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -2929,6 +3227,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -2967,6 +3270,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -3009,6 +3317,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -3032,6 +3345,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -3078,7 +3396,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -3138,6 +3456,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -3176,6 +3499,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -3218,6 +3546,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -3241,6 +3574,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -3286,8 +3624,8 @@
      {
       "rule_id": "R6",
       "severity": "info",
-      "title": "Price 36% over recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000. Not a sign of a fake ad, but there is room to negotiate.",
+      "title": "Price 32% over recent deals",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500. Not a sign of a fake ad, but there is room to negotiate.",
       "ask_agent": null
      }
     ],
@@ -3339,6 +3677,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -3377,6 +3720,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -3419,6 +3767,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -3442,6 +3795,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -3488,7 +3846,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -3548,6 +3906,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -3586,6 +3949,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -3628,6 +3996,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -3651,6 +4024,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -3697,7 +4075,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -3749,6 +4127,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-10-13",
       "amount": 150000,
       "size_sqft": 1186
@@ -3787,6 +4170,11 @@
       "date": "2026-08-17",
       "amount": 103000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-08-13",
@@ -3829,6 +4217,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -3852,6 +4245,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -3898,7 +4296,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -3932,7 +4330,11 @@
     "has_permit_link": true,
     "images_count": 13,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "e353232f2d4d2919",
+     "6263737348dedbdd",
+     "59c8c8c8c9983ebd"
+    ],
     "description": "",
     "transactions": [
      {
@@ -3944,6 +4346,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -3986,6 +4393,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -4026,6 +4438,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -4049,6 +4466,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -4095,7 +4517,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -4137,7 +4559,11 @@
     "has_permit_link": true,
     "images_count": 17,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "b4b8b4978646d8ca",
+     "1e1d2d2b3aae9931",
+     "650f0b33231f5f7b"
+    ],
     "description": "",
     "transactions": [
      {
@@ -4149,6 +4575,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -4191,6 +4622,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -4231,6 +4667,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -4254,6 +4695,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -4300,7 +4746,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -4342,7 +4788,11 @@
     "has_permit_link": true,
     "images_count": 17,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "4b0d440606098c8a",
+     "6703bbe1c4c493c7",
+     "5f4e62dac4961c99"
+    ],
     "description": "",
     "transactions": [
      {
@@ -4354,6 +4804,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -4396,6 +4851,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -4436,6 +4896,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -4459,6 +4924,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -4499,17 +4969,24 @@
    },
    "verdict": {
     "listing_id": "147762008",
-    "status": "shortlist",
+    "status": "hidden",
     "flags": [
      {
       "rule_id": "R6",
       "severity": "info",
-      "title": "Price 30% over recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000. Not a sign of a fake ad, but there is room to negotiate.",
+      "title": "Price 27% over recent deals",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500. Not a sign of a fake ad, but there is room to negotiate.",
+      "ask_agent": null
+     },
+     {
+      "rule_id": "R2",
+      "severity": "block",
+      "title": "Duplicate of another listing",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 135,000 to 150,000). We show only the best one.",
       "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G1",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -4539,7 +5016,11 @@
     "has_permit_link": true,
     "images_count": 8,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "01011123e2c2ecca",
+     "f8f8f1f263182eac",
+     "637779793179c101"
+    ],
     "description": "",
     "transactions": [
      {
@@ -4551,6 +5032,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -4593,6 +5079,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -4633,6 +5124,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -4656,6 +5152,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -4702,7 +5203,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -4736,7 +5237,11 @@
     "has_permit_link": true,
     "images_count": 11,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "41414c6074536027",
+     "f9e9f28d2b8ecd5b",
+     "fbedbdb5f5ed7d6c"
+    ],
     "description": "",
     "transactions": [
      {
@@ -4748,6 +5253,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -4790,6 +5300,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -4830,6 +5345,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -4853,6 +5373,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -4899,7 +5424,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -4933,7 +5458,11 @@
     "has_permit_link": true,
     "images_count": 16,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "494b382a743cdbd6",
+     "494968d74c5f6335",
+     "13755c594d9b1367"
+    ],
     "description": "",
     "transactions": [
      {
@@ -4945,6 +5474,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -4987,6 +5521,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -5027,6 +5566,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -5050,6 +5594,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -5096,7 +5645,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -5130,7 +5679,11 @@
     "has_permit_link": true,
     "images_count": 17,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "c0e1e6d68e64761b",
+     "434362521e0e0e58",
+     "dddfff8acacd9d8e"
+    ],
     "description": "",
     "transactions": [
      {
@@ -5142,6 +5695,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -5184,6 +5742,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -5224,6 +5787,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -5247,6 +5815,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -5293,7 +5866,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -5327,7 +5900,11 @@
     "has_permit_link": true,
     "images_count": 8,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "3c033b3c3a212458",
+     "270716131666c2c4",
+     "3f3bb4743c37273f"
+    ],
     "description": "",
     "transactions": [
      {
@@ -5339,6 +5916,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -5381,6 +5963,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -5421,6 +6008,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -5444,6 +6036,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -5490,7 +6087,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -5524,7 +6121,11 @@
     "has_permit_link": true,
     "images_count": 11,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "0f4e570727a88687",
+     "998cdc9484929bbe",
+     "96cccecc8cd64686"
+    ],
     "description": "",
     "transactions": [
      {
@@ -5536,6 +6137,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -5578,6 +6184,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -5618,6 +6229,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -5641,6 +6257,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -5687,7 +6308,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -5729,7 +6350,11 @@
     "has_permit_link": true,
     "images_count": 9,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "374753f79dbd65dc",
+     "070f070707164646",
+     "0d2d060154476427"
+    ],
     "description": "",
     "transactions": [
      {
@@ -5741,6 +6366,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -5783,6 +6413,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -5823,6 +6458,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -5846,6 +6486,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -5892,7 +6537,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -5926,7 +6571,11 @@
     "has_permit_link": true,
     "images_count": 13,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "e0c090b0b343a62d",
+     "3c3d7bb336b6e6e6",
+     "3b1f595348076d6c"
+    ],
     "description": "",
     "transactions": [
      {
@@ -5938,6 +6587,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -5980,6 +6634,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -6020,6 +6679,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -6043,6 +6707,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -6088,8 +6757,8 @@
      {
       "rule_id": "R6",
       "severity": "info",
-      "title": "Price 57% over recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000. Not a sign of a fake ad, but there is room to negotiate.",
+      "title": "Price 52% over recent deals",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500. Not a sign of a fake ad, but there is room to negotiate.",
       "ask_agent": null
      },
      {
@@ -6131,7 +6800,11 @@
     "has_permit_link": true,
     "images_count": 20,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "2e2c2d7b7f2f1f0e",
+     "9d9d999bef939687",
+     "3626262626463f33"
+    ],
     "description": "",
     "transactions": [
      {
@@ -6143,6 +6816,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -6185,6 +6863,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -6225,6 +6908,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -6248,6 +6936,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -6294,7 +6987,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      }
     ],
@@ -6328,7 +7021,11 @@
     "has_permit_link": true,
     "images_count": 9,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "e0f0cc0d8dcd1c34",
+     "fff2cfcf0cd89998",
+     "f0c24ccd0f4b4b89"
+    ],
     "description": "",
     "transactions": [
      {
@@ -6340,6 +7037,11 @@
       "date": "2026-10-22",
       "amount": 115000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2026-10-16",
+      "amount": 145000,
+      "size_sqft": 1180
      },
      {
       "date": "2026-10-13",
@@ -6382,6 +7084,11 @@
       "size_sqft": 1189
      },
      {
+      "date": "2026-08-14",
+      "amount": 145000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-08-13",
       "amount": 125000,
       "size_sqft": 1189
@@ -6422,6 +7129,11 @@
       "size_sqft": 1183
      },
      {
+      "date": "2026-06-20",
+      "amount": 140000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2026-06-01",
       "amount": 100000,
       "size_sqft": 1189
@@ -6445,6 +7157,11 @@
       "date": "2026-04-09",
       "amount": 132676,
       "size_sqft": 1183
+     },
+     {
+      "date": "2026-03-25",
+      "amount": 121275,
+      "size_sqft": 1180
      },
      {
       "date": "2026-03-12",
@@ -6491,7 +7208,7 @@
       "rule_id": "R6",
       "severity": "info",
       "title": "Price in line with recent deals",
-      "reason": "The median of 21 registered rents for this size in the last 6 months is AED 115,000.",
+      "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
      },
      {
@@ -6533,7 +7250,11 @@
     "has_permit_link": true,
     "images_count": 16,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "7db6c9c97d759296",
+     "b3ccd49592b4b587",
+     "8428b8a9b5aec2d6"
+    ],
     "description": "",
     "transactions": [
      {
@@ -6695,7 +7416,11 @@
     "has_permit_link": true,
     "images_count": 14,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "41254a52d64d5793",
+     "6fed13b7b3910991",
+     "269cc4c0c1534361"
+    ],
     "description": "",
     "transactions": [
      {
@@ -6857,7 +7582,11 @@
     "has_permit_link": true,
     "images_count": 8,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "5bc6f95bfbb6f6f3",
+     "85999d795b9b39f3",
+     "434313938393a73b"
+    ],
     "description": "",
     "transactions": [
      {
@@ -7020,7 +7749,11 @@
     "has_permit_link": true,
     "images_count": 11,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "3bd27369f8c6c6c7",
+     "063232100c6c7978",
+     "f9edf3c5dcfacc3d"
+    ],
     "description": "",
     "transactions": [
      {
@@ -7182,7 +7915,11 @@
     "has_permit_link": true,
     "images_count": 15,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "fcf8f8fcececd8b8",
+     "ff3f1a5e58aee6c6",
+     "b4f894d6e464cdcc"
+    ],
     "description": "",
     "transactions": [
      {
@@ -7344,7 +8081,11 @@
     "has_permit_link": true,
     "images_count": 10,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "3e784c442c67696c",
+     "4337c3c7838e8f96",
+     "2f93d890f8d26beb"
+    ],
     "description": "",
     "transactions": [
      {
@@ -7506,7 +8247,11 @@
     "has_permit_link": true,
     "images_count": 29,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "f7e5f0c56533e80d",
+     "7f3f7f926a8ce6b3",
+     "0f7f7e76c898741e"
+    ],
     "description": "",
     "transactions": [
      {
@@ -7668,7 +8413,11 @@
     "has_permit_link": true,
     "images_count": 10,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "37bbb57d3d27233b",
+     "c7c48ccc6c6c4d1f",
+     "330e33b7b8bbb39d"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10458,14 +11207,10 @@
   },
   {
    "listing_id": "147762008",
-   "available": true,
-   "confirmed_price_aed": 150000,
-   "terms": "2 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "That unit is gone, but I have a similar one at a higher price.",
+   "viewing_slots": []
   },
   {
    "listing_id": "169274661",
@@ -10577,7 +11322,7 @@
    "listing_id": "169247428",
    "available": true,
    "confirmed_price_aed": 2549000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10588,7 +11333,7 @@
    "listing_id": "158686028",
    "available": true,
    "confirmed_price_aed": 2200000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10599,7 +11344,7 @@
    "listing_id": "152354392",
    "available": true,
    "confirmed_price_aed": 1825000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10610,7 +11355,7 @@
    "listing_id": "164562185",
    "available": true,
    "confirmed_price_aed": 2000000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10621,7 +11366,7 @@
    "listing_id": "162770382",
    "available": true,
    "confirmed_price_aed": 2549000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10632,7 +11377,7 @@
    "listing_id": "158244486",
    "available": true,
    "confirmed_price_aed": 2450000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10643,7 +11388,7 @@
    "listing_id": "167431760",
    "available": true,
    "confirmed_price_aed": 2000000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10654,7 +11399,7 @@
    "listing_id": "158698070",
    "available": true,
    "confirmed_price_aed": 2200000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10665,7 +11410,7 @@
    "listing_id": "149100966",
    "available": true,
    "confirmed_price_aed": 1990000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10676,7 +11421,7 @@
    "listing_id": "158703922",
    "available": true,
    "confirmed_price_aed": 2700000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10687,7 +11432,7 @@
    "listing_id": "165571403",
    "available": true,
    "confirmed_price_aed": 2700000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10698,7 +11443,7 @@
    "listing_id": "136072118",
    "available": true,
    "confirmed_price_aed": 2895000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10709,7 +11454,7 @@
    "listing_id": "98681358",
    "available": true,
    "confirmed_price_aed": 2200000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10720,7 +11465,7 @@
    "listing_id": "75411271",
    "available": true,
    "confirmed_price_aed": 2549000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10731,7 +11476,7 @@
    "listing_id": "147781701",
    "available": true,
    "confirmed_price_aed": 2200000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10742,7 +11487,7 @@
    "listing_id": "135143057",
    "available": true,
    "confirmed_price_aed": 2080000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10753,7 +11498,7 @@
    "listing_id": "144602929",
    "available": true,
    "confirmed_price_aed": 2250000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10764,7 +11509,7 @@
    "listing_id": "156936676",
    "available": true,
    "confirmed_price_aed": 2450000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10775,7 +11520,7 @@
    "listing_id": "155062404",
    "available": true,
    "confirmed_price_aed": 2850000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10786,7 +11531,7 @@
    "listing_id": "162781538",
    "available": true,
    "confirmed_price_aed": 2250000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10797,7 +11542,7 @@
    "listing_id": "158249720",
    "available": true,
    "confirmed_price_aed": 2000000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10808,7 +11553,7 @@
    "listing_id": "150009971",
    "available": true,
    "confirmed_price_aed": 2000000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",
@@ -10819,7 +11564,7 @@
    "listing_id": "121118406",
    "available": true,
    "confirmed_price_aed": 2350000,
-   "terms": "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft.",
+   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
    "viewing_slots": [
     "Sat 10:00",
     "Sat 16:30",

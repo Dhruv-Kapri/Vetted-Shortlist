@@ -8,6 +8,7 @@ import json
 from datetime import date
 from pathlib import Path
 
+from scripts.fetch_details import in_audit
 from trust.models import AgentReply, Listing, ListingCard, Status, Transaction
 from trust.rules import evaluate
 
@@ -82,7 +83,7 @@ def mocked_reply(listing: Listing, status: Status, n: int) -> AgentReply | None:
     terms = (
         f"{listing.cheques or 4} cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency."
         if listing.offering == "rent"
-        else "Vacant on transfer. Price negotiable within reason. Service charge about AED 19/sqft."
+        else "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner."
     )
     return AgentReply(
         listing_id=listing.id,
@@ -101,7 +102,7 @@ def main() -> None:
         deals = pooled_deals(details, offering)
         for p in {x["id"]: x for x in json.loads((RAW / f"princess_tower_{offering}.json").read_text())}.values():
             lid = str(p["id"])
-            if lid in details:
+            if lid in details and in_audit(p):  # the prototype shows the audited listings only
                 listings.append(to_listing(p, details[lid], offering, deals, hashes.get(lid, [])))
     verdicts, groups = evaluate(listings, TODAY)
     by_id = {x.id: x for x in listings}
