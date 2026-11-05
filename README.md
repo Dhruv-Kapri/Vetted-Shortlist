@@ -7,6 +7,27 @@ The agent stays in the deal.
 
 **Live prototype (open on a phone):** https://vetted-shortlist.vercel.app
 
+### Try it in two minutes
+
+![Walkthrough: results, Why hidden?, ask the agent, the agent's view, buy mode, short list](docs/walkthrough.gif)
+
+The data is real: 55 live 2-bed listings in Princess Tower, Dubai Marina. Agent replies are mocked.
+
+1. **Renter: results.** The bar says what the assistant did: "checked 32 listings: 13 on your short
+   list, 14 to confirm with the agent, 5 hidden". Tap **Why hidden?**. Each hidden listing shows its
+   evidence (here, the same flat posted twice), what would bring it back, and **Not right? Tell us**.
+2. **Renter: a doubtful listing.** Open one marked "Assistant will check", e.g. one whose "available"
+   date is months old. **Before you call** shows the checks, and the registered rents for that size.
+3. **Ask the agent for me.** Untick or add questions, then **Send to agent**. The mocked reply comes
+   back. If the flat is gone or the price is higher, the listing is removed with the reason; if not,
+   it joins the short list and you can pick a viewing slot.
+4. **The agent's side.** Tap **See what the agent receives**. The agent gets a pre-qualified lead
+   (budget, move-in, cheques, viewing windows) and answers in one tap: available, gone, or price
+   changed. The answer updates the searcher's screens.
+5. **Buyer.** Switch to **Buy**. The same checks run against registered sales, with buyer questions
+   (final price, service charge) instead of cheques.
+6. **Short list.** Everything that passed or was confirmed, with the agent's terms and your viewing.
+
 **Read these first:**
 
 - [ONE-PAGER.md](ONE-PAGER.md): the problem behind the problem, where the assistant lives, metrics,
