@@ -90,10 +90,11 @@ signing, or off-plan, where the developer confirms availability.
 - **Searcher side:** active searchers, contacts per searcher, contact-to-viewing rate, repeat use.
 - **Agent side:** leads per listing, lead-to-viewing rate, subscription renewal.
 
-**It moves contact-to-viewing up and wasted contacts down.** About 4 in 10 rental listings in our
-building had a stale "available" date. Suppose half are gone: roughly 1 in 5 first calls is wasted today,
-and the assistant removes most. As an estimate from one building: **contact-to-viewing
-up 15-25% for people who use it**, with leads per searcher flat or slightly down.
+**It moves contact-to-viewing up and wasted contacts down.** Stale "available" dates appear on
+**19%** of a random sample across seven places, and on **36-39%** of all rentals in the two towers
+we read in full. Suppose half of those flats are gone. Then **1 in 10 to 1 in 5 first calls is
+wasted today**, and the assistant removes most of them. As a rough estimate: **contact-to-viewing
+up 10-25% for people who use it**, with leads per searcher flat or slightly down.
 
 ## 6. One number that proves it works
 
@@ -112,7 +113,7 @@ up 15-25% for people who use it**, with leads per searcher flat or slightly down
 | 1 | **Real messaging with agents** (send the questions, read structured replies) | The core of the product: replies drive the short list | Needs Property Finder's internal lead and messaging channel. Agent replies in the prototype are mocked |
 | 2 | **Unit identity** (DLD unit or property ID behind each listing) | Exact duplicate detection instead of photo matching, which merges look-alike balconies | Not public. The listing data has an empty unit field. Needs an internal Property Finder connection |
 | 3 | **Live availability signal** (has a new Ejari contract been registered on this unit?) | Turns "probably gone" into "gone" without asking the agent | Ejari data is not public at unit level. Needs government data access |
-| 4 | **Permit-to-listing match at scale** (the permit's price, size and type match the ad) | Catches ads whose price or unit differs from the permit. We did it by hand for Flat A's 5 permits | Permit cards are public but have no unit number and no API; checking every listing needs DLD integration |
+| 4 | **Permit-to-listing match at scale** (the permit's price, size and type match the ad) | Catches ads whose price or unit differs from the permit. We did it by hand for 27 permit cards. All matched their ad, and one ad had no permit | Permit cards are public but have no unit number and no API; checking every listing needs DLD integration |
 | 5 | **Agent track record** (how often their "available" turns out to be gone, response time) | Lets the assistant trust some agents faster | Needs Property Finder's internal lead and response data |
 | 6 | **Automatic photo checks**: interior-only matching, staging and AI-image detection, "is this the right building" | Fewer false duplicates. Catches undisclosed staging and photos from another tower. In the prototype these come from our eye check | Needs engineering help (image models trained on each tower) |
 | 7 | **Accounts, cross-device sync and push notifications** | The web-to-app handover in section 2 | Needs the Property Finder app and accounts. Shown as a placeholder |

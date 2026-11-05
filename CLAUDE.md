@@ -5,14 +5,17 @@ beats completeness. This repo may be shared publicly; write about the product an
 
 ## Status
 
-Scaffold only. The brief is in `scratch/brief.md` (git-ignored, never commit it); product notes are in
-`research/`. Record the stack and commands below as soon as they exist.
+Built and deployed. The prototype is a static mobile page in `web/`, served by Vercel (`vercel.json`)
+from `main`. The rules engine is in `trust/`, data scripts in `scripts/`, and the submission docs are
+README, ONE-PAGER, AUDIT, RULES and AI-LOG. The brief is in `scratch/brief.md` (git-ignored, never
+commit it).
 
 ## Commands
 
 ```sh
-# TBD once the stack is chosen (default: uv + Python 3.12)
-uv sync
+uv sync                                          # Python 3.12 (pinned)
+PYTHONPATH=. uv run python scripts/build_data.py # rebuild web/data/listings.json from data/raw/
+cd web && python3 -m http.server 8765            # run the prototype locally
 uv run pytest path/to/touched_test.py   # while editing
 uv run pytest                           # once, at integration
 ```

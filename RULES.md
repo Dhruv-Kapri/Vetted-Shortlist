@@ -56,7 +56,8 @@ for themselves.
     often give several agencies the right to advertise. Hiding one is then a choice, not a judgement
     of fraud.
 - **Seen in the audit:** Flat A's three rent ads (AED 135K, 140K, 150K) each match their own valid
-  DLD permit. A duplicate is not proof of wrongdoing. That's why the kept card shows the price
+  DLD permit. So do Binghatti Heights' pair (the same 1-bed at AED 69,999 and 75,000). A duplicate is
+  not proof of wrongdoing. That's why the kept card shows the price
   spread instead of accusing anyone.
 - **Who gets hurt:** **an honest agent** whose different unit is folded under someone else's card,
   or whose real mandate loses to a competitor's. The person searching loses little, because the flat
@@ -83,8 +84,10 @@ for themselves.
 - **Rule:** no DLD permit validation link on the listing → **hidden**. In Dubai, a property ad needs
   a DLD advertising permit (Trakheesi).
 - **Where it's wrong:** a portal display bug, or a permit that exists but wasn't linked.
-- **Who gets hurt:** **an honest agent**. In our audit, all 55 listings showed a permit link, so this
-  rule never fired here. It guards the floor, not the building we checked.
+- **Who gets hurt:** **an honest agent**. It fired once in the 195 listings checked by hand:
+  Binghatti Heights 125629909, a holiday-home operator 17% under registered deals and not Verified.
+  That's also where the rule can be wrong: holiday homes may be licensed by Dubai's tourism
+  department rather than through a DLD permit. A production version should accept that licence too.
 - **Limit:** we can see that a link is present, but not that the permit matches this unit and this
   price. That check needs the DLD's systems (see the one-pager, "What we could not build").
 
@@ -100,15 +103,17 @@ Not every edited photo is a lie, so the assistant grades them:
 | The same, and the ad says **"Furnished"** | 135143057 again | **Check**, adding: "Is the furniture shown in the flat?" Furniture that isn't there is part of the price |
 | First photos show only the view or the pool | 161902017, 158224698 | **Check**: "Can you send photos or a video of this exact flat?" |
 | The same photos on the agent's 1-, 2- and 3-bed listings | 169274661, 158717394 | **Check**, with the same question |
-| Photos of a different building (forgery) | None found | **Hidden** |
+| Furnished-looking photos on an **"Unfurnished"** ad | 91820798 (Dubai Marina), 88753740 (Discovery Gardens) | **Check**: "Are the photos of this flat as it is today?" |
+| Photos of a different building (forgery) | None found in 195 checked by hand | **Hidden** |
 
 - **Where it's wrong:** an honest agent using a professional 3D render of a flat that really is being
   furnished to that design, or a real flat renovated so well it looks rendered. They get one
   question. Nobody is hidden unless the photos are of a different building.
 - **Who gets hurt:** **an honest agent**, delayed by a question. If the assistant misses undisclosed
   staging, **the person searching** gets hurt: they visit and find an empty flat.
-- **Limit:** in the prototype, the photo issues come from our own eye check (AUDIT.md). None of the
-  217 listings in the building disclosed staging in its text. In production, this needs an image
+- **Limit:** in the prototype, the photo issues come from our own eye check (AUDIT.md). In the random
+  half of the 140 checked by hand, 10% had a photo problem. None of the 217 Princess Tower listings
+  disclosed staging in its text. In production, this needs an image
   model (see the one-pager).
 
 ## R6: Well above recent deals (information only)

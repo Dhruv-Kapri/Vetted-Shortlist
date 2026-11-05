@@ -11,7 +11,8 @@ The agent stays in the deal.
 
 - [ONE-PAGER.md](ONE-PAGER.md): the problem behind the problem, where the assistant lives, metrics,
   and what we couldn't build.
-- [AUDIT.md](AUDIT.md): 55 live Princess Tower listings checked one by one, plus a price check of the
+- [AUDIT.md](AUDIT.md): 195 listings checked by hand (55 in Princess Tower, 140 across seven places),
+  27 DLD permit cards, and automatic checks on about 950 listings. It also includes a price check of the
   whole building.
 - [RULES.md](RULES.md): every rule, where it's wrong, and who gets hurt.
 - [AI-LOG.md](AI-LOG.md): confident wrong AI answers about UAE real estate, and how we caught them.
@@ -107,12 +108,12 @@ Raw pages and photos go to `data/raw/` (git-ignored).
   to be gone.
 - **Assumption:** the registered deals on a listing page are the right benchmark for a fair price.
   For sales there were only 4 in the last 12 months, so buy-side price verdicts are weak.
-- **One building, one layout.** Bait pricing may be common elsewhere, in cheaper communities. We
-  checked the rest of Princess Tower and a second, cheaper building (see AUDIT.md), but not other
-  communities.
+- **Samples, not a census.** Rentals in six neighbourhoods and two towers. The neighbourhood samples
+  are the first result pages, which favour fresh ads. Villas, off-plan and other emirates weren't
+  checked.
 
 ## Cut
 
 - A live LLM in the prototype, which would read agents' free-text replies and the descriptions.
 - Interior-only photo matching.
-- An eye check of the second building's photos (automatic checks only there).
+- An eye check of every listing. 195 were checked by hand; the rest got the automatic checks only.
