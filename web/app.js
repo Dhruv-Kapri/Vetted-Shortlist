@@ -16,6 +16,7 @@ const extraQuestions = {};
 const OUT_KEY = "pfa_outcomes";
 const INTRO_KEY = "pfa_intro_seen";
 const MODE_KEY = "pfa_mode";
+const DISPUTE_KEY = "pfa_disputes";
 
 // ---------- helpers ----------
 
@@ -48,6 +49,8 @@ function save(key, value) {
 
 /** @returns {Record<string, {state:string, reason:string, reply:Reply|null, slot?:string}>} */
 const outcomes = () => load(OUT_KEY, {});
+/** Hides the person said were wrong, by listing id. @returns {Record<string, boolean>} */
+const disputes = () => load(DISPUTE_KEY, {});
 
 /** @param {number} n @param {string} offering */
 function money(n, offering) {
@@ -83,6 +86,7 @@ function effectiveStatus(c) {
   const o = outcomes()[c.listing.id];
   if (o && o.state === "shortlist") return "shortlist";
   if (o && o.state === "removed") return "hidden";
+  if (c.verdict.status === "hidden" && disputes()[c.listing.id]) return "check";
   return /** @type {any} */ (c.verdict.status);
 }
 
@@ -102,6 +106,7 @@ function topFlag(c) {
 
 /** Non-keep members of a duplicate group are folded under the keep card. @param {Card} c */
 function isFolded(c) {
+  if (disputes()[c.listing.id]) return false;
   const g = groupOf(c);
   return !!g && g.keep_id !== c.listing.id && !!byId(g.keep_id);
 }
@@ -263,6 +268,11 @@ function hiddenWhy(c) {
     out.push(h("p", { class: "small" }, [h("b", {}, [f.title + ". "]), f.reason]));
   }
   if (!keep) out.push(h("p", { class: "small muted" }, ["Shown again if the agent confirms the details."]));
+  out.push(h("button", { class: "btn secondary", type: "button", onclick: () => {
+    save(DISPUTE_KEY, { ...disputes(), [c.listing.id]: true });
+    toast("Thanks. It is back under 'to confirm', and your report goes to the team that checks this rule.");
+    route();
+  } }, ["Not right? Tell us"]));
   return out;
 }
 
