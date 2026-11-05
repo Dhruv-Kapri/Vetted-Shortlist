@@ -133,7 +133,35 @@ The pattern holds across a premium and a mid-market building. For the first phot
 share it with at least one other listing (22 groups). Many are probably the building's exterior shot,
 so we don't count them as duplicates without an eye check.
 
-AREAS_TBD
+## Six neighbourhoods, from luxury to budget
+
+Does the pattern depend on how expensive the area is? For each of six neighbourhoods we took the
+first 3 pages of apartment rentals (72-81 listings each, about 450 in all) and their detail pages.
+We judged each listing against **its own page's** registered rents: same building, same size, last
+6 months, at least 3 deals. Script: `scripts/compare_areas.py`.
+
+| Area | listings | median AED/sqft/yr | judged (>=3 deals) | under 75% (bait) | 75-90% | over 125% | median asking vs deals | 'available' >45 d ago | Verified | permit link | listings per agency | buildings in sample |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Palm Jumeirah (luxury) | 78 | 155 | 28 | 0% | 0% | 21% | +10% | 18% | 99% | 100% | 1.6 | 46 |
+| Downtown Dubai (luxury) | 72 | 149 | 43 | 0% | 14% | 16% | +6% | 29% | 99% | 100% | 1.7 | 45 |
+| Dubai Marina (upper-mid) | 81 | 117 | 53 | 0% | 13% | 8% | +5% | 22% | 96% | 99% | 2.2 | 44 |
+| JVC (mid) | 80 | 101 | 29 | 0% | 7% | 10% | +0% | 11% | 84% | 100% | 2.6 | 60 |
+| Discovery Gardens (budget) | 77 | 80 | 23 | 0% | 0% | 0% | +5% | 21% | 95% | 100% | 1.8 | 47 |
+| International City (budget) | 76 | 66 | 38 | 0% | 3% | 13% | +6% | 25% | 83% | 99% | 2.5 | 53 |
+
+- **Bait pricing is absent in every tier.** In every area, 0% of the judged listings are under 75%
+  of registered deals.
+- **The tiers have different problems.**
+  - **Luxury** asks far above recent deals: 21% of the Palm's judged listings are over 125%. The
+    risk there is overpaying, not bait.
+  - **Mid and budget** areas have fewer Verified ads (83-84% in JVC and International City, against
+    99% on the Palm and in Downtown) and more listings per agency (2.5-2.6 against 1.6-1.7).
+- **Stale "available" dates show up everywhere** (11-29% of these samples). They're lower here than
+  in the full-building pulls (36-39%) because the first result pages favour fresh listings. The
+  stale ads sit deeper in the results, where a tired searcher scrolls after weeks of looking.
+- **Limits:** these are the first pages only, rentals only, and no eye check. Coverage of registered
+  deals varies (23-53 judged per area), so the percentages are rough.
+
 
 ## The 55 listings
 

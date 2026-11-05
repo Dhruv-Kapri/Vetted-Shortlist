@@ -1,16 +1,8 @@
-palm-jumeirah 1 31
-palm-jumeirah 2 53
-palm-jumeirah 3 78
-downtown-dubai 1 31
-downtown-dubai 2 49
-downtown-dubai 3 72
-dubai-marina 1 31
-dubai-marina 2 56
-dubai-marina 3 81
-jumeirah-village-circle 1 30
-jumeirah-village-circle 2 55
-jumeirah-village-circle 3 80
-discovery-gardens 1 27
-discovery-gardens 2 52
-discovery-gardens 3 77
-international-city 1 26
+| Area | listings | median AED/sqft/yr | judged (>=3 deals) | under 75% (bait) | 75-90% | over 125% | median asking vs deals | 'available' >45 d ago | Verified | permit link | listings per agency | buildings in sample |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Palm Jumeirah (luxury) | 78 | 155 | 28 | 0% | 0% | 21% | +10% | 18% | 99% | 100% | 1.6 | 46 |
+| Downtown Dubai (luxury) | 72 | 149 | 43 | 0% | 14% | 16% | +6% | 29% | 99% | 100% | 1.7 | 45 |
+| Dubai Marina (upper-mid) | 81 | 117 | 53 | 0% | 13% | 8% | +5% | 22% | 96% | 99% | 2.2 | 44 |
+| JVC (mid) | 80 | 101 | 29 | 0% | 7% | 10% | +0% | 11% | 84% | 100% | 2.6 | 60 |
+| Discovery Gardens (budget) | 77 | 80 | 23 | 0% | 0% | 0% | +5% | 21% | 95% | 100% | 1.8 | 47 |
+| International City (budget) | 76 | 66 | 38 | 0% | 3% | 13% | +6% | 25% | 83% | 99% | 2.5 | 53 |

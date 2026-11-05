@@ -30,6 +30,10 @@ for the same unit size, which the listing pages show.
 - **53 of 55 carry the "Verified" badge**, including the 489-day one. The badge checks documents
   once. It can't tell a live unit from a let one.
 
+- **The same in six neighbourhoods, luxury to budget** (about 450 rentals): no bait prices in any
+  tier, and stale dates in all of them. Luxury's own problem is asking far above deals (21% of Palm
+  listings over 125%). Budget and mid areas have fewer Verified ads (83-84%).
+
 None is *proven* fake, because only the agent can confirm a unit is gone. But **23 of the 55 show at
 least one of these signs.**
 
