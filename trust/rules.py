@@ -121,6 +121,32 @@ def permit_flag(listing: Listing) -> Flag | None:
     )
 
 
+def photo_flag(listing: Listing) -> Flag | None:
+    """R5: photos that may not show the real unit. Touch-ups are fine; undisclosed staging is not."""
+    issue = listing.photo_issue
+    if issue is None:
+        return None
+    if issue == "staged_disclosed":
+        return Flag(rule_id="R5", severity=Severity.INFO, title="Photos virtually staged (disclosed)",
+                    reason="The agent says the furniture in the photos is added digitally. Useful to imagine the flat; not what you get.")
+    if issue == "other_building":
+        return Flag(rule_id="R5", severity=Severity.BLOCK, title="Photos from another building",
+                    reason="The photos show a different building from the one advertised.")
+    if issue == "staged_undisclosed":
+        furnished = listing.furnished.upper() == "YES"
+        return Flag(rule_id="R5", severity=Severity.WARN, title="Photos look computer-staged",
+                    reason="The rooms look digitally furnished and the ad doesn't say so"
+                    + (", yet it is advertised as furnished." if furnished else "."),
+                    ask_agent="Are the photos of this flat as it is today? Is the furniture shown in the flat?"
+                    if furnished else "Are the photos of this flat as it is today?")
+    reason = {
+        "views_only": "The first photos show only the view or the pool, nothing of the flat itself.",
+        "reused_other_units": "The same photos appear on this agent's listings for other unit sizes, so they may not be this flat.",
+    }[issue]
+    return Flag(rule_id="R5", severity=Severity.WARN, title="Photos may not show this flat", reason=reason,
+                ask_agent="Can you send photos or a video of this exact flat?")
+
+
 def duplicate_groups(
     listings: Sequence[Listing], today: date, known_same: Sequence[Sequence[str]] = ()
 ) -> list[DuplicateGroup]:
@@ -197,7 +223,7 @@ def evaluate(
     group_of: dict[str, DuplicateGroup] = {i: g for g in groups for i in g.listing_ids}
     verdicts: list[Verdict] = []
     for x in listings:
-        flags = price_flags(x, today) + [f for f in (stale_flag(x, today), permit_flag(x)) if f]
+        flags = price_flags(x, today) + [f for f in (stale_flag(x, today), permit_flag(x), photo_flag(x)) if f]
         g = group_of.get(x.id)
         if g is not None:
             spread = f"AED {g.price_min_aed:,} to {g.price_max_aed:,}"

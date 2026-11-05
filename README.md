@@ -29,8 +29,8 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
 - **53 of 55 listings carry "Verified".**
 - **Duplicates:** we matched photos by eye and found 11 of the 55 listings belong to 3 flats. One
   flat is for rent at AED 135K, 140K and 150K through three agencies.
-- **The prototype's verdicts on the 55:** 37 on the short list, 12 for the assistant to check with
-  the agent, 6 hidden.
+- **The prototype's verdicts on the 55:** 32 on the short list, 17 for the assistant to check with
+  the agent, 6 hidden. None is proven fake, but 23 show at least one sign of being misleading.
 
 ## What is real and what is mocked
 

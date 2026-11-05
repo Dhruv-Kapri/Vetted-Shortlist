@@ -83,6 +83,29 @@ for themselves.
 - **Limit:** we can see that a link is present, but not that the permit matches this unit and this
   price. That check needs the DLD's systems (see the one-pager, "What we could not build").
 
+## R5: Photos that may not show the real flat
+
+Not every edited photo is a lie, so the assistant grades them:
+
+| What we see | Example | Outcome |
+|---|---|---|
+| Touch-up: brightness, sky, lens correction | Most listings | Nothing. It's normal |
+| Virtual staging, **disclosed** in the ad | "Furniture digitally added" | **Information** chip. It helps you imagine an empty flat |
+| Staging or AI-generated rooms, **not disclosed** | 135143057: rooms look rendered, with wooden floors where the tower's standard is tiles | **Check**: "Are the photos of this flat as it is today?" |
+| The same, and the ad says **"Furnished"** | 135143057 again | **Check**, adding: "Is the furniture shown in the flat?" Furniture that isn't there is part of the price |
+| First photos show only the view or the pool | 161902017, 158224698 | **Check**: "Can you send photos or a video of this exact flat?" |
+| The same photos on the agent's 1-, 2- and 3-bed listings | 169274661, 158717394 | **Check**, with the same question |
+| Photos of a different building (forgery) | None found | **Hidden** |
+
+- **Where it's wrong:** an honest agent using a professional 3D render of a flat that really is being
+  furnished to that design, or a real flat renovated so well it looks rendered. They get one
+  question. Nobody is hidden unless the photos are of a different building.
+- **Who gets hurt:** **an honest agent**, delayed by a question. If the assistant misses undisclosed
+  staging, **the person searching** gets hurt: they visit and find an empty flat.
+- **Limit:** in the prototype, the photo issues come from our own eye check (AUDIT.md). None of the
+  217 listings in the building disclosed staging in its text. In production, this needs an image
+  model (see the one-pager).
+
 ## R6: Well above recent deals (information only)
 
 - **Rule:** over 125% of the registered median → an **information** chip ("Price 32% over recent
@@ -114,8 +137,8 @@ another one" would be a signal about that agent (see the one-pager).
 
 ## Rules we considered and did not ship
 
-- **Photos from a different building:** we checked a sample of photos by eye (AUDIT.md). Doing it
-  automatically needs image recognition that knows each tower. We list it as a missing feature
-  rather than fake it.
+- **Automatic photo checks:** R5 runs on our eye check. Doing it automatically needs an image model
+  that knows each tower and can tell staging from a touch-up. We list it as a missing feature rather
+  than fake it.
 - **Agent track record** (how often their listings turn out to be gone): this needs Property
   Finder's own lead and response data.

@@ -10,6 +10,10 @@ from pydantic import BaseModel
 
 Offering = Literal["rent", "sale"]
 
+# What is wrong with the photos, if anything. In the prototype this comes from our eye check (AUDIT.md);
+# in production it would come from an image model (see ONE-PAGER, "What we could not build").
+PhotoIssue = Literal["views_only", "reused_other_units", "staged_undisclosed", "staged_disclosed", "other_building"]
+
 
 class Status(StrEnum):
     SHORTLIST = "shortlist"  # passes every rule; safe to contact
@@ -56,6 +60,7 @@ class Listing(BaseModel):
     photo_hashes: list[str]  # 64-bit dHash hex of the first photos
     description: str
     transactions: list[Transaction]  # recent registered deals, same size, newest first
+    photo_issue: PhotoIssue | None = None
 
 
 class Flag(BaseModel):

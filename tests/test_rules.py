@@ -59,3 +59,12 @@ def test_known_same_flat_groups_listings_the_photo_hash_missed_but_never_mixes_r
     sale = make("s", 2_000_000).model_copy(update={"offering": "sale"})
     _, groups = evaluate([a, b, sale], TODAY, known_same=[["a", "b", "s"]])
     assert [sorted(g.listing_ids) for g in groups] == [["a", "b"]]
+
+
+def test_undisclosed_staging_on_a_furnished_ad_asks_about_the_furniture_while_disclosed_staging_only_informs() -> None:
+    hidden_staging = make("u", 115000).model_copy(update={"photo_issue": "staged_undisclosed"})
+    open_staging = make("d", 115000).model_copy(update={"photo_issue": "staged_disclosed"})
+    verdicts, _ = evaluate([hidden_staging, open_staging], TODAY)
+    by_id = {v.listing_id: v for v in verdicts}
+    assert by_id["u"].status == Status.CHECK and any("furniture" in q for q in by_id["u"].agent_questions)
+    assert by_id["d"].status == Status.SHORTLIST

@@ -257,7 +257,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168361070",
@@ -485,7 +486,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "146422045",
@@ -706,7 +708,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "16024503",
@@ -934,7 +937,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168328487",
@@ -1155,7 +1159,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "164607175",
@@ -1376,7 +1381,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "165044257",
@@ -1597,7 +1603,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "165601648",
@@ -1825,7 +1832,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168366670",
@@ -2046,7 +2054,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "142855746",
@@ -2281,7 +2290,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "162788781",
@@ -2516,7 +2526,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "146425500",
@@ -2751,7 +2762,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168365745",
@@ -2979,7 +2991,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "161854932",
@@ -3200,7 +3213,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "167870490",
@@ -3421,7 +3435,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "162770873",
@@ -3656,7 +3671,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "138777963",
@@ -3877,7 +3893,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "166541246",
@@ -4105,7 +4122,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "161881119",
@@ -4326,7 +4344,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "131574377",
@@ -4554,7 +4573,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "141465422",
@@ -4782,7 +4802,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "154609767",
@@ -5010,7 +5031,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "147762008",
@@ -5238,11 +5260,12 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": "reused_other_units"
    },
    "verdict": {
     "listing_id": "169274661",
-    "status": "shortlist",
+    "status": "check",
     "flags": [
      {
       "rule_id": "R6",
@@ -5250,10 +5273,18 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos may not show this flat",
+      "reason": "The same photos appear on this agent's listings for other unit sizes, so they may not be this flat.",
+      "ask_agent": "Can you send photos or a video of this exact flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
+     "Can you send photos or a video of this exact flat?",
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
@@ -5459,7 +5490,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168809700",
@@ -5680,7 +5712,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "168792326",
@@ -5901,7 +5934,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "156916361",
@@ -6122,7 +6156,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "167007072",
@@ -6350,7 +6385,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "163694214",
@@ -6585,11 +6621,12 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": "reused_other_units"
    },
    "verdict": {
     "listing_id": "158717394",
-    "status": "shortlist",
+    "status": "check",
     "flags": [
      {
       "rule_id": "R6",
@@ -6597,10 +6634,18 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos may not show this flat",
+      "reason": "The same photos appear on this agent's listings for other unit sizes, so they may not be this flat.",
+      "ask_agent": "Can you send photos or a video of this exact flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
+     "Can you send photos or a video of this exact flat?",
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
@@ -6806,7 +6851,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "104675044",
@@ -7034,11 +7080,12 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": "views_only"
    },
    "verdict": {
     "listing_id": "158224698",
-    "status": "shortlist",
+    "status": "check",
     "flags": [
      {
       "rule_id": "R6",
@@ -7046,10 +7093,18 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos may not show this flat",
+      "reason": "The first photos show only the view or the pool, nothing of the flat itself.",
+      "ask_agent": "Can you send photos or a video of this exact flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
+     "Can you send photos or a video of this exact flat?",
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
@@ -7255,7 +7310,8 @@
       "amount": 120000,
       "size_sqft": 1186
      }
-    ]
+    ],
+    "photo_issue": "views_only"
    },
    "verdict": {
     "listing_id": "161902017",
@@ -7274,11 +7330,19 @@
       "title": "Said 'available' 147 days ago",
       "reason": "The agent listed it as available from 2026-06-11. Units in this tower usually let faster, so it may be gone.",
       "ask_agent": "Is the unit still available, and when can I view it?"
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos may not show this flat",
+      "reason": "The first photos show only the view or the pool, nothing of the flat itself.",
+      "ask_agent": "Can you send photos or a video of this exact flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
+     "Can you send photos or a video of this exact flat?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -7468,7 +7532,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "169247428",
@@ -7674,7 +7739,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "158686028",
@@ -7880,7 +7946,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "152354392",
@@ -8087,7 +8154,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "164562185",
@@ -8293,7 +8361,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "162770382",
@@ -8499,7 +8568,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "158244486",
@@ -8705,11 +8775,12 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": "views_only"
    },
    "verdict": {
     "listing_id": "167431760",
-    "status": "shortlist",
+    "status": "check",
     "flags": [
      {
       "rule_id": "R6",
@@ -8717,10 +8788,18 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 4 registered sales for this size in the last 12 months is AED 2,050,000.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos may not show this flat",
+      "reason": "The first photos show only the view or the pool, nothing of the flat itself.",
+      "ask_agent": "Can you send photos or a video of this exact flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
+     "Can you send photos or a video of this exact flat?",
      "Is the unit vacant or tenanted? If tenanted, when does the lease end?",
      "Is the asking price final, and what is the service charge per sqft?",
      "Is there a mortgage on the unit that needs a bank release?",
@@ -8911,7 +8990,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "158698070",
@@ -9117,7 +9197,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "149100966",
@@ -9323,7 +9404,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "158703922",
@@ -9529,7 +9611,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "165571403",
@@ -9735,7 +9818,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "136072118",
@@ -9941,7 +10025,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "98681358",
@@ -10147,7 +10232,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "75411271",
@@ -10353,7 +10439,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "147781701",
@@ -10566,11 +10653,12 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": "staged_undisclosed"
    },
    "verdict": {
     "listing_id": "135143057",
-    "status": "shortlist",
+    "status": "check",
     "flags": [
      {
       "rule_id": "R6",
@@ -10578,10 +10666,18 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 4 registered sales for this size in the last 12 months is AED 2,050,000.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R5",
+      "severity": "warn",
+      "title": "Photos look computer-staged",
+      "reason": "The rooms look digitally furnished and the ad doesn't say so, yet it is advertised as furnished.",
+      "ask_agent": "Are the photos of this flat as it is today? Is the furniture shown in the flat?"
      }
     ],
     "duplicate_group": null,
     "agent_questions": [
+     "Are the photos of this flat as it is today? Is the furniture shown in the flat?",
      "Is the unit vacant or tenanted? If tenanted, when does the lease end?",
      "Is the asking price final, and what is the service charge per sqft?",
      "Is there a mortgage on the unit that needs a bank release?",
@@ -10772,7 +10868,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "144602929",
@@ -10985,7 +11082,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "156936676",
@@ -11191,7 +11289,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "155062404",
@@ -11397,7 +11496,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "162781538",
@@ -11603,7 +11703,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "158249720",
@@ -11809,7 +11910,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "150009971",
@@ -12015,7 +12117,8 @@
       "amount": 1950000,
       "size_sqft": 1181
      }
-    ]
+    ],
+    "photo_issue": null
    },
    "verdict": {
     "listing_id": "121118406",
@@ -12306,14 +12409,10 @@
   },
   {
    "listing_id": "158717394",
-   "available": true,
-   "confirmed_price_aed": 109970,
-   "terms": "1 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "104675044",

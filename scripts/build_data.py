@@ -15,6 +15,7 @@ from trust.rules import evaluate
 RAW: Path = Path("data/raw/pf")
 OUT: Path = Path("web/data/listings.json")
 TODAY: date = date(2026, 11, 5)  # the day the pages were read
+PHOTO_ISSUES: dict[str, str] = json.loads(Path("research/photo-issues.json").read_text())  # from the eye check
 SIZE_TOLERANCE: int = 10  # sqft: registered deals within this of the listing's size count as the same layout
 
 
@@ -59,6 +60,7 @@ def to_listing(p: dict, d: dict, offering: str, deals: list[Transaction], hashes
         photo_hashes=hashes,
         description="",  # dropped: agent text often holds names and phone numbers
         transactions=[t for t in deals if abs(t.size_sqft - size) <= SIZE_TOLERANCE],
+        photo_issue=PHOTO_ISSUES.get(str(p["id"])),
     )
 
 

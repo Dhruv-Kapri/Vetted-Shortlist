@@ -8,9 +8,11 @@ agent stays in the deal: the viewing, the negotiation and the contract are their
 
 ## 1. The problem behind the problem
 
-**Our audit says the main lie is "available", not the price.** We checked 55 live 2-bed listings in
-one building, Princess Tower in Dubai Marina, and compared them with registered contracts for the
-same unit size, which the listing pages show:
+**Our audit says the main lie is "available", not the price.** In one building, Princess Tower in
+Dubai Marina, we checked 55 live 2-bed listings by hand, photos included, and ran all 217 of its
+listings through the same price and availability checks. Prices were compared with the registered
+contracts for the same unit size that the listing pages show. None is proven fake, because only the
+agent can confirm that. But 23 of the 55 show a sign of being misleading:
 
 - **Zero of 32 rentals were priced like bait.** The cheapest was 7% under the median of 24
   registered rents in the last 6 months (AED 118,500). Across the whole building, 0 of 217 listings
@@ -18,6 +20,8 @@ same unit size, which the listing pages show:
 - **13 of 32 rentals give an "available from" date more than 45 days old**, and 47 of 119 across the
   building. One is 489 days old.
   The ads are still up and still collecting calls.
+- **Photos that may not show the flat:** 6 of 55. That's views only, photos reused across unit
+  sizes, or rooms that look computer-staged on an ad that says "Furnished", none of it disclosed.
 - **53 of 55 carry the "Verified" badge**, including that 489-day one. The badge checks documents
   once. It can't tell a live unit from a let one.
 - **The same flat appears more than once.** We matched photos by eye and found one 2-bed in five
@@ -39,8 +43,8 @@ and you can see it Saturday." That's the assistant.
 
 Not on the homepage. It appears at the three moments when trust breaks:
 
-1. **Search results, under the filters.** "Your assistant checked 32 listings: 16 on your short
-   list, 11 to confirm with the agent, 5 hidden. Why?" Duplicates collapse into one card that shows
+1. **Search results, under the filters.** "Your assistant checked 32 listings: 13 on your short
+   list, 14 to confirm with the agent, 5 hidden. Why?" Duplicates collapse into one card that shows
    the price spread.
 2. **The listing page, next to Call and WhatsApp.** This is the moment the person is about to spend
    a call. "Ask the agent for me" sits beside "Call yourself", and "Before you call" shows the

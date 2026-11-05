@@ -38,6 +38,19 @@ The benchmark for rent is 24 registered contracts in 6 months, with a median of 
 a middle half of 103K-140K. For sale, only **4** registered sales in 12 months (median AED 2.05M),
 so buy-side price judgements are weak and the assistant says so.
 
+**So, are any of them fake?** None is *proven* fake from what a searcher can see. Proving that a
+unit is gone, or that the price is not real, takes asking the agent, which is what the assistant is
+for. But **23 of the 55 (19 of 32 rentals) show at least one sign of being misleading**:
+
+- 13 say "available" long ago (R3).
+- 6 are the same flat posted again (R2).
+- 6 have photos that may not show the flat (R5): views or pool only, photos reused across unit
+  sizes, or rooms that look computer-staged on an ad that says "Furnished". No listing in the
+  building discloses staging.
+- 1 sale is 11% under registered deals (R1).
+
+What we did **not** find is the classic bait ad, a price far under the market.
+
 **Three flats, eleven listings (confirmed by eye).**
 
 - **Flat A:** the same balcony furniture, living room and kitchen in **5 listings**. It's for rent at
