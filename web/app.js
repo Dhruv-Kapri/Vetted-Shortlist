@@ -437,7 +437,7 @@ function renderAgent(c) {
     ["Listing", l.title],
     ["Listed price", money(l.price_aed, l.offering) + perYear],
     ["Budget", "Up to " + money(l.price_aed, l.offering) + perYear],
-    ["Move-in", l.available_from ? "From " + l.available_from : "Within 30 days"],
+    ["Move-in", "Within 30 days"],
     rent ? ["Cheques", `Can pay in ${l.cheques || 4}`] : ["Payment", "Mortgage pre-approved"],
     ["Household", "2 adults"],
     ["Viewing windows", windows.join(" or ")],
