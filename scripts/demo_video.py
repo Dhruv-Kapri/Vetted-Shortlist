@@ -1,12 +1,13 @@
-"""Record the narrated demo video (docs/demo.mp4) and the README GIF (docs/walkthrough.gif).
+"""Record the demo video (docs/demo.mp4, captions, no sound) and the README GIF (docs/walkthrough.gif).
 
 Needs the prototype served at http://localhost:8765 (`cd web && python3 -m http.server 8765`),
 Playwright's Chromium, ffmpeg/ffprobe and macOS `say`. Run:
 
     uv run --with playwright python scripts/demo_video.py
 
-Each scene has a caption (on screen) and a voiceover (macOS "Daniel"). A scene lasts at least as long
-as its voiceover plus a pause, so the screens and the voice stay in step.
+Each scene has a caption (on screen) and a voiceover script (macOS "Daniel"). The voiceover only paces
+the scenes: a scene lasts as long as its spoken text plus a pause, which gives time to read the caption.
+The published video is silent; set NARRATION = True to mux the voice in.
 """
 
 from __future__ import annotations
@@ -87,6 +88,9 @@ SCENES: list[tuple[str, str, str]] = [
     ("closing", "Real listings, mocked agent replies. The agent stays in the deal.",
      "Real listings, mocked agent replies. And the agent stays in the deal."),
 ]
+
+
+NARRATION: bool = False  # the submitted video is silent; captions carry the explanation
 
 
 def run(cmd: list[str]) -> None:
@@ -305,12 +309,14 @@ def build_audio(tmp: Path, clips: dict[str, tuple[Path, float]], spans: dict[str
     return out
 
 
-def encode(webm: Path, audio: Path, total: float, mp4: Path) -> None:
+def encode(webm: Path, audio: Path | None, total: float, mp4: Path) -> None:
+    inputs: list[str] = ["-i", str(webm)] + (["-i", str(audio)] if audio else [])
+    sound: list[str] = ["-c:a", "aac", "-b:a", "96k"] if audio else ["-an"]
     run([
-        "ffmpeg", "-y", "-i", str(webm), "-i", str(audio),
+        "ffmpeg", "-y", *inputs,
         "-vf", "fps=25",
         "-c:v", "libx264", "-crf", "24", "-preset", "slow", "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "96k", "-t", f"{total:.2f}", "-movflags", "+faststart", str(mp4),
+        *sound, "-t", f"{total:.2f}", "-movflags", "+faststart", str(mp4),
     ])
 
 
@@ -332,7 +338,7 @@ def main() -> None:
         total = spans[SCENES[-1][0]][1]
         # Playwright's video starts a little before t0 (page creation); lead is that gap.
         lead = 0.0
-        audio = build_audio(tmp, clips, spans, lead)
+        audio = build_audio(tmp, clips, spans, lead) if NARRATION else None
         encode(webm, audio, total, docs / "demo.mp4")
         make_gif(docs / "demo.mp4", docs / "walkthrough.gif")
     for sid, (a, b) in spans.items():
