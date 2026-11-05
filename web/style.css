@@ -68,3 +68,6 @@ textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid #c5ccd3; 
 #sheet[hidden], #toast[hidden] { display: none; }
 #sheet .inner { background: #fff; width: 100%; max-width: 430px; padding: 18px; border-radius: 16px 16px 0 0; }
 #toast { position: fixed; bottom: 76px; left: 50%; transform: translateX(-50%); background: #1c2430; color: #fff; padding: 10px 14px; border-radius: 8px; font-size: 14px; max-width: 380px; z-index: 20; }
+.agentbar { background: #1c2430; color: #fff; font-weight: 700; text-align: center; padding: 8px; margin: -14px -14px 12px; letter-spacing: .5px; }
+.numin { flex: 1; font: inherit; padding: 8px; border: 1px solid #c5ccd3; border-radius: 8px; }
+.actions { flex-wrap: wrap; }
