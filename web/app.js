@@ -207,9 +207,8 @@ function renderResults(mode, showHidden) {
   const shown = cards.filter((c) => !isFolded(c));
   const short = shown.filter((c) => effectiveStatus(c) === "shortlist");
   const check = shown.filter((c) => effectiveStatus(c) === "check");
-  const hidden = shown.filter((c) => effectiveStatus(c) === "hidden");
-  const hiddenCount = cards.length - short.length - check.length;
-  const folded = cards.length - shown.length;
+  const hidden = cards.filter((c) => effectiveStatus(c) === "hidden");
+  const hiddenCount = hidden.length;
 
   const sw = h("div", { class: "switch" }, [
     h("a", { href: "#/results?mode=rent", class: mode === "rent" ? "on" : "" }, ["Rent"]),
@@ -228,16 +227,43 @@ function renderResults(mode, showHidden) {
   if (!shown.length) view.append(h("p", { class: "muted" }, ["No listings in this mode."]));
   for (const c of [...short, ...check]) view.append(renderCard(c));
   if (showHidden) {
-    view.append(h("h2", {}, [`Hidden (${hiddenCount})`]));
-    if (folded) view.append(h("p", { class: "muted small" }, [`${folded} of these are the same flat posted again; they are folded under the card they duplicate.`]));
+    view.append(h("h2", { id: "hidden-h" }, [`Hidden (${hiddenCount})`]));
     for (const c of hidden) {
-      const card = renderCard(c);
-      const why = c.verdict.flags.filter((f) => f.severity !== "info");
-      for (const f of why) card.append(h("p", { class: "small" }, [h("b", {}, [f.title + ". "]), f.reason]));
+      const card = renderCard(c, false);
+      card.append(...hiddenWhy(c));
       view.append(card);
     }
+    setTimeout(() => { const el = document.getElementById("hidden-h"); if (el) el.scrollIntoView(); }, 0);
   }
   return view;
+}
+
+/** Evidence and the way back, for a hidden card. @param {Card} c @returns {HTMLElement[]} */
+function hiddenWhy(c) {
+  const o = outcomes()[c.listing.id];
+  if (o && o.state === "removed") {
+    return [h("p", { class: "small" }, [h("b", {}, ["Removed. "]), o.reason + "."]), h("p", { class: "small muted" }, ["Removed after the agent's reply."])];
+  }
+  const out = [];
+  const g = groupOf(c);
+  const keep = g && g.keep_id !== c.listing.id ? byId(g.keep_id) : null;
+  if (g && keep) {
+    const off = c.listing.offering;
+    const spread = g.price_min_aed === g.price_max_aed
+      ? `all at ${money(g.price_min_aed, off)}`
+      : `prices ${money(g.price_min_aed, off)} to ${money(g.price_max_aed, off).replace("AED ", "")}`;
+    out.push(h("p", { class: "small" }, [
+      h("b", {}, ["Duplicate. "]), "Same flat as ",
+      h("a", { href: `#/listing/${encodeURIComponent(keep.listing.id)}` }, [`${keep.listing.title} at ${money(keep.listing.price_aed, off)}`]),
+      `. Listed ${g.listing_ids.length} times by ${g.agencies} agencies, ${spread}.`,
+    ]));
+    out.push(h("p", { class: "small muted" }, ["Shown again if the agent confirms it's a different unit."]));
+  }
+  for (const f of c.verdict.flags.filter((x) => x.severity !== "info" && !(keep && x.rule_id === "R2"))) {
+    out.push(h("p", { class: "small" }, [h("b", {}, [f.title + ". "]), f.reason]));
+  }
+  if (!keep) out.push(h("p", { class: "small muted" }, ["Shown again if the agent confirms the details."]));
+  return out;
 }
 
 /** @param {Card} c */
