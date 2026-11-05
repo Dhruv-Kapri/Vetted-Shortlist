@@ -146,6 +146,9 @@ in DLD data, which Property Finder shows back as "Transactions").
 - **O:** Logged out, a typed query (a renter's question) would not send. The sidebar says "Log in to
   explore UAE property values, trends, and personalised recommendations". **I did not get to test a
   conversation. Try it yourself while logged in.**
+- **O (follow-up):** Scout couldn't be opened from either side. On the web, Google sign-in led to a
+  waitlist ("access limited"). In the Android app, Scout wasn't anywhere in the UI. So it looks
+  gated or rolled out in stages, not a feature generally available to users.
 - **Opinion:** Scout is positioned for off-plan investors (payment plans, appreciation), not renters.
   Renters are the bigger audience: 89,786 rental apartments in Dubai alone. That makes them the gap.
 

@@ -175,8 +175,8 @@ app_port: 8501
 
 ## Do before Start
 
-- ⬜ Try **Scout** while logged in (`propertyfinder.ae/scout/v2`), with one renter query and one
-  off-plan query. Note what it answers well and badly. I couldn't test it logged out.
+- ❌ **Scout** couldn't be tested: the web version is waitlisted and the Android app has no entry point.
+  Treat it as gated; build anything Scout-like from the public pages only.
 - ⬜ Spend 5 minutes in the **app** (Home Valuation, Rent in 12) and on **mobile web** on your phone.
   I didn't test mobile web.
 - ✅ Bayut reviewed first-hand after you cleared its check (see the teardown).
