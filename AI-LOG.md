@@ -12,10 +12,10 @@ our coding assistant made while building this.
 - **What it said (Q1):** "Roughly AED 135,000-165,000 per year." In a separate answer (Q3) it said
   2-beds "have recently rented for roughly AED 120,000-170,000+ a year".
 - **What the evidence says:** the listing pages show the registered rents for the same size. Pooled
-  across our 32 audited listings, there are 30 registered contracts for a 1,181-1,189 sqft 2-bed,
-  21 of them from the last 6 months. Their median is **AED 115,000**, and the middle half falls
-  between AED 100,000 and 126,000. The
-  model's low end sits above the median of real contracts.
+  across our 32 audited listings, there are 24 registered contracts from the last 6 months for this
+  2-bed layout (±10 sqft). Their median is **AED 118,500**, and the middle half falls between AED
+  103,000 and 140,000. The model's low end is above the median of real contracts, and the middle of
+  its range (150K) is above three-quarters of them.
 - **How we caught it:** we compared every number against `similar_price_transactions` on the listing
   pages, never against other listings' asking prices.
 - **Why it matters:** an assistant that trusts this range would mark honest AED 110-120K listings as
@@ -27,7 +27,7 @@ our coding assistant made while building this.
   with photos, location, and price matching what's advertised".
 - **What the evidence says:** Property Finder describes Verified Listings as a document check by its
   quality team (an advertising agreement and the owner's ID), done once the documents are in. It
-  doesn't re-check availability every day. In our audit, **54 of 55** listings carry the badge,
+  doesn't re-check availability every day. In our audit, **53 of 55** listings carry the badge,
   including one whose own "available from" date is **489 days** old (listing 162770873). Another
   Verified ad at AED 180,000 has been up since June and is priced 57% above recent contracts
   (listing 104675044).

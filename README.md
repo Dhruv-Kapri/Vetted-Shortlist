@@ -21,13 +21,16 @@ The agent stays in the deal.
 These come from Princess Tower, Dubai Marina, read on 5 Nov 2026. The audit covers 55 two-bed
 listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
 
-- **0 of 32 rentals priced like bait.** All are within 5% below to 57% above the median of 21 recent
-  registered rents (AED 115K).
-- **14 of 32 rentals give an "available from" date more than 45 days old.** The oldest is 489 days.
-- **54 of 55 listings carry "Verified".**
-- **Duplicates:** see AUDIT.md for the groups confirmed by eye and by photo hash.
-- **The prototype's verdicts on the 55:** 39 on the short list, 14 for the assistant to check with
-  the agent, 2 hidden.
+- **0 of 32 rentals priced like bait.** All are between 7% below and 52% above the median of 24
+  registered rents in the last 6 months (AED 118,500). Across all 217 listings in the building, none
+  is under 75% of registered deals.
+- **13 of 32 rentals give an "available from" date more than 45 days old.** The oldest is 489 days.
+  Across the building, 47 of 119 do.
+- **53 of 55 listings carry "Verified".**
+- **Duplicates:** we matched photos by eye and found 11 of the 55 listings belong to 3 flats. One
+  flat is for rent at AED 135K, 140K and 150K through three agencies.
+- **The prototype's verdicts on the 55:** 37 on the short list, 12 for the assistant to check with
+  the agent, 6 hidden.
 
 ## What is real and what is mocked
 

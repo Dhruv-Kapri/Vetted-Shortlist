@@ -12,14 +12,17 @@ agent stays in the deal: the viewing, the negotiation and the contract are their
 one building, Princess Tower in Dubai Marina, and compared them with registered contracts for the
 same unit size, which the listing pages show:
 
-- **Zero of 32 rentals were priced like bait.** The cheapest was 5% under the median of 21 recent
-  registered rents (AED 115K).
-- **14 of 32 rentals give an "available from" date more than 45 days old.** One is 489 days old.
+- **Zero of 32 rentals were priced like bait.** The cheapest was 7% under the median of 24
+  registered rents in the last 6 months (AED 118,500). Across the whole building, 0 of 217 listings
+  were under 75% of registered deals.
+- **13 of 32 rentals give an "available from" date more than 45 days old**, and 47 of 119 across the
+  building. One is 489 days old.
   The ads are still up and still collecting calls.
-- **54 of 55 carry the "Verified" badge**, including that 489-day one. The badge checks documents
+- **53 of 55 carry the "Verified" badge**, including that 489-day one. The badge checks documents
   once. It can't tell a live unit from a let one.
-- **The same flat appears more than once.** One 2-bed was posted by two agencies at AED 115K and
-  140K. One agent reuses the same photos across 1-, 2- and 3-bed listings from 862 to 2,006 sqft.
+- **The same flat appears more than once.** We matched photos by eye and found one 2-bed in five
+  listings: for rent at AED 135K, 140K and 150K through three agencies, and for sale through two.
+  Of the 55 audited listings, 11 belong to just 3 flats.
 
 **Why it exists.** An ad costs little to keep up once it's paid for, and every call is a lead. A
 let unit keeps producing calls the agent can steer to other units, so the agent has no reason to
@@ -36,8 +39,8 @@ and you can see it Saturday." That's the assistant.
 
 Not on the homepage. It appears at the three moments when trust breaks:
 
-1. **Search results, under the filters.** "Your assistant checked 32 listings: 18 on your short
-   list, 13 to confirm with the agent, 1 hidden. Why?" Duplicates collapse into one card that shows
+1. **Search results, under the filters.** "Your assistant checked 32 listings: 16 on your short
+   list, 11 to confirm with the agent, 5 hidden. Why?" Duplicates collapse into one card that shows
    the price spread.
 2. **The listing page, next to Call and WhatsApp.** This is the moment the person is about to spend
    a call. "Ask the agent for me" sits beside "Call yourself", and "Before you call" shows the

@@ -29,7 +29,7 @@ for themselves.
   for the final price and whether the unit is tenanted (for sale).
 - **R1b:** fewer than 3 registered deals → **check**, never hidden. Not enough evidence to judge.
 - **Why these numbers:** in Princess Tower, the middle half of 2-bed contracts lies between 87% and
-  110% of the median (AED 100-126K around 115K). Under 75% is outside anything we saw, apart from
+  118% of the median (AED 103-140K around 118.5K). Under 75% is outside anything we saw, apart from
   one AED 50K contract that looks like a special case.
 - **Where it's wrong:** a landlord who needs a tenant this week, a unit on a low floor with a bad
   view, or a sale by an owner who has to sell (divorce, leaving the country, a bank sale).
