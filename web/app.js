@@ -458,9 +458,21 @@ function renderAgent(c) {
   view.append(h("h2", {}, ["Questions sent to you"]), h("ul", {}, questions.map((q) => h("li", {}, [q]))));
 
   const body = h("div");
+  /** Which answer the agent gave last, if any. @returns {"available"|"gone"|"price"|null} */
+  const chosen = () => {
+    const o = outcomes()[l.id];
+    const r = o && o.reply;
+    if (!r) return null;
+    if (!r.available) return "gone";
+    return r.confirmed_price_aed !== null && r.confirmed_price_aed !== l.price_aed ? "price" : "available";
+  };
+  /** @type {Record<string, HTMLElement>} */
+  const answerBtns = {};
   const draw = () => {
     const o = outcomes()[l.id];
     body.replaceChildren(...(o ? [outcomeNote(o)] : []));
+    const pick = chosen();
+    for (const [k, b] of Object.entries(answerBtns)) b.className = "btn " + (k === pick ? "primary" : "secondary");
   };
   /** @param {boolean} available @param {number|null} price */
   const answer = (available, price) => {
@@ -491,9 +503,9 @@ function renderAgent(c) {
     h("h2", {}, ["Answer in one tap"]),
     h("div", { class: "small muted" }, ["Viewing slots you offer (tap to switch off):"]), chips,
     h("div", { class: "actions" }, [
-      h("button", { type: "button", class: "btn primary", onclick: () => answer(true, l.price_aed) }, ["Available at this price"]),
-      h("button", { type: "button", class: "btn secondary", onclick: () => answer(false, null) }, ["Gone / let"]),
-      h("button", { type: "button", class: "btn secondary", onclick: () => { priceRow.hidden = !priceRow.hidden; } }, ["Price changed"]),
+      answerBtns.available = h("button", { type: "button", class: "btn secondary", onclick: () => answer(true, l.price_aed) }, ["Available at this price"]),
+      answerBtns.gone = h("button", { type: "button", class: "btn secondary", onclick: () => answer(false, null) }, ["Gone / let"]),
+      answerBtns.price = h("button", { type: "button", class: "btn secondary", onclick: () => { priceRow.hidden = !priceRow.hidden; } }, ["Price changed"]),
     ]),
     priceRow, body,
     h("div", { class: "panel" }, [
@@ -516,9 +528,18 @@ function outcomeNote(o) {
 
 function renderShortlist() {
   const items = DATA.cards.filter((c) => effectiveStatus(c) === "shortlist" && !isFolded(c));
-  const view = h("div", { class: "pad" }, [h("h1", {}, ["Your short list"]), h("div", { class: "muted" }, [`${items.length} listings you can trust`])]);
+  const confirmed = items.filter((c) => outcomes()[c.listing.id]).length;
+  const view = h("div", { class: "pad" }, [h("h1", {}, ["Your short list"]), h("div", { class: "muted" }, [
+    `${confirmed} confirmed with the agent · ${items.length - confirmed} passed every check, not yet confirmed`,
+  ])]);
   if (!items.length) view.append(h("p", {}, ["Nothing here yet. Open a listing and tap “Ask the agent for me”."]));
+  let lastOffering = "";
   for (const c of items) {
+    if (c.listing.offering !== lastOffering) {
+      lastOffering = c.listing.offering;
+      const n = items.filter((x) => x.listing.offering === lastOffering).length;
+      view.append(h("h2", {}, [`${lastOffering === "sale" ? "To buy" : "To rent"} (${n})`]));
+    }
     const o = outcomes()[c.listing.id];
     const card = renderCard(c);
     const r = o && o.reply;
