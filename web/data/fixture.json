@@ -1,0 +1,219 @@
+{
+ "generated": "fixture",
+ "groups": [
+  {
+   "group_id": "G1",
+   "listing_ids": [
+    "2",
+    "3"
+   ],
+   "price_min_aed": 85000,
+   "price_max_aed": 118000,
+   "agencies": 2,
+   "keep_id": "3"
+  }
+ ],
+ "cards": [
+  {
+   "listing": {
+    "id": "1",
+    "offering": "rent",
+    "url": "https://www.propertyfinder.ae/en/plp/rent/x-1.html",
+    "title": "2BR | Sea view | Princess Tower",
+    "price_aed": 112000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqft": 1189,
+    "furnished": "YES",
+    "cheques": 4,
+    "listed_date": "2026-10-20",
+    "available_from": null,
+    "agency": "Example Realty",
+    "agent_key": "A1",
+    "agent_is_super": true,
+    "is_verified": true,
+    "has_permit_link": true,
+    "images_count": 12,
+    "thumb_url": null,
+    "photo_hashes": [],
+    "description": "Example description.",
+    "transactions": [
+     {
+      "date": "2026-10-22",
+      "amount": 115000,
+      "size_sqft": 1189
+     }
+    ]
+   },
+   "verdict": {
+    "listing_id": "1",
+    "status": "shortlist",
+    "flags": [
+     {
+      "rule_id": "R6",
+      "severity": "info",
+      "title": "In line with recent contracts",
+      "reason": "The last 5 registered rents for this size were 100-115K.",
+      "ask_agent": null
+     }
+    ],
+    "duplicate_group": null,
+    "agent_questions": [
+     "Is it still available from 1 Dec?"
+    ]
+   }
+  },
+  {
+   "listing": {
+    "id": "2",
+    "offering": "rent",
+    "url": "https://www.propertyfinder.ae/en/plp/rent/x-2.html",
+    "title": "2BR | Sea view | Princess Tower",
+    "price_aed": 85000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqft": 1189,
+    "furnished": "YES",
+    "cheques": 4,
+    "listed_date": "2026-10-20",
+    "available_from": "2026-07-01",
+    "agency": "Example Realty",
+    "agent_key": "A1",
+    "agent_is_super": true,
+    "is_verified": true,
+    "has_permit_link": true,
+    "images_count": 12,
+    "thumb_url": null,
+    "photo_hashes": [],
+    "description": "Example description.",
+    "transactions": [
+     {
+      "date": "2026-10-22",
+      "amount": 115000,
+      "size_sqft": 1189
+     }
+    ]
+   },
+   "verdict": {
+    "listing_id": "2",
+    "status": "hidden",
+    "flags": [
+     {
+      "rule_id": "R1",
+      "severity": "block",
+      "title": "Price 26% under recent contracts",
+      "reason": "Registered rents for this size were 100-115K in the last 6 months. 85K is far below.",
+      "ask_agent": "Can you confirm 85K per year is the full rent, with how many cheques?"
+     }
+    ],
+    "duplicate_group": "G1",
+    "agent_questions": [
+     "Is 85K the full yearly rent?"
+    ]
+   }
+  },
+  {
+   "listing": {
+    "id": "3",
+    "offering": "rent",
+    "url": "https://www.propertyfinder.ae/en/plp/rent/x-3.html",
+    "title": "2BR | Sea view | Princess Tower",
+    "price_aed": 118000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqft": 1189,
+    "furnished": "YES",
+    "cheques": 4,
+    "listed_date": "2026-10-20",
+    "available_from": "2026-08-01",
+    "agency": "Example Realty",
+    "agent_key": "A1",
+    "agent_is_super": true,
+    "is_verified": false,
+    "has_permit_link": true,
+    "images_count": 12,
+    "thumb_url": null,
+    "photo_hashes": [],
+    "description": "Example description.",
+    "transactions": [
+     {
+      "date": "2026-10-22",
+      "amount": 115000,
+      "size_sqft": 1189
+     }
+    ]
+   },
+   "verdict": {
+    "listing_id": "3",
+    "status": "check",
+    "flags": [
+     {
+      "rule_id": "R3",
+      "severity": "warn",
+      "title": "Available since August",
+      "reason": "The agent said it was free from 1 Aug; three months later it may be gone.",
+      "ask_agent": "Is the unit still available, and when can I view it?"
+     }
+    ],
+    "duplicate_group": "G1",
+    "agent_questions": [
+     "Is it still available?",
+     "Can I view it this week?"
+    ]
+   }
+  },
+  {
+   "listing": {
+    "id": "4",
+    "offering": "sale",
+    "url": "https://www.propertyfinder.ae/en/plp/sale/x-4.html",
+    "title": "2BR | Sea view | Princess Tower",
+    "price_aed": 1950000,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqft": 1189,
+    "furnished": "YES",
+    "cheques": null,
+    "listed_date": "2026-10-20",
+    "available_from": null,
+    "agency": "Example Realty",
+    "agent_key": "A1",
+    "agent_is_super": true,
+    "is_verified": true,
+    "has_permit_link": true,
+    "images_count": 12,
+    "thumb_url": null,
+    "photo_hashes": [],
+    "description": "Example description.",
+    "transactions": [
+     {
+      "date": "2026-10-22",
+      "amount": 1900000,
+      "size_sqft": 1189
+     }
+    ]
+   },
+   "verdict": {
+    "listing_id": "4",
+    "status": "shortlist",
+    "flags": [],
+    "duplicate_group": null,
+    "agent_questions": [
+     "Is the unit vacant or tenanted?"
+    ]
+   }
+  }
+ ],
+ "replies": [
+  {
+   "listing_id": "3",
+   "available": true,
+   "confirmed_price_aed": 118000,
+   "terms": "4 cheques, 5% agency fee, 5% deposit",
+   "viewing_slots": [
+    "Sat 10:00",
+    "Sun 16:00"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+[project]
+name = "trusted-shortlist"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "anthropic>=2.5.0",
+    "pydantic>=2.14.3",
+    "python-dotenv>=1.2.4",
+]
+
+[dependency-groups]
+dev = [
+    "pillow>=13.0.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
