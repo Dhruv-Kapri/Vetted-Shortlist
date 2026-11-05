@@ -40,6 +40,11 @@ same unit size.
   | Discovery Gardens | 0% | 0% | 21% | 95% |
   | International City | 0% | 13% | 25% | 83% |
 
+- **140 more checked by hand** (20 per area, half random): in the random half, **0 bait, 19% stale,
+  10% photos that may not show the flat**. All 22 permits checked for the cheapest ads match the ad
+  price. A second same-flat-two-prices case turned up in Binghatti Heights (AED 69,999 vs 75,000,
+  both with valid permits).
+
 None is *proven* fake: only the agent can confirm a unit is gone. But **23 of the 55 show at least
 one of these signs.**
 

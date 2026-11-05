@@ -11,7 +11,7 @@ read-only.
 |---|---|---|
 | **By hand** (the table at the end) | 55: every 2-bed in the 1,181-1,189 sqft layout, 32 rent + 23 sale | Everything below, plus every photo looked at by eye and duplicates confirmed. The prototype shows these |
 | **Whole building** | 217: all Princess Tower listings, every bedroom count, 119 rent + 98 sale | The automatic checks only: price against registered deals, "available" date, badge, permit link |
-| **By hand, six neighbourhoods** | 60: 10 per area, half random and half most suspicious | Photos by eye and permit cards (see "By-hand checks across neighbourhoods") |
+| **By hand, six neighbourhoods + Binghatti Heights** | 140: 20 per place, half random and half most suspicious | Photos by eye, plus permit cards for the cheapest (see "By-hand checks across neighbourhoods") |
 
 **Audit set (the table below):** every 2-bed listing in the building's commonest layout
 (1,181-1,189 sqft): **32 for rent and 23 for sale**. For each one we checked what a person
@@ -214,6 +214,74 @@ We judged each listing against **its own page's** registered rents: same buildin
 - **Limits:** these are the first pages only, rentals only, and no eye check. Coverage of registered
   deals varies (23-53 judged per area), so the percentages are rough.
 
+
+## By-hand checks across neighbourhoods (140 more listings)
+
+So the hand-checked evidence doesn't rest on one premium tower, we checked **20 rentals by hand in
+each of the six neighbourhoods and in Binghatti Heights**. In each place, **10 were picked at
+random** (seeded, so the pick is repeatable) and **10 were picked as most suspicious**: the 5
+cheapest against their own page's registered deals, and the 5 with the oldest "available" date.
+The two halves are reported separately. **The random half is the unbiased estimate.** The
+suspicious half tests whether the worst-looking ads really are fake. For each listing we looked at
+the first three photos, and for the cheapest 3 per area (plus both sides of any duplicate) we
+opened the DLD permit card. Script: `scripts/hand_sample.py`. Notes: `research/hand_eye.json` and
+`research/hand_permits.json`.
+
+| Area | Sample | n | Bait (<75%) | Stale >45 d | Photo problem | Staged | Permit checked / price differs | Any sign |
+|---|---|---|---|---|---|---|---|---|
+| Palm Jumeirah | random | 10 | 0 | 1 | 1 | 1 | 0 / 0 | 2 |
+| Palm Jumeirah | suspicious | 10 | 0 | 6 | 1 | 0 | 3 / 0 | 6 |
+| Downtown Dubai | random | 10 | 0 | 4 | 1 | 0 | 0 / 0 | 4 |
+| Downtown Dubai | suspicious | 10 | 0 | 5 | 0 | 0 | 3 / 0 | 10 |
+| Dubai Marina | random | 10 | 0 | 2 | 1 | 0 | 0 / 0 | 4 |
+| Dubai Marina | suspicious | 10 | 0 | 5 | 1 | 1 | 3 / 0 | 10 |
+| JVC | random | 10 | 0 | 1 | 0 | 0 | 0 / 0 | 1 |
+| JVC | suspicious | 10 | 0 | 6 | 0 | 0 | 3 / 0 | 8 |
+| Discovery Gardens | random | 10 | 0 | 1 | 2 | 0 | 0 / 0 | 3 |
+| Discovery Gardens | suspicious | 10 | 0 | 5 | 3 | 1 | 3 / 0 | 7 |
+| International City | random | 10 | 0 | 2 | 0 | 0 | 0 / 0 | 2 |
+| International City | suspicious | 10 | 0 | 5 | 0 | 0 | 3 / 0 | 6 |
+| Binghatti Heights (JVC tower) | random | 10 | 0 | 2 | 2 | 0 | 2 / 0 | 4 |
+| Binghatti Heights (JVC tower) | suspicious | 10 | 0 | 8 | 2 | 1 | 4 / 1 | 10 |
+| **All** | suspicious | 70 | 0 | 40 | 7 | 3 | 22 / 1 | 57 |
+| **All** | random | 70 | 0 | 13 | 7 | 1 | 2 / 0 | 20 |
+
+"Photo problem" means views or amenities only, undisclosed staging, or the same flat posted again.
+"Any sign" also counts a price more than 10% under deals.
+
+**What the random half says (70 listings, 7 places):** **0 bait**, **13 (19%) stale**, **7 (10%)
+with photos that may not show the flat**. In all, 20 of 70 (29%) show at least one sign.
+
+**What the suspicious half says:**
+
+- **The cheapest ads are real.** We opened 22 permit cards for the cheapest listings and duplicate
+  pairs, and all 22 match their ad's price and size exactly. That includes Downtown's cheapest
+  (24% under deals). One listing shows **no permit link at all**: Binghatti Heights 125629909, a
+  holiday-home operator, 17% under deals, not Verified. That's R4's case, and also where R4 can be
+  wrong: holiday homes may be licensed by Dubai's tourism department rather than through a DLD
+  permit.
+- **Stale ads are everywhere.** The oldest "available" dates run to 988 days (Palm), 897 days
+  (Downtown), 882 days (Binghatti Heights) and 787 days (International City).
+
+**Area by area (by hand):**
+
+- **Palm Jumeirah:** ads at 988, 689 and 666 days stale. One ad shows only the building and the view.
+  One "Furnished" ad has rooms that look rendered.
+- **Downtown Dubai:** all 3 cheapest (−24%, −19%, −15%) have valid permits at the ad price, so the
+  discounts are real. One ad shows only the view.
+- **Dubai Marina:** an "Unfurnished" ad shows fully furnished, render-like rooms. One agency lists two
+  4-beds of the same size in Horizon Tower at AED 175K and 180K (different photos, so not
+  confirmed).
+- **JVC:** clean photos, all permits valid. Herad Tower's new-build studios look identical, so two
+  listings could be one unit or two, and only a unit ID would settle it.
+- **Discovery Gardens:** one agency posts what looks like the same studio twice (same building, size,
+  price and kitchen photo). An "Unfurnished" 2-bed shows render-like furnished rooms at AED 135K
+  where other 2-beds ask 90-100K. Two ads show only the community gardens.
+- **International City:** real photos throughout. The most non-Verified ads (5 of 20). Ads at 787
+  and 604 days stale from one agency.
+- **Binghatti Heights:** **the same 620 sqft 1-bed posted by two agencies at AED 69,999 and 75,000,
+  each with a valid permit at its own price**. That's the Flat A pattern again, in a second building.
+  It also has the listing with no permit, and a 2-bed whose rooms look rendered.
 
 ## The 55 listings
 

@@ -17,11 +17,22 @@ from urllib.request import Request, urlopen
 from PIL import Image, ImageDraw
 
 AREAS: list[str] = ["palm-jumeirah", "downtown-dubai", "dubai-marina", "jumeirah-village-circle",
-                    "discovery-gardens", "international-city"]
+                    "discovery-gardens", "international-city", "binghatti-heights"]
+PER_GROUP: int = 10  # 10 suspicious + 10 random per area
 TODAY: date = date(2026, 11, 5)
 UA: str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130 Safari/537.36"
 NEXT_DATA: re.Pattern[str] = re.compile(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', re.DOTALL)
 OUT: Path = Path("data/raw/pf/hand")
+
+
+def get(url: str) -> bytes:
+    """GET with a few retries: the site sometimes resets the connection."""
+    for attempt in range(4):
+        try:
+            return urlopen(Request(url, headers={"User-Agent": UA}), timeout=30).read()
+        except OSError:
+            time.sleep(10 * (attempt + 1))
+    return urlopen(Request(url, headers={"User-Agent": UA}), timeout=30).read()
 
 
 def ratio(r: dict) -> float | None:
@@ -35,21 +46,43 @@ def stale_days(r: dict) -> int:
 
 def pick(rows: list[dict], rng: random.Random) -> list[tuple[str, dict]]:
     judged = sorted((x for x in rows if ratio(x) is not None), key=lambda x: ratio(x) or 9)
-    suspicious = judged[:3] + [x for x in sorted(rows, key=stale_days, reverse=True) if x not in judged[:3]][:2]
+    cheap = judged[:5]
+    suspicious = cheap + [x for x in sorted(rows, key=stale_days, reverse=True) if x not in cheap][:PER_GROUP - 5]
     rest = [x for x in rows if x not in suspicious]
-    return [("suspicious", x) for x in suspicious] + [("random", x) for x in rng.sample(rest, 5)]
+    return [("suspicious", x) for x in suspicious] + [("random", x) for x in rng.sample(rest, PER_GROUP)]
+
+
+def binghatti_rows() -> list[dict]:
+    """Binghatti Heights rentals in the same row shape as the area files."""
+    raw = Path("data/raw/pf")
+    details = json.loads((raw / "binghatti_heights_details.json").read_text())
+    rows: list[dict] = []
+    for p in {x["id"]: x for x in json.loads((raw / "binghatti_heights_rent.json").read_text())}.values():
+        d = details.get(str(p["id"])) or {}
+        rows.append({
+            "id": str(p["id"]), "price": p["price"]["value"], "size": p["size"]["value"], "bedrooms": p["bedrooms"],
+            "building": "Binghatti Heights", "agency": p["broker"]["name"], "verified": bool(p["is_verified"]),
+            "available_from": (d.get("rental_availability_date") or "")[:10],
+            "deals": [(t["date"][:10], float(t["amount"])) for t in (d.get("similar_price_transactions") or {}).get("rent") or []],
+        })
+    return rows
 
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     rng = random.Random(20261105)
-    sample: list[dict] = []
+    done_path = Path("research/hand_sample.json")
+    sample: list[dict] = json.loads(done_path.read_text()) if done_path.exists() else []
+    finished = {x["area"] for x in sample if sum(y["area"] == x["area"] for y in sample) == 2 * PER_GROUP}
+    sample = [x for x in sample if x["area"] in finished]  # drop a half-done area and redo it
     for area in AREAS:
-        rows = json.loads(Path(f"data/raw/pf/areas/{area}.json").read_text())
+        if area in finished:
+            continue
+        rows = binghatti_rows() if area == "binghatti-heights" else json.loads(Path(f"data/raw/pf/areas/{area}.json").read_text())
         tiles: list[tuple[str, Path]] = []
         for why, r in pick(rows, rng):
             url = f"https://www.propertyfinder.ae/en/plp/rent/x-{r['id']}.html"
-            html = urlopen(Request(url, headers={"User-Agent": UA}), timeout=30).read().decode()
+            html = get(url).decode()
             prop = json.loads(NEXT_DATA.search(html).group(1))["props"]["pageProps"]["propertyResult"]["property"]
             time.sleep(3)
             images = prop.get("images") or {}
@@ -57,7 +90,7 @@ def main() -> None:
             for k, im in enumerate(listing_images[:3]):
                 p = OUT / f"{r['id']}_{k}.jpg"
                 if not p.exists():
-                    p.write_bytes(urlopen(Request(im.get("small") or im["medium"], headers={"User-Agent": UA}), timeout=30).read())
+                    p.write_bytes(get(im.get("small") or im["medium"]))
                     time.sleep(2)
                 tiles.append((f"{r['id']}_{k}", p))
             rt = ratio(r)
@@ -69,7 +102,7 @@ def main() -> None:
                 "agency": r["agency"], "permit_url": (prop.get("rera") or {}).get("permit_validation_url"),
             })
             Path("research/hand_sample.json").write_text(json.dumps(sample, indent=1, ensure_ascii=False))
-        W, H, cols = 200, 140, 6
+        W, H, cols = 200, 140, 9
         rows_n = (len(tiles) + cols - 1) // cols
         sheet = Image.new("RGB", (cols * W, rows_n * (H + 14)), "white")
         draw = ImageDraw.Draw(sheet)

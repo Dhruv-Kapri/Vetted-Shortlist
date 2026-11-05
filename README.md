@@ -37,6 +37,9 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
   - JVC: stale 11%, over 125% 10%
   - Discovery Gardens: stale 21%, over 125% 0%
   - International City: stale 25%, over 125% 13%
+- **140 more checked by hand** across all seven places (10 random and 10 most suspicious each). The
+  random half: 0 bait, 19% stale, 10% photos that may not show the flat. All 22 permit cards checked
+  match the ad price.
 - **The 55 vs the 217:** 55 listings were checked by hand (one layout, photos included). All 217
   listings in the building went through the automatic checks.
 - **The prototype's verdicts on the 55:** 32 on the short list, 17 for the assistant to check with

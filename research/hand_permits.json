@@ -1,0 +1,168 @@
+{
+ "167867897": {
+  "permit_price": 235000,
+  "type": "Rent",
+  "sqm": 202.65,
+  "ends": "2027-10-04",
+  "building": "Al Tamr"
+ },
+ "161885104": {
+  "permit_price": 99989,
+  "type": "Rent",
+  "sqm": 48.7,
+  "ends": "2027-02-25",
+  "building": "The Palm Tower"
+ },
+ "168329837": {
+  "permit_price": 185000,
+  "type": "Rent",
+  "sqm": 165.18,
+  "ends": "2027-06-18",
+  "building": "Marina Apartments 1 (ad says Marina Residences 1: naming variant)"
+ },
+ "165500526": {
+  "permit_price": 159999,
+  "type": "Rent",
+  "sqm": 99.54,
+  "ends": "2027-02-02",
+  "building": "Vida Dubai Mall Tower 2"
+ },
+ "140131377": {
+  "permit_price": 85000,
+  "type": "Rent",
+  "sqm": 65.77,
+  "ends": "2027-07-31",
+  "building": "BD Standpoint A"
+ },
+ "168801051": {
+  "permit_price": 170000,
+  "type": "Rent",
+  "sqm": 137.31,
+  "ends": "2027-06-29",
+  "building": "Residences W1"
+ },
+ "158688428": {
+  "permit_price": 95000,
+  "type": "Rent",
+  "sqm": 81.29,
+  "ends": "2027-11-03",
+  "building": "Cayan Tower"
+ },
+ "168352148": {
+  "permit_price": 175000,
+  "type": "Rent",
+  "sqm": 223.76,
+  "ends": "2027-01-06",
+  "building": "Horizon Tower"
+ },
+ "164562107": {
+  "permit_price": 210000,
+  "type": "Rent",
+  "sqm": 201.41,
+  "ends": "2027-11-02",
+  "building": "Avant"
+ },
+ "166069003": {
+  "permit_price": 51999,
+  "type": "Rent",
+  "sqm": 51.47,
+  "ends": "2027-08-17",
+  "building": "Herad Tower"
+ },
+ "167901734": {
+  "permit_price": 75000,
+  "type": "Rent",
+  "sqm": 84.44,
+  "ends": "2027-03-21",
+  "building": "Binghatti Apex"
+ },
+ "168803360": {
+  "permit_price": 55000,
+  "type": "Rent",
+  "sqm": 51.47,
+  "ends": "2027-02-02",
+  "building": "Herad Tower"
+ },
+ "167440711": {
+  "permit_price": 44000,
+  "type": "Rent",
+  "sqm": 45,
+  "ends": "2026-11-10",
+  "building": "MOG 197"
+ },
+ "168346095": {
+  "permit_price": 40000,
+  "type": "Rent",
+  "sqm": 45,
+  "ends": "2027-05-13",
+  "building": "MED 92"
+ },
+ "167884638": {
+  "permit_price": 44999,
+  "type": "Rent",
+  "sqm": 43.15,
+  "ends": "2027-08-17",
+  "building": "MOG 191"
+ },
+ "155072381": {
+  "permit_price": 38999,
+  "type": "Rent",
+  "sqm": 66.5,
+  "ends": "2027-09-10",
+  "building": "T-02"
+ },
+ "149546197": {
+  "permit_price": 30000,
+  "type": "Rent",
+  "sqm": 43,
+  "ends": "2027-01-02",
+  "building": "X-21"
+ },
+ "152378496": {
+  "permit_price": 54000,
+  "type": "Rent",
+  "sqm": 86.05,
+  "ends": "2027-03-17",
+  "building": "A03"
+ },
+ "135169220": {
+  "permit_price": 57999,
+  "type": "Rent",
+  "sqm": 57.77,
+  "ends": "2026-12-30",
+  "building": "Binghatti Heights"
+ },
+ "158710724": {
+  "permit_price": 60000,
+  "type": "Rent",
+  "sqm": 59.66,
+  "ends": "2026-11-06",
+  "building": "Binghatti Heights"
+ },
+ "54928224": {
+  "permit_price": 200000,
+  "type": "Rent",
+  "sqm": 178.07,
+  "ends": "2027-01-31",
+  "building": "Binghatti Heights"
+ },
+ "163232101": {
+  "permit_price": 75000,
+  "type": "Rent",
+  "sqm": 57.62,
+  "ends": "2027-09-21",
+  "building": "Binghatti Heights"
+ },
+ "167005080": {
+  "permit_price": 69999,
+  "type": "Rent",
+  "sqm": 57.62,
+  "ends": "2026-12-28",
+  "building": "Binghatti Heights"
+ },
+ "125629909": {
+  "permit_price": null,
+  "type": "none shown",
+  "note": "No DLD permit link on the listing (holiday-home operator)"
+ }
+}
