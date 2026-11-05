@@ -11,6 +11,8 @@ The agent stays in the deal.
 
 ![Walkthrough: results, Why hidden?, ask the agent, the agent's view, buy mode, short list](docs/walkthrough.gif)
 
+[Narrated demo video (about 2 min)](docs/demo.mp4). Regenerate both: `uv run --with playwright python scripts/demo_video.py` (needs the web server on port 8765, ffmpeg and macOS `say`).
+
 The data is real: 55 live 2-bed listings in Princess Tower, Dubai Marina. Agent replies are mocked.
 
 1. **Renter: results.** The bar says what the assistant did: "checked 32 listings: 13 on your short
