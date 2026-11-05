@@ -29,9 +29,16 @@ same unit size.
   or computer-staged rooms on a "Furnished" ad. None is disclosed.
 - **53 of 55 carry the "Verified" badge**, including the 489-day one. The badge checks documents
   once. It can't tell live from let.
-- **Six neighbourhoods, luxury to budget** (about 450 rentals): no bait prices, stale dates in all.
-  Luxury asks far above deals (21% of Palm listings over 125%). Budget and mid areas have fewer
-  Verified ads (83-84%).
+- **Six neighbourhoods, luxury to budget** (about 75 rentals each, first result pages):
+
+  | Area | Under 75% (bait) | Over 125% | Stale >45 d | Verified |
+  |---|---|---|---|---|
+  | Palm Jumeirah | 0% | 21% | 18% | 99% |
+  | Downtown Dubai | 0% | 16% | 29% | 99% |
+  | Dubai Marina | 0% | 8% | 22% | 96% |
+  | JVC | 0% | 10% | 11% | 84% |
+  | Discovery Gardens | 0% | 0% | 21% | 95% |
+  | International City | 0% | 13% | 25% | 83% |
 
 None is *proven* fake: only the agent can confirm a unit is gone. But **23 of the 55 show at least
 one of these signs.**

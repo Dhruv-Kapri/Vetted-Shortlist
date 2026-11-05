@@ -5,6 +5,14 @@ identical layouts. That makes it a fair test: same building, same layout, so pri
 duplicates are easy to see. **Read on 5 Nov 2026** from public propertyfinder.ae pages, logged out,
 read-only.
 
+**Two depths of checking, so the numbers aren't confused:**
+
+| Set | Listings | What was checked |
+|---|---|---|
+| **By hand** (the table at the end) | 55: every 2-bed in the 1,181-1,189 sqft layout, 32 rent + 23 sale | Everything below, plus every photo looked at by eye and duplicates confirmed. The prototype shows these |
+| **Whole building** | 217: all Princess Tower listings, every bedroom count, 119 rent + 98 sale | The automatic checks only: price against registered deals, "available" date, badge, permit link |
+| **By hand, six neighbourhoods** | 60: 10 per area, half random and half most suspicious | Photos by eye and permit cards (see "By-hand checks across neighbourhoods") |
+
 **Audit set (the table below):** every 2-bed listing in the building's commonest layout
 (1,181-1,189 sqft): **32 for rent and 23 for sale**. For each one we checked what a person
 searching can see:
@@ -133,6 +141,32 @@ The pattern holds across a premium and a mid-market building. For the first phot
 share it with at least one other listing (22 groups). Many are probably the building's exterior shot,
 so we don't count them as duplicates without an eye check.
 
+## What counts as a bait price, and does the threshold matter?
+
+**The rule (R1):** compare the listing with the median of *registered* contracts for the same size
+(±10 sqft) shown on its own page: rentals over the last 6 months, sales over 12, with at least 3
+deals. **Under 75% is likely bait** and gets hidden. **75-90%** is plausible, so the assistant asks
+for the full price first. With fewer than 3 deals, the assistant asks instead of judging. We chose
+75% because genuine 2-bed contracts in Princess Tower sit between 87% and 118% of the median (the
+middle half).
+
+To check that "no bait" isn't just a result of choosing 75%, here are the counts at looser
+thresholds. Every rental is judged against its own page's deals:
+
+| Rentals judged | n | under 75% | under 80% | under 85% | under 90% | cheapest vs deals |
+|---|---|---|---|---|---|---|
+| Palm Jumeirah | 28 | 0 (0%) | 0 (0%) | 0 (0%) | 0 (0%) | -10% |
+| Downtown Dubai | 43 | 0 (0%) | 1 (2%) | 2 (5%) | 6 (14%) | -24% |
+| Dubai Marina | 53 | 0 (0%) | 1 (2%) | 3 (6%) | 7 (13%) | -21% |
+| JVC | 29 | 0 (0%) | 0 (0%) | 0 (0%) | 2 (7%) | -13% |
+| Discovery Gardens | 23 | 0 (0%) | 0 (0%) | 0 (0%) | 0 (0%) | -4% |
+| International City | 38 | 0 (0%) | 0 (0%) | 0 (0%) | 1 (3%) | -13% |
+| Princess Tower (whole building) | 94 | 0 (0%) | 0 (0%) | 0 (0%) | 2 (2%) | -14% |
+| Binghatti Heights (whole building) | 105 | 0 (0%) | 0 (0%) | 2 (2%) | 4 (4%) | -17% |
+
+Even at 90%, the share stays at 14% or less in every area. The cheapest listing anywhere is 24%
+under its registered deals, in Downtown. At 75%, the count is zero everywhere.
+
 ## Six neighbourhoods, from luxury to budget
 
 Does the pattern depend on how expensive the area is? For each of six neighbourhoods we took the
@@ -148,6 +182,24 @@ We judged each listing against **its own page's** registered rents: same buildin
 | JVC (mid) | 80 | 101 | 29 | 0% | 7% | 10% | +0% | 11% | 84% | 100% | 2.6 | 60 |
 | Discovery Gardens (budget) | 77 | 80 | 23 | 0% | 0% | 0% | +5% | 21% | 95% | 100% | 1.8 | 47 |
 | International City (budget) | 76 | 66 | 38 | 0% | 3% | 13% | +6% | 25% | 83% | 99% | 2.5 | 53 |
+
+**Area by area:**
+
+- **Palm Jumeirah (luxury, AED 155/sqft/yr):** no bait, and nothing even at 75-90%. **21% ask over
+  125% of registered deals**, the highest of any area. 18% stale. 99% Verified. 1.6 listings per
+  agency.
+- **Downtown Dubai (luxury, AED 149):** no bait, but the most "cheap" listings (14% at 75-90%) and
+  the **most stale (29%)**. 16% over 125%. 99% Verified.
+- **Dubai Marina (upper-mid, AED 117):** no bait. 13% at 75-90%, 8% over 125%, 22% stale, 96%
+  Verified. 2.2 listings per agency.
+- **JVC (mid, AED 101):** no bait. 7% at 75-90%, 10% over 125%, the least stale (11%), and **84%
+  Verified**. The most listings per agency (2.6).
+- **Discovery Gardens (budget, AED 80):** no bait, and nothing even at 75-90%. 0% over 125%, 21%
+  stale, 95% Verified.
+- **International City (budget, AED 66):** no bait. 3% at 75-90%, 13% over 125%, 25% stale, the
+  **fewest Verified (83%)**, and 2.5 listings per agency.
+
+**Across them:**
 
 - **Bait pricing is absent in every tier.** In every area, 0% of the judged listings are under 75%
   of registered deals.

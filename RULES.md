@@ -31,6 +31,8 @@ for themselves.
 - **Why these numbers:** in Princess Tower, the middle half of 2-bed contracts lies between 87% and
   118% of the median (AED 103-140K around 118.5K). Under 75% is outside anything we saw, apart from
   one AED 50K contract that looks like a special case.
+- **Does the threshold matter?** Hardly. Even at 90%, at most 14% of an area's rentals count as cheap.
+  At 75%, none do in any of the 8 places we checked (AUDIT.md, "What counts as a bait price").
 - **Where it's wrong:** a landlord who needs a tenant this week, a unit on a low floor with a bad
   view, or a sale by an owner who has to sell (divorce, leaving the country, a bank sale).
 - **Who gets hurt:** **an honest agent**, whose genuine deal gets hidden, and **the person

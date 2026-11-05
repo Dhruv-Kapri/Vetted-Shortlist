@@ -29,8 +29,16 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
 - **53 of 55 listings carry "Verified".**
 - **Duplicates:** we matched photos by eye and found 11 of the 55 listings belong to 3 flats. One
   flat is for rent at AED 135K, 140K and 150K through three agencies.
-- **Second building and six neighbourhoods** (luxury to budget, about 700 more listings): still no
-  bait prices in any tier. Stale "available" dates show up everywhere. See AUDIT.md.
+- **Second building and six neighbourhoods** (about 700 more listings). None has a single listing
+  under 75% of registered deals:
+  - Palm Jumeirah: stale 18%, over 125% 21%
+  - Downtown: stale 29%, over 125% 16%
+  - Dubai Marina: stale 22%, over 125% 8%
+  - JVC: stale 11%, over 125% 10%
+  - Discovery Gardens: stale 21%, over 125% 0%
+  - International City: stale 25%, over 125% 13%
+- **The 55 vs the 217:** 55 listings were checked by hand (one layout, photos included). All 217
+  listings in the building went through the automatic checks.
 - **The prototype's verdicts on the 55:** 32 on the short list, 17 for the assistant to check with
   the agent, 6 hidden. None is proven fake, but 23 show at least one sign of being misleading.
 
