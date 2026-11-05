@@ -2,6 +2,7 @@
 
 Prints markdown. Q1: do asking prices and listing-page deals agree with DLD contracts?
 Q2: are ads whose 'available from' date is >45 days old more often matched by a DLD New contract?
+Q3: do asking sale prices agree with DLD registered sales, Jan to Nov 2026?
 """
 
 import csv
@@ -14,12 +15,20 @@ from statistics import median
 
 RAW_ROOT: Path = Path(os.environ.get("RAW_ROOT", "/Users/dhruvkapri/Desktop/Developer/sandbox-1104/data/raw"))
 RENTS_CSV: Path = RAW_ROOT / "dld/rents_2026-10-04_2026-11-04.csv"
-SALES_CSV: Path = RAW_ROOT / "dld/transactions_2026-10-04_2026-11-04.csv"
+# DLD sales exports per building: slug -> file (the JVC export may not exist yet)
+SALES_FILES: dict[str, Path] = {
+    "princess_tower": RAW_ROOT / "dld/sales_dubai_marina_2026-01-01_2026-11-05.csv",
+    "binghatti_heights": RAW_ROOT / "dld/sales_jvc_2026-01-01_2026-11-05.csv",
+}
+MIN_SALE_VALUE: float = 300_000  # below this a "sale" is a partial-share or odd transfer
+AREA_MISMATCH: float = 0.01  # PROCEDURE_AREA vs ACTUAL_AREA gap that marks a partial share
+SALE_DEAL_DAYS: int = 365  # same 12-month window as scripts/building_check.py for sales
 TODAY: date = date(2026, 11, 5)
 SQFT_PER_SQM: float = 10.7639
 AREA_TOL: float = 0.05  # listing size within +-5% of DLD ACTUAL_AREA
 PRICE_TOL: float = 0.10  # strict variant: DLD annual rent within +-10% of asking
 STALE_DAYS: int = 45
+AUDITED_ID: str = "169274661"  # cheapest of the 55 hand-audited Princess Tower rentals
 PAGE_DEAL_DAYS: int = 183  # same 6-month window as scripts/building_check.py
 # (slug, details file, DLD PROJECT_EN, label)
 BUILDINGS: list[tuple[str, str, str, str]] = [
@@ -123,18 +132,81 @@ def pt_two_bed_claim(listings: list[dict], dld: list[dict[str, str]], deals: set
     return out
 
 
-def sales_section(label: str, project: str, listings: list[dict], sales: list[dict[str, str]]) -> list[str]:
-    out: list[str] = [f"**{label}**"]
-    rows = [r for r in sales if r["PROJECT_EN"] == project and r["GROUP_EN"] == "Sales"]
-    if not rows:
-        out.append("- no DLD sales row in the window.")
+def clean_sales(rows: list[dict[str, str]]) -> tuple[list[dict[str, str]], dict[str, int]]:
+    """Ready flats, deduped on TRANSACTION_NUMBER, minus partial-share and odd-value transfers.
+
+    Returns (kept rows, counts of rows dropped per reason; a row is counted under the first reason that hits).
+    """
+    dropped: dict[str, int] = {"not a ready flat": 0, "duplicate": 0, "partial share (areas differ >1%)": 0,
+                               f"value under {MIN_SALE_VALUE:,.0f}": 0}
+    kept: list[dict[str, str]] = []
+    seen: set[str] = set()
     for r in rows:
-        sqm = float(r["ACTUAL_AREA"])
-        asks = [p["price"]["value"] for p in listings if p["size"]["value"] and area_match(p["size"]["value"], sqm)]
-        rng = f"{min(asks):,} to {max(asks):,} (n={len(asks)})" if asks else "no listing of that size"
-        out.append(f"- DLD sale {r['INSTANCE_DATE'][:10]}: AED {float(r['TRANS_VALUE']):,.0f}, {sqm} sqm "
-                   f"({sqm * SQFT_PER_SQM:.0f} sqft), {r['ROOMS_EN']}. Asking for same size (+-5%): AED {rng}.")
-    return out
+        if r["PROP_SB_TYPE_EN"] != "Flat" or r["IS_OFFPLAN_EN"] != "Ready":
+            dropped["not a ready flat"] += 1
+        elif r["TRANSACTION_NUMBER"] in seen:
+            dropped["duplicate"] += 1
+        elif abs(float(r["PROCEDURE_AREA"]) - float(r["ACTUAL_AREA"])) > AREA_MISMATCH * float(r["ACTUAL_AREA"]):
+            dropped["partial share (areas differ >1%)"] += 1
+        elif float(r["TRANS_VALUE"]) < MIN_SALE_VALUE:
+            dropped[f"value under {MIN_SALE_VALUE:,.0f}"] += 1
+        else:
+            kept.append(r)
+        seen.add(r["TRANSACTION_NUMBER"])
+    return kept, dropped
+
+
+def rng(xs: list[float]) -> str:
+    return f"{min(xs):,.0f} to {max(xs):,.0f}" if xs else "-"
+
+
+def sales_section(label: str, project: str, listings: list[dict], details: dict[str, dict],
+                  sales: list[dict[str, str]] | None) -> tuple[list[str], list[str]]:
+    """(table rows, notes) comparing DLD sales with live sale asks, per bedroom count."""
+    if sales is None:
+        return [f"| {label} | all | not exported |" + " |" * 10], [f"- {label}: DLD sales not exported."]
+    rows = [r for r in sales if r["PROJECT_EN"] == project and r["GROUP_EN"] == "Sales"]
+    kept, dropped = clean_sales(rows)
+    notes = [f"- {label}: {len(rows)} DLD sales rows, {len(kept)} kept; dropped " +
+             ", ".join(f"{n} {why}" for why, n in dropped.items()) + "."]
+    all_deals = page_deals(details, "sale")
+    deals = [(a, sz) for dt, a, sz in all_deals if (TODAY - date.fromisoformat(dt)).days <= SALE_DEAL_DAYS]
+    by_bed: dict[str, list[dict]] = defaultdict(list)
+    for p in listings:
+        if p["size"]["value"]:
+            by_bed[str(p["bedrooms"])].append(p)
+    out: list[str] = []
+    for bed, ps in sorted(by_bed.items()):
+        sizes = [p["size"]["value"] for p in ps]
+        dld = [r for r in kept if r["ROOMS_EN"] == f"{bed} B/R"]
+        vals = [float(r["TRANS_VALUE"]) for r in dld]
+        psm = [float(r["TRANS_VALUE"]) / float(r["ACTUAL_AREA"]) for r in dld]
+        sized = [float(r["TRANS_VALUE"]) for r in dld
+                 if any(area_match(s, float(r["ACTUAL_AREA"])) for s in sizes)]
+        asks = [p["price"]["value"] for p in ps]
+        ratios = [a / median(vals) for a in asks] if vals else []
+        on_pages = sum(any(dt == r["INSTANCE_DATE"][:10] and abs(a - float(r["TRANS_VALUE"])) <= 1 for dt, a, _ in all_deals)
+                       for r in dld)
+        page_n = len([1 for a, sz in deals if any(area_match(s, sz / SQFT_PER_SQM) for s in sizes)])
+        out.append(f"| {label} | {bed} | {len(dld)} | {med(vals)} | {rng(vals)} | {med(psm)} | {med(sized)} (n={len(sized)}) "
+                   f"| {len(ps)} | {med(asks)} | {min(asks):,} | "
+                   + (f"{min(ratios):.0%} / {sum(r < 0.75 for r in ratios)} / {sum(r > 1.25 for r in ratios)}" if ratios else "-")
+                   + f" | {page_n} | {on_pages} of {len(dld)} |")
+    return out, notes
+
+
+def audited_claim(listings: list[dict], details: dict[str, dict], dld: list[dict[str, str]]) -> list[str]:
+    """The one-pager claim: cheapest of the 55 hand-audited listings (169274661, 1,184 sqft, AED 110,000)."""
+    p = next(p for p in listings if str(p["id"]) == AUDITED_ID)
+    size, price = p["size"]["value"], p["price"]["value"]
+    deals = page_deals(details, "rent")
+    pd_ = [a for dt, a, sz in deals if abs(sz - size) <= 10 and (TODAY - date.fromisoformat(dt)).days <= PAGE_DEAL_DAYS]
+    new = [float(r["ANNUAL_AMOUNT"]) for r in dld if r["VERSION_EN"] == "New" and area_match(size, float(r["ACTUAL_AREA"]))]
+    ren = [float(r["ANNUAL_AMOUNT"]) for r in dld if r["VERSION_EN"] == "Renewed" and area_match(size, float(r["ACTUAL_AREA"]))]
+    return [f"- Cheapest of the 55 hand-audited listings (listing {AUDITED_ID}): {size} sqft, AED {price:,}.",
+            f"  - Listing-page deals (+-10 sqft, {PAGE_DEAL_DAYS} days): median {med(pd_)}, n={len(pd_)}; ask is {price / median(pd_) - 1:+.0%}.",
+            f"  - DLD New contracts within +-5% of {size / SQFT_PER_SQM:.0f} sqm: n={len(new)}, median {med(new)}, values {sorted(int(x) for x in new)}.",
+            f"  - DLD Renewed contracts, same size band: n={len(ren)}, median {med(ren)}, range {rng(ren)}."]
 
 
 def q2(label: str, listings: list[dict], details: dict[str, dict], dld: list[dict[str, str]]) -> tuple[list[str], list[str]]:
@@ -162,10 +234,12 @@ def q2(label: str, listings: list[dict], details: dict[str, dict], dld: list[dic
 
 def main() -> None:
     rents = read_csv(RENTS_CSV)
-    sales = read_csv(SALES_CSV)
+    sales_by_slug: dict[str, list[dict[str, str]] | None] = {
+        slug: read_csv(f) if f.exists() else None for slug, f in SALES_FILES.items()}
     q1_rows: list[str] = []
     claims: list[str] = []
-    sale_lines: list[str] = []
+    sale_rows: list[str] = []
+    sale_notes: list[str] = []
     q2_sum: list[str] = []
     q2_det: list[str] = []
     for slug, dfile, project, label in BUILDINGS:
@@ -177,7 +251,10 @@ def main() -> None:
         claims += claim_checks(label, rent, dld, deals)
         if slug == "princess_tower":
             claims += pt_two_bed_claim(rent, dld, deals)
-        sale_lines += sales_section(label, project, load_listings(slug, "sale"), sales)
+            claims += audited_claim(rent, details, dld)
+        t, n = sales_section(label, project, load_listings(slug, "sale"), details, sales_by_slug[slug])
+        sale_rows += t
+        sale_notes += n
         s, d = q2(label, rent, details, dld)
         q2_sum += s
         q2_det += d
@@ -188,8 +265,15 @@ def main() -> None:
     print("\nDLD rows are Flats whose area matches any listing of that bedroom count (+-5%).\n")
     print("### Claim checks\n")
     print("\n".join(claims))
-    print("\n### Sales (DLD sales rows in the window)\n")
-    print("\n".join(sale_lines))
+    print("\n## Q3. Sales, Jan to Nov 2026: DLD registered sales vs live asking (AED)\n")
+    print("\n".join(sale_notes))
+    print("\n| Building | Bedrooms | DLD sales | DLD median | DLD min to max | DLD median per sqm | DLD median, size-matched | "
+          "Live sale listings | Ask median | Ask min | Ask % of DLD median: lowest / n under 75% / n over 125% | Sales on listing pages (12 mo) | DLD sales also on listing pages |")
+    print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+    print("\n".join(sale_rows))
+    print("\nDLD columns: ready flats of that bedroom count (ROOMS_EN) in the building, 2026-01-01 to 2026-11-05, "
+          "cleaned as above. Size-matched: only DLD flats within +-5% of a live listing size. "
+          "Listing-page sales: unique (date, amount, size) 'buy' deals in the details files, last 365 days, size within +-5% of a listing of that bedroom count. Last column: DLD sale with the same date and amount (+-1) among all listing-page deals.\n")
     print("\n## Q2. Stale vs fresh ads: share with a size-matched DLD New contract in the window\n")
     print("Stale = 'available from' more than 45 days before 2026-11-05; fresh = 45 days or less, or in the future. "
           "Loose = New contract in the same building, area within +-5%. Strict = loose and annual rent within +-10% of asking.\n")
