@@ -8,25 +8,28 @@ agent stays in the deal: the viewing, the negotiation and the contract are their
 
 ## 1. The problem behind the problem
 
-**Our audit says the main lie is "available", not the price.** In one building, Princess Tower in
-Dubai Marina, we checked 55 live 2-bed listings by hand, photos included, and ran all 217 of its
-listings through the same price and availability checks. Prices were compared with the registered
-contracts for the same unit size that the listing pages show. None is proven fake, because only the
-agent can confirm that. But 23 of the 55 show a sign of being misleading:
+**Our audit says the main lie is "available", not the price.** In Princess Tower, Dubai Marina, we
+checked 55 live 2-bed listings by hand, photos included, and ran all 217 of its listings through the
+same price and availability checks. Then we repeated the automatic checks on a cheaper, busier
+building, Binghatti Heights in JVC (267 listings). Prices were compared with the registered contracts
+for the same unit size, which the listing pages show.
 
-- **Zero of 32 rentals were priced like bait.** The cheapest was 7% under the median of 24
-  registered rents in the last 6 months (AED 118,500). Across the whole building, 0 of 217 listings
-  were under 75% of registered deals.
-- **13 of 32 rentals give an "available from" date more than 45 days old**, and 47 of 119 across the
-  building. One is 489 days old.
-  The ads are still up and still collecting calls.
-- **Photos that may not show the flat:** 6 of 55. That's views only, photos reused across unit
-  sizes, or rooms that look computer-staged on an ad that says "Furnished", none of it disclosed.
-- **53 of 55 carry the "Verified" badge**, including that 489-day one. The badge checks documents
+- **Bait prices barely exist.** Not one listing in either building is under 75% of registered deals.
+  The cheapest Princess Tower 2-bed rental is 7% under the median of 24 recent registered rents
+  (AED 118,500).
+- **"Available" is where it goes wrong.** 13 of the 32 audited rentals give an "available from"
+  date more than 45 days old, and one is 489 days old. That's 47 of 119 rentals across Princess
+  Tower and 79 of 218 across Binghatti Heights. The ads stay up and keep collecting calls.
+- **The same flat appears more than once.** By eye, 11 of the 55 audited listings belong to just 3
+  flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies, and for sale
+  through two more listings.
+- **Photos may not show the flat in 6 of 55:** views or pool only, photos reused across unit sizes,
+  or rooms that look computer-staged on an ad that says "Furnished". None of it is disclosed.
+- **53 of 55 carry the "Verified" badge**, including the 489-day one. The badge checks documents
   once. It can't tell a live unit from a let one.
-- **The same flat appears more than once.** We matched photos by eye and found one 2-bed in five
-  listings: for rent at AED 135K, 140K and 150K through three agencies, and for sale through two.
-  Of the 55 audited listings, 11 belong to just 3 flats.
+
+None is *proven* fake, because only the agent can confirm a unit is gone. But **23 of the 55 show at
+least one of these signs.**
 
 **Why it exists.** An ad costs little to keep up once it's paid for, and every call is a lead. A
 let unit keeps producing calls the agent can steer to other units, so the agent has no reason to
@@ -114,5 +117,5 @@ leads per searcher flat or slightly down.
 | 3 | **Live availability signal** (has a new Ejari contract been registered on this unit?) | Turns "probably gone" into "gone" without asking the agent | Ejari data is not public at unit level. Needs government data access |
 | 4 | **Permit-to-listing match** (the Trakheesi permit is valid for this unit and this price) | Catches ads with a real permit for a different unit | Only the validation link is public. Needs DLD integration |
 | 5 | **Agent track record** (how often their "available" turns out to be gone, response time) | Lets the assistant trust some agents faster | Needs Property Finder's internal lead and response data |
-| 6 | **Interior-only photo matching and "is this the right building"** | Fewer false duplicates. Catches photos from another tower | Needs engineering help (image models trained on each tower) |
+| 6 | **Automatic photo checks**: interior-only matching, staging and AI-image detection, "is this the right building" | Fewer false duplicates. Catches undisclosed staging and photos from another tower. In the prototype these come from our eye check | Needs engineering help (image models trained on each tower) |
 | 7 | **Accounts, cross-device sync and push notifications** | The web-to-app handover in section 2 | Needs the Property Finder app and accounts. Shown as a placeholder |

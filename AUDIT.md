@@ -105,7 +105,26 @@ by several agencies at different prices.
 
 ## Second building
 
-SECOND_BUILDING_TBD
+Binghatti Heights, JVC: a cheaper, busier tower, mostly 1-beds at AED 58-87K a year. We ran the
+same automatic checks on all 267 listings (no eye check), to see whether bait shows up where rents
+are lower:
+
+| Offering | Bedrooms | Listings | Judged (>=3 deals) | Under 75% | 75-90% | Over 125% | 'Available' >45 d ago | Verified |
+|---|---|---|---|---|---|---|---|---|
+| rent | 1 | 124 | 120 | 0 | 7 | 2 | 47 | 114 |
+| rent | 2 | 59 | 54 | 0 | 0 | 2 | 26 | 55 |
+| rent | 3 | 35 | 15 | 0 | 0 | 3 | 6 | 32 |
+| sale | 1 | 32 | 22 | 0 | 0 | 2 | - | 32 |
+| sale | 2 | 7 | 0 | 0 | 0 | 0 | - | 7 |
+| sale | 3 | 10 | 0 | 0 | 0 | 0 | - | 10 |
+
+**Again, 0 listings are under 75% of registered deals.** Only 7 one-bed rentals sit at 86-89%. And
+**79 of 218 rentals (36%) say "available" more than 45 days ago**, close to Princess Tower's 39%.
+The pattern holds across a premium and a mid-market building. For the first photo only, 49 listings
+share it with at least one other listing (22 groups). Many are probably the building's exterior shot,
+so we don't count them as duplicates without an eye check.
+
+AREAS_TBD
 
 ## The 55 listings
 

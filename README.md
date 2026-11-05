@@ -64,6 +64,10 @@ PYTHONPATH=. uv run python scripts/build_data.py    # -> web/data/listings.json
 PYTHONPATH=. uv run python scripts/audit_table.py   # -> research/audit_table.md
 ```
 
+The second building (Binghatti Heights, JVC) uses the same scripts with
+`PF_LOCATION_ID=12170 PF_SLUG=binghatti_heights PF_PHOTOS=1`, then
+`uv run python scripts/building_check.py`.
+
 Raw pages and photos go to `data/raw/` (git-ignored).
 
 ## Layout
@@ -91,10 +95,11 @@ Raw pages and photos go to `data/raw/` (git-ignored).
 - **Assumption:** the registered deals on a listing page are the right benchmark for a fair price.
   For sales there were only 4 in the last 12 months, so buy-side price verdicts are weak.
 - **One building, one layout.** Bait pricing may be common elsewhere, in cheaper communities. We
-  checked the rest of Princess Tower (see AUDIT.md), but no other building.
+  checked the rest of Princess Tower and a second, cheaper building (see AUDIT.md), but not other
+  communities.
 
 ## Cut
 
 - A live LLM in the prototype, which would read agents' free-text replies and the descriptions.
 - Interior-only photo matching.
-- A second building.
+- An eye check of the second building's photos (automatic checks only there).

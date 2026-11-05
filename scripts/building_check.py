@@ -4,6 +4,7 @@ Prints a markdown table per offering and bedroom count, used in AUDIT.md.
 """
 
 import json
+import os
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
@@ -12,10 +13,12 @@ from statistics import median
 RAW: Path = Path("data/raw/pf")
 TODAY: date = date(2026, 11, 5)
 WINDOW: dict[str, int] = {"rent": 183, "sale": 365}
+SLUG: str = os.environ.get("PF_SLUG", "princess_tower")
+DETAILS_FILE: str = "details.json" if SLUG == "princess_tower" else f"{SLUG}_details.json"
 
 
 def main() -> None:
-    details: dict[str, dict] = json.loads((RAW / "details.json").read_text())
+    details: dict[str, dict] = json.loads((RAW / DETAILS_FILE).read_text())
     deals: dict[str, set[tuple[str, int, int]]] = defaultdict(set)
     for d in details.values():
         key = "rent" if d["offering"] == "rent" else "buy"
@@ -24,7 +27,7 @@ def main() -> None:
     stats: dict[tuple[str, str], dict[str, int]] = defaultdict(lambda: defaultdict(int))
     odd: list[str] = []
     for o in ("rent", "sale"):
-        listings = {str(p["id"]): p for p in json.loads((RAW / f"princess_tower_{o}.json").read_text())}
+        listings = {str(p["id"]): p for p in json.loads((RAW / f"{SLUG}_{o}.json").read_text())}
         for lid, p in listings.items():
             s = stats[(o, str(p["bedrooms"]))]
             s["listings"] += 1
