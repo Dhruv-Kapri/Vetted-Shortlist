@@ -1,0 +1,10 @@
+{
+ "checked": "2026-11-05, public DLD Trakheesi permit cards linked from each listing (broker personal details deliberately not recorded)",
+ "permits": [
+  {"listing": "146425500", "agency": "Luxfolio Real Estate Brokers", "permit_type": "Rent", "permit_value_aed": 135000, "size_sqm": 110.15, "end_date": "2027-01-29", "ad_price_aed": 135000},
+  {"listing": "163694214", "agency": "Metropolitan Premium Properties", "permit_type": "Rent", "permit_value_aed": 140000, "size_sqm": 110.15, "end_date": "2027-02-01", "ad_price_aed": 140000},
+  {"listing": "147762008", "agency": "EVA Real Estate", "permit_type": "Rent", "permit_value_aed": 150000, "size_sqm": 110.15, "end_date": "2027-01-27", "ad_price_aed": 150000},
+  {"listing": "147781701", "agency": "EVA Real Estate", "permit_type": "Sell", "permit_value_aed": 2200000, "size_sqm": 110.15, "end_date": "2027-02-20", "ad_price_aed": 2200000},
+  {"listing": "144602929", "agency": "Metropolitan Premium Properties", "permit_type": "Sell", "permit_value_aed": 2250000, "size_sqm": 110.15, "end_date": "2026-12-31", "ad_price_aed": 2250000}
+ ]
+}

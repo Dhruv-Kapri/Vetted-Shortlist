@@ -22,7 +22,9 @@ for the same unit size, which the listing pages show.
   Tower and 79 of 218 across Binghatti Heights. The ads stay up and keep collecting calls.
 - **The same flat appears more than once.** By eye, 11 of the 55 audited listings belong to just 3
   flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies, and for sale
-  through two more listings.
+  through two more listings. **It's not fraud: each ad matches its own valid DLD permit, price
+  included.** The government approved three rents for the same flat. It's legal and misleading at
+  once, and only someone comparing across listings can see it.
 - **Photos may not show the flat in 6 of 55:** views or pool only, photos reused across unit sizes,
   or rooms that look computer-staged on an ad that says "Furnished". None of it is disclosed.
 - **53 of 55 carry the "Verified" badge**, including the 489-day one. The badge checks documents

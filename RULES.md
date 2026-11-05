@@ -53,6 +53,9 @@ for themselves.
   - Two agents may both hold a real mandate for the same flat. That's legal in Dubai, because owners
     often give several agencies the right to advertise. Hiding one is then a choice, not a judgement
     of fraud.
+- **Seen in the audit:** Flat A's three rent ads (AED 135K, 140K, 150K) each match their own valid
+  DLD permit. A duplicate is not proof of wrongdoing. That's why the kept card shows the price
+  spread instead of accusing anyone.
 - **Who gets hurt:** **an honest agent** whose different unit is folded under someone else's card,
   or whose real mandate loses to a competitor's. The person searching loses little, because the flat
   is still on the list.

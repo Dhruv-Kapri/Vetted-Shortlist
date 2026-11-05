@@ -57,6 +57,15 @@ What we did **not** find is the classic bait ad, a price far under the market.
   **AED 135K (Luxfolio), 140K (Metropolitan) and 150K (EVA)**, and for sale at **AED 2.2M (EVA)
   and 2.25M (Metropolitan)**. That's one flat, three agencies, three rents. Someone calling the
   150K ad would pay 15K a year more for the same flat.
+- **Is Flat A fraud? We checked the permits.** Each of the five ads links to its own DLD permit
+  card, and all five are valid. Each matches its ad exactly: Rent at AED 135,000 (Luxfolio), 140,000
+  (Metropolitan) and 150,000 (EVA), and Sell at AED 2.2M (EVA) and 2.25M (Metropolitan). All five
+  give the same 110.15 sqm. So **the DLD issued three rent permits at three prices for one flat**.
+  No ad breaks its permit. The likeliest story is non-exclusive mandates from the owner at
+  different times or prices, which is legal. It is still misleading in practice: which number you
+  pay depends on which agent you happen to call, and nothing on the portal or on the permit card,
+  which has no unit number, tells you. Details: `research/permits-flat-a.json` (we deliberately
+  didn't record broker names or contacts).
 - **Flat B:** the same sofa, table and layout. For rent at AED 120K by White & Co and by fam
   Properties, whose ad says "available" since **489 days ago**. Also for sale at AED 2.2M by fam.
 - **Flat C:** the same dining room and painting. For rent at AED 120K by Allsopp & Allsopp and by

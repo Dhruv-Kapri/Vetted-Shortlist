@@ -1,0 +1,16 @@
+palm-jumeirah 1 31
+palm-jumeirah 2 53
+palm-jumeirah 3 78
+downtown-dubai 1 31
+downtown-dubai 2 49
+downtown-dubai 3 72
+dubai-marina 1 31
+dubai-marina 2 56
+dubai-marina 3 81
+jumeirah-village-circle 1 30
+jumeirah-village-circle 2 55
+jumeirah-village-circle 3 80
+discovery-gardens 1 27
+discovery-gardens 2 52
+discovery-gardens 3 77
+international-city 1 26
