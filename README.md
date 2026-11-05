@@ -13,7 +13,7 @@ The agent stays in the deal.
   and what we couldn't build.
 - [AUDIT.md](AUDIT.md): 195 listings checked by hand (55 in Princess Tower, 140 across seven places),
   27 DLD permit cards, and automatic checks on about 950 listings. It also includes a price check of the
-  whole building.
+  whole building and a one-month cross-check against DLD's own register.
 - [RULES.md](RULES.md): every rule, where it's wrong, and who gets hurt.
 - [AI-LOG.md](AI-LOG.md): confident wrong AI answers about UAE real estate, and how we caught them.
 
@@ -25,6 +25,11 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
 - **0 of 32 rentals priced like bait.** All are between 7% below and 52% above the median of 24
   registered rents in the last 6 months (AED 118,500). Across all 217 listings in the building, none
   is under 75% of registered deals.
+- **DLD's own register agrees (one month, 4 Oct to 4 Nov).** Size-matched, no rental in either
+  building is under 75%. The lowest asks are 89% (Princess Tower, 88 of 137 judgeable) and 91%
+  (Binghatti Heights, 95 of 263; DLD has 27 contracts there). Of the 55 audited, the cheapest 2-bed
+  rental is 7% under the 24 listing-page deals, and 13-19% under DLD at that size, on only 2 new and 5
+  renewed contracts. DLD shows 1 sale per building, too few to judge: the thinness is at the source.
 - **13 of 32 rentals give an "available from" date more than 45 days old.** The oldest is 489 days.
   Across the building, 47 of 119 do.
 - **53 of 55 listings carry "Verified".**
@@ -55,6 +60,9 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
 | Photo matching | **Real**: a 64-bit difference hash of each listing's first 3 photos. The photos themselves are not in the repo |
 | The rules and verdicts | **Real**, computed by `trust/rules.py` from the data above |
 | Agent replies in "Ask the agent for me" | **Mocked**, and labelled in the app. Nothing is sent to any agent |
+| Agent's view (`#/agent/<id>`): the pre-qualified lead (budget, move-in, cheques, viewing windows) and one-tap answers (available, gone, price changed) that feed the searcher's side | **Mocked** screen, no real agents |
+| "Why hidden?" | Lists every hidden listing with its evidence and what would un-hide it, plus a "Not right? Tell us" control (the control sends nothing) |
+| DLD register check | **Real**: official open data, one month, size-matched (`scripts/dld_check.py`) |
 | Accounts, web-to-app sync, notifications, Scout integration | **Not built**. Placeholders only (see ONE-PAGER, "What we could not build") |
 
 Left out on purpose: agent names, phone numbers and listing descriptions, because agents' text often
@@ -76,6 +84,7 @@ uv run python scripts/fetch_details.py --all        # detail pages: permit link,
 uv run python scripts/photo_hashes.py               # first 3 thumbnails per listing -> hashes
 PYTHONPATH=. uv run python scripts/build_data.py    # -> web/data/listings.json
 PYTHONPATH=. uv run python scripts/audit_table.py   # -> research/audit_table.md
+PYTHONPATH=. uv run python -m scripts.dld_check     # DLD cross-check (needs the git-ignored DLD files)
 ```
 
 The second building (Binghatti Heights, JVC) uses the same scripts with
@@ -98,6 +107,9 @@ Raw pages and photos go to `data/raw/` (git-ignored).
   link, and the registered deals each page shows. We used them for this non-commercial evaluation
   only and keep derived fields, not photos or descriptions. The content remains Property Finder's
   and the advertisers'.
+- **DLD Open Data (dubailand.gov.ae open data):** one month of rent contracts and sales, 4 Oct to 4
+  Nov 2026, used for `research/dld_check.md`. Terms not published. Only aggregates are committed; raw
+  files are git-ignored. A longer export (Jan to Nov 2026) may be added later.
 - **Model answers in `research/ai-checks/`:** generated with Claude for AI-LOG.md.
 
 ## Assumptions, and what would prove this wrong
@@ -108,6 +120,12 @@ Raw pages and photos go to `data/raw/` (git-ignored).
   to be gone.
 - **Assumption:** the registered deals on a listing page are the right benchmark for a fair price.
   For sales there were only 4 in the last 12 months, so buy-side price verdicts are weak.
+- **Tested against DLD, not settled:** if a stale "available" date meant the flat had gone, stale ads
+  should more often have a new DLD contract of the same size in the same building. Not supported, and
+  the proxy cannot tell. Princess Tower loose match 95% stale vs 100% fresh; strict (rent within
+  10%) 49% vs 77%, the opposite way. Binghatti Heights no difference within bedroom counts (1-bed 89%
+  vs 87%, 2-bed 52% vs 47%). It is size-level not unit-level, one month, no unit numbers. Unit-level
+  Ejari access could settle it. So the assistant keeps stale dates as "ask the agent", never "hide".
 - **Samples, not a census.** Rentals in six neighbourhoods and two towers. The neighbourhood samples
   are the first result pages, which favour fresh ads. Villas, off-plan and other emirates weren't
   checked.
@@ -116,4 +134,5 @@ Raw pages and photos go to `data/raw/` (git-ignored).
 
 - A live LLM in the prototype, which would read agents' free-text replies and the descriptions.
 - Interior-only photo matching.
+- A mock Scout screen: the least evidence per minute.
 - An eye check of every listing. 195 were checked by hand; the rest got the automatic checks only.

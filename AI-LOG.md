@@ -60,6 +60,17 @@ our coding assistant made while building this.
 - **Lesson:** mocked data must contain no made-up facts. The prototype labels every agent reply as
   mocked.
 
+## 5. A subagent's DLD check: the wrong listing, and a stale date
+
+- **What happened:** we delegated the DLD cross-check and the stale-vs-fresh test to a subagent. It
+  reported it "could not reproduce n=24". The orchestrator found why: it had tested a different
+  listing, the cheapest of all 217 (AED 105,000, 1,298 sqft), not the cheapest of the 55 audited. The
+  n=24 claim was about the audited ones. Note that `research/dld_check.md` still carries the
+  subagent's wording on this point.
+- **A second catch:** the new agent view mocked the searcher's move-in date from the listing's own
+  stale "available from" date. It was fixed so the mocked move-in no longer reuses that date.
+- **Lesson:** check which object a subagent's "could not reproduce" was run on before believing it.
+
 ## What the model got right (so we don't overstate the log)
 
 The 5% / 10% security deposit, the 5% agency fee, the Trakheesi permit requirement and the 4% DLD

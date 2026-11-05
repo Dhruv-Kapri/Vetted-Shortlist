@@ -15,18 +15,20 @@ hand, photos included, and ran all 217 listings through price and availability c
 the automatic checks in Binghatti Heights, JVC (267 listings), against registered contracts for the
 same unit size.
 
-- **Bait prices barely exist.** No listing in either building is under 75% of registered deals. The
-  cheapest Princess Tower 2-bed rental is 7% under the median of 24 recent registered rents (AED
-  118,500).
+- **Bait prices barely exist, by two sources.** No listing in either building is under 75% of the
+  registered deals on listing pages, or of DLD's own register of new rent contracts (one month,
+  size-matched). Lowest asks: 89% (Princess Tower, 88 of 137 rentals judgeable) and 91% (Binghatti
+  Heights, 95 of 263; DLD has only 27 contracts there). Of the 55 audited, the cheapest 2-bed rental
+  is 7% under the median of 24 recent registered rents (AED 118,500). Against DLD at that size it is
+  13-19% under, on just 2 new and 5 renewed contracts.
 - **"Available" is where it goes wrong.** 13 of the 32 audited rentals show an "available from"
   date over 45 days old, one 489 days old. Across all listings: 47 of 119 rentals in Princess
   Tower, 79 of 218 in Binghatti Heights.
 - **The same flat appears more than once.** By eye, 11 of the 55 audited listings belong to just 3
-  flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies, and for sale
-  through two more listings. **It's not fraud: each ad matches its own valid DLD permit, price
+  flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies. **It's not fraud: each ad matches its own valid DLD permit, price
   included.** It's legal and misleading at once, and only a comparison across listings shows it.
-- **Photos may not show the flat in 6 of 55:** views or pool only, photos reused across unit sizes,
-  or computer-staged rooms on a "Furnished" ad. None is disclosed.
+- **Photos may not show the flat in 6 of 55:** views or pool only, reused across unit sizes, or
+  staged rooms on a "Furnished" ad. None is disclosed.
 - **53 of 55 carry the "Verified" badge**, including the 489-day one. The badge checks documents
   once. It can't tell live from let.
 - **Six neighbourhoods, luxury to budget** (about 75 rentals each, first result pages):
@@ -40,16 +42,22 @@ same unit size.
   | Discovery Gardens | 0% | 0% | 21% | 95% |
   | International City | 0% | 13% | 25% | 83% |
 
-- **140 more checked by hand** (20 per area, half random): in the random half, **0 bait, 19% stale,
-  10% photos that may not show the flat**. All 22 permits checked for the cheapest ads match the ad
-  price. A second same-flat-two-prices case turned up in Binghatti Heights (AED 69,999 vs 75,000,
-  both with valid permits).
+- **140 more checked by hand** (half random): **0 bait, 19% stale, 10% photos that may not show the
+  flat**. All 22 permits checked match the ad price.
+- **We tried to prove ourselves wrong with government data; it can't settle it.** If stale means
+  gone, stale ads should more often have a new same-size DLD contract in the building. Princess Tower:
+  95% stale vs 100% fresh (strict, rent within 10%: 49% vs 77%, the opposite way). Binghatti Heights:
+  no difference within bedroom counts (1-bed 89% vs 87%, 2-bed 52% vs 47%). It is size-level, one
+  month, no unit numbers. Unit-level Ejari access could settle it.
+- **Buy side is thin at the source:** DLD shows 1 sale per building that month (Princess Tower 1-bed
+  AED 1.23m vs asks of 1.30-2.15m; Binghatti Heights 2-bed AED 1.33m vs 1.39-1.70m). Too few to judge.
+  A longer DLD export could add to this.
 
 None is *proven* fake: only the agent can confirm a unit is gone. But **23 of the 55 show at least
 one of these signs.**
 
 **Why it exists.** A paid ad is cheap to keep up, and every call is a lead the agent can steer
-elsewhere, so nobody takes a let unit down. The searcher pays with weeks of calls, honest agents with
+elsewhere, so nobody takes a let unit down. The searcher pays with calls, honest agents with
 drowned listings, and **the platform last and most.**
 
 **What the person really wants** is **someone on their side who has already asked**: "free, at this
@@ -66,34 +74,34 @@ Not the homepage, but where trust breaks:
 3. **Inside Scout.** Results pass the same rules: "I hid 3 and asked 5 agents."
 
 **Web and app, one thread.** The short list and agent chats live in the Property Finder account.
-People research on the web; replies arrive as app notifications. Logged-out sessions hand over by QR
-code or link.
+People research on the web; replies arrive as app notifications.
 
 ## 3. Why use it instead of searching and calling, and when not to
 
-**Use it** for more than a handful of listings. It makes five calls in parallel, asks the same
-questions every time, and sees across listings, as no single agent will.
+**Use it** for more than a handful of listings: it asks five agents at once and sees across
+listings, as no single agent will.
 **Don't use it** when you know the building and agent and need a viewing today, when negotiating or
 signing, or off-plan, where the developer confirms availability.
 
 ## 4. What it means for agents and for Property Finder
 
-- **Honest agents:** pre-qualified leads, fewer "is it still available?" calls.
+- **Honest agents:** pre-qualified leads, fewer "is it still available?" calls. The prototype's
+  agent view shows the lead (budget, move-in, cheques, viewing windows) with one-tap answers:
+  available, gone, price changed.
 - **Volume and bait agents:** stale ads stop earning calls.
 - **Revenue risk:** fewer raw leads on hidden or duplicate listings, so volume-paying agents may
   complain. **Upside:** leads that become viewings are worth more, and "Verified" means something
-  again. A paid "confirmed available this week" status, earned by quick answers,
-  rewards clean listings.
+  again.
 
 ## 5. Which metrics it moves
 
 - **Searcher side:** active searchers, contacts per searcher, contact-to-viewing rate, repeat use.
-- **Agent side:** leads per listing, lead-to-viewing rate, subscription renewal.
+- **Agent side:** leads per listing, lead-to-viewing rate, renewal.
 
 **It moves contact-to-viewing up and wasted contacts down.** Stale "available" dates appear on
 **19%** of a random sample across seven places, and on **36-39%** of all rentals in the two towers
-we read in full. Suppose half of those flats are gone. Then **1 in 10 to 1 in 5 first calls is
-wasted today**, and the assistant removes most of them. As a rough estimate: **contact-to-viewing
+we read in full. Suppose half of those flats are gone (the DLD test above could not confirm this). Then **1 in 10 to 1 in 5 first calls is
+wasted today**, and the assistant removes most of them. Stale dates stay a "check with the agent", never a hide. Rough estimate: **contact-to-viewing
 up 10-25% for people who use it**, with leads per searcher flat or slightly down.
 
 ## 6. One number that proves it works
@@ -112,8 +120,8 @@ up 10-25% for people who use it**, with leads per searcher flat or slightly down
 |---|---|---|---|
 | 1 | **Real messaging with agents** (send the questions, read structured replies) | The core of the product: replies drive the short list | Needs Property Finder's internal lead and messaging channel. Agent replies in the prototype are mocked |
 | 2 | **Unit identity** (DLD unit or property ID behind each listing) | Exact duplicate detection instead of photo matching, which merges look-alike balconies | Not public. The listing data has an empty unit field. Needs an internal Property Finder connection |
-| 3 | **Live availability signal** (has a new Ejari contract been registered on this unit?) | Turns "probably gone" into "gone" without asking the agent | Ejari data is not public at unit level. Needs government data access |
+| 3 | **Live availability signal** (has a new Ejari contract been registered on this unit?) | Turns "probably gone" into "gone" without asking the agent. Our DLD open-data test could not settle this at size level | Ejari data is not public at unit level. Needs government data access |
 | 4 | **Permit-to-listing match at scale** (the permit's price, size and type match the ad) | Catches ads whose price or unit differs from the permit. We did it by hand for 27 permit cards. All matched their ad, and one ad had no permit | Permit cards are public but have no unit number and no API; checking every listing needs DLD integration |
-| 5 | **Agent track record** (how often their "available" turns out to be gone, response time) | Lets the assistant trust some agents faster | Needs Property Finder's internal lead and response data |
-| 6 | **Automatic photo checks**: interior-only matching, staging and AI-image detection, "is this the right building" | Fewer false duplicates. Catches undisclosed staging and photos from another tower. In the prototype these come from our eye check | Needs engineering help (image models trained on each tower) |
-| 7 | **Accounts, cross-device sync and push notifications** | The web-to-app handover in section 2 | Needs the Property Finder app and accounts. Shown as a placeholder |
+| 5 | **Agent track record** (how often their "available" turns out to be gone, response time) | Lets the assistant trust some agents faster | Needs Property Finder's internal data |
+| 6 | **Automatic photo checks**: interior-only matching, staging detection, "right building" | Fewer false duplicates. In the prototype these come from our eye check | Needs engineering help (image models) |
+| 7 | **Accounts, sync and push notifications** | The web-to-app handover | Needs the Property Finder app. Placeholder only |

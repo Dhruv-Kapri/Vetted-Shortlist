@@ -283,6 +283,16 @@ with photos that may not show the flat**. In all, 20 of 70 (29%) show at least o
   each with a valid permit at its own price**. That's the Flat A pattern again, in a second building.
   It also has the listing with no permit, and a 2-bed whose rooms look rendered.
 
+## DLD cross-check (official register, one month)
+
+We checked the listings against DLD open data for 4 Oct to 4 Nov 2026 (Princess Tower 64 flat rent
+rows, Binghatti Heights 27, plus sales). Size match is within 5%. Findings: no rental is under 75% of
+the DLD median (lowest asks 89% and 91%); DLD shows 1 sale per building, too few to judge; and stale
+ads are not more often matched by a new contract than fresh ones, so the stale-means-gone belief is
+untested, not confirmed. Limits: size-level not unit-level, one month, no unit numbers.
+Full tables and reading: `research/dld_check.md`. Script: `scripts/dld_check.py`, run with
+`PYTHONPATH=. uv run python -m scripts.dld_check`. Raw DLD files are git-ignored.
+
 ## The 55 listings
 
 "vs registered median" compares the listing with registered deals for the same size (n = number of
