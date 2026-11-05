@@ -72,7 +72,8 @@ def mocked_reply(listing: Listing, status: Status, n: int) -> AgentReply | None:
             terms="That unit is gone, but I have a similar one at a higher price.",
             viewing_slots=[],
         )
-    if status == Status.CHECK and n % 3 == 0:
+    stale_days = (TODAY - date.fromisoformat(listing.available_from)).days if listing.available_from else 0
+    if status == Status.CHECK and (stale_days > 120 or n % 4 == 0):
         return AgentReply(
             listing_id=listing.id,
             available=False,
@@ -104,7 +105,8 @@ def main() -> None:
             lid = str(p["id"])
             if lid in details and in_audit(p):  # the prototype shows the audited listings only
                 listings.append(to_listing(p, details[lid], offering, deals, hashes.get(lid, [])))
-    verdicts, groups = evaluate(listings, TODAY)
+    known = json.loads(Path("research/same-flat-by-eye.json").read_text())
+    verdicts, groups = evaluate(listings, TODAY, [g["listing_ids"] for g in known])
     by_id = {x.id: x for x in listings}
     cards = [ListingCard(listing=by_id[v.listing_id], verdict=v) for v in verdicts]
     replies = [r for n, c in enumerate(cards) if (r := mocked_reply(c.listing, c.verdict.status, n))]

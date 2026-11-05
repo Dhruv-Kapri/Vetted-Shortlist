@@ -4,16 +4,39 @@
   {
    "group_id": "G1",
    "listing_ids": [
-    "146425500",
-    "147762008"
+    "131574377",
+    "167007072"
    ],
-   "price_min_aed": 135000,
-   "price_max_aed": 150000,
+   "price_min_aed": 120000,
+   "price_max_aed": 120000,
    "agencies": 2,
-   "keep_id": "146425500"
+   "keep_id": "167007072"
   },
   {
    "group_id": "G2",
+   "listing_ids": [
+    "146425500",
+    "147762008",
+    "163694214"
+   ],
+   "price_min_aed": 135000,
+   "price_max_aed": 150000,
+   "agencies": 3,
+   "keep_id": "146425500"
+  },
+  {
+   "group_id": "G3",
+   "listing_ids": [
+    "147781701",
+    "144602929"
+   ],
+   "price_min_aed": 2200000,
+   "price_max_aed": 2250000,
+   "agencies": 2,
+   "keep_id": "147781701"
+  },
+  {
+   "group_id": "G4",
    "listing_ids": [
     "16024503",
     "142855746"
@@ -22,6 +45,17 @@
    "price_max_aed": 120000,
    "agencies": 2,
    "keep_id": "142855746"
+  },
+  {
+   "group_id": "G5",
+   "listing_ids": [
+    "162788781",
+    "162770873"
+   ],
+   "price_min_aed": 120000,
+   "price_max_aed": 120000,
+   "agencies": 2,
+   "keep_id": "162788781"
   }
  ],
  "cards": [
@@ -247,7 +281,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -694,7 +727,7 @@
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G2",
+    "duplicate_group": "G4",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -1588,7 +1621,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -2042,10 +2074,9 @@
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G2",
+    "duplicate_group": "G4",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -2269,12 +2300,18 @@
       "title": "Said 'available' 133 days ago",
       "reason": "The agent listed it as available from 2026-06-25. Units in this tower usually let faster, so it may be gone.",
       "ask_agent": "Is the unit still available, and when can I view it?"
+     },
+     {
+      "rule_id": "R2",
+      "severity": "info",
+      "title": "Same flat listed 2 times",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 120,000 to 120,000). We kept this one: it has the strongest proof.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G5",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -2502,15 +2539,14 @@
      {
       "rule_id": "R2",
       "severity": "info",
-      "title": "Same flat listed 2 times",
-      "reason": "The same photos appear on 2 listings (2 agencies, AED 135,000 to 150,000). We kept this one: it has the strongest proof.",
+      "title": "Same flat listed 3 times",
+      "reason": "The same photos appear on 3 listings (3 agencies, AED 135,000 to 150,000). We kept this one: it has the strongest proof.",
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G1",
+    "duplicate_group": "G2",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -2739,7 +2775,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -3390,7 +3425,7 @@
    },
    "verdict": {
     "listing_id": "162770873",
-    "status": "check",
+    "status": "hidden",
     "flags": [
      {
       "rule_id": "R6",
@@ -3405,12 +3440,18 @@
       "title": "Said 'available' 489 days ago",
       "reason": "The agent listed it as available from 2025-07-04. Units in this tower usually let faster, so it may be gone.",
       "ask_agent": "Is the unit still available, and when can I view it?"
+     },
+     {
+      "rule_id": "R2",
+      "severity": "block",
+      "title": "Duplicate of another listing",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 120,000 to 120,000). We show only the best one.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G5",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -3860,7 +3901,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -4290,7 +4330,7 @@
    },
    "verdict": {
     "listing_id": "131574377",
-    "status": "shortlist",
+    "status": "hidden",
     "flags": [
      {
       "rule_id": "R6",
@@ -4298,9 +4338,16 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R2",
+      "severity": "block",
+      "title": "Duplicate of another listing",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 120,000 to 120,000). We show only the best one.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G1",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -4531,7 +4578,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -4760,7 +4806,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -4982,11 +5027,11 @@
       "rule_id": "R2",
       "severity": "block",
       "title": "Duplicate of another listing",
-      "reason": "The same photos appear on 2 listings (2 agencies, AED 135,000 to 150,000). We show only the best one.",
+      "reason": "The same photos appear on 3 listings (3 agencies, AED 135,000 to 150,000). We show only the best one.",
       "ask_agent": null
      }
     ],
-    "duplicate_group": "G1",
+    "duplicate_group": "G2",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -6089,9 +6134,16 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 24 registered rents for this size in the last 6 months is AED 118,500.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R2",
+      "severity": "info",
+      "title": "Same flat listed 2 times",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 120,000 to 120,000). We kept this one: it has the strongest proof.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G1",
     "agent_questions": [
      "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
@@ -6302,7 +6354,7 @@
    },
    "verdict": {
     "listing_id": "163694214",
-    "status": "check",
+    "status": "hidden",
     "flags": [
      {
       "rule_id": "R6",
@@ -6317,12 +6369,18 @@
       "title": "Said 'available' 51 days ago",
       "reason": "The agent listed it as available from 2026-09-15. Units in this tower usually let faster, so it may be gone.",
       "ask_agent": "Is the unit still available, and when can I view it?"
+     },
+     {
+      "rule_id": "R2",
+      "severity": "block",
+      "title": "Duplicate of another listing",
+      "reason": "The same photos appear on 3 listings (3 agencies, AED 135,000 to 150,000). We show only the best one.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G2",
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -6772,7 +6830,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -7222,7 +7279,6 @@
     "duplicate_group": null,
     "agent_questions": [
      "Is the unit still available, and when can I view it?",
-     "Is the unit still available, and from what date?",
      "What is the full yearly rent, in how many cheques?",
      "What are the agency fee and the security deposit?",
      "Can I view it this week?"
@@ -7278,6 +7334,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -7288,9 +7349,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -7323,9 +7399,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -7444,6 +7540,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -7454,9 +7555,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -7489,9 +7605,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -7610,6 +7746,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -7620,9 +7761,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -7655,9 +7811,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -7777,6 +7953,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -7787,9 +7968,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -7822,9 +8018,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -7943,6 +8159,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -7953,9 +8174,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -7988,9 +8224,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8109,6 +8365,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8119,9 +8380,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8154,9 +8430,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8275,6 +8571,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8285,9 +8586,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8320,9 +8636,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8441,6 +8777,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8451,9 +8792,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8486,9 +8842,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8579,7 +8955,11 @@
     "has_permit_link": true,
     "images_count": 11,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "afe3e7cbcbcbeb8b",
+     "4f2fcf099b99931b",
+     "131b1f1e3e22c3d3"
+    ],
     "description": "",
     "transactions": [
      {
@@ -8603,6 +8983,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8613,9 +8998,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8648,9 +9048,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8741,7 +9161,11 @@
     "has_permit_link": true,
     "images_count": 13,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "e4e0e0c316928a26",
+     "240387edadac8787",
+     "438e84a8a9a48c86"
+    ],
     "description": "",
     "transactions": [
      {
@@ -8765,6 +9189,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8775,9 +9204,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8810,9 +9254,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -8903,7 +9367,11 @@
     "has_permit_link": true,
     "images_count": 30,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "f3fdedfe75b5352a",
+     "0341070d0d293b1f",
+     "1e643575f5e5c787"
+    ],
     "description": "",
     "transactions": [
      {
@@ -8927,6 +9395,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -8937,9 +9410,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -8972,9 +9460,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9065,7 +9573,11 @@
     "has_permit_link": true,
     "images_count": 24,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "ffdf0f978f9fd95d",
+     "0f860696364ecec6",
+     "e562065a484cce8e"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9089,6 +9601,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9099,9 +9616,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9134,9 +9666,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9227,7 +9779,11 @@
     "has_permit_link": true,
     "images_count": 22,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "d8ebdbcfef794e8b",
+     "8a82a14c66ab2d39",
+     "1f092738298d31d7"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9251,6 +9807,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9261,9 +9822,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9296,9 +9872,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9389,7 +9985,11 @@
     "has_permit_link": true,
     "images_count": 19,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "f9fdf7f3ed7a668c",
+     "03cde0aaa99c9427",
+     "030121a9a9a02612"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9413,6 +10013,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9423,9 +10028,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9458,9 +10078,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9551,7 +10191,11 @@
     "has_permit_link": true,
     "images_count": 17,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "4b0d440606098c8a",
+     "6703bbe1c4c493c7",
+     "5f4e62dac4961c99"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9575,6 +10219,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9585,9 +10234,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9620,9 +10284,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9681,9 +10365,16 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 4 registered sales for this size in the last 12 months is AED 2,050,000.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R2",
+      "severity": "info",
+      "title": "Same flat listed 2 times",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 2,200,000 to 2,250,000). We kept this one: it has the strongest proof.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G3",
     "agent_questions": [
      "Is the unit vacant or tenanted? If tenanted, when does the lease end?",
      "Is the asking price final, and what is the service charge per sqft?",
@@ -9713,7 +10404,11 @@
     "has_permit_link": true,
     "images_count": 8,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "ffdf8397977663c3",
+     "0727370c0c03cb61",
+     "23477d0d5fda1e35"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9737,6 +10432,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9747,9 +10447,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9782,9 +10497,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9875,7 +10610,11 @@
     "has_permit_link": true,
     "images_count": 11,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "0f4e570727a88687",
+     "21363e8ca4b9b9b9",
+     "96cccecc8cd64686"
+    ],
     "description": "",
     "transactions": [
      {
@@ -9899,6 +10638,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -9909,9 +10653,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -9944,9 +10703,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -9997,7 +10776,7 @@
    },
    "verdict": {
     "listing_id": "144602929",
-    "status": "shortlist",
+    "status": "hidden",
     "flags": [
      {
       "rule_id": "R6",
@@ -10005,9 +10784,16 @@
       "title": "Price in line with recent deals",
       "reason": "The median of 4 registered sales for this size in the last 12 months is AED 2,050,000.",
       "ask_agent": null
+     },
+     {
+      "rule_id": "R2",
+      "severity": "block",
+      "title": "Duplicate of another listing",
+      "reason": "The same photos appear on 2 listings (2 agencies, AED 2,200,000 to 2,250,000). We show only the best one.",
+      "ask_agent": null
      }
     ],
-    "duplicate_group": null,
+    "duplicate_group": "G3",
     "agent_questions": [
      "Is the unit vacant or tenanted? If tenanted, when does the lease end?",
      "Is the asking price final, and what is the service charge per sqft?",
@@ -10037,7 +10823,11 @@
     "has_permit_link": true,
     "images_count": 18,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "f6fc942495d165e8",
+     "a38e392921294dce",
+     "cb84f0b0b4f48c36"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10061,6 +10851,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10071,9 +10866,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10106,9 +10916,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -10199,7 +11029,11 @@
     "has_permit_link": true,
     "images_count": 18,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "973f1f5f571b1f9c",
+     "639f3f1b1e3e1d1c",
+     "8e8e9eda6ec7cb03"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10223,6 +11057,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10233,9 +11072,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10268,9 +11122,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -10361,7 +11235,11 @@
     "has_permit_link": true,
     "images_count": 30,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "333151312633190f",
+     "4b44540707a9868b",
+     "1f1f2d0d0d1d0d6c"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10385,6 +11263,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10395,9 +11278,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10430,9 +11328,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -10523,7 +11441,11 @@
     "has_permit_link": true,
     "images_count": 15,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "0111534d8dd94981",
+     "4e8e9e0e0f0e2791",
+     "3f36131a3c303838"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10547,6 +11469,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10557,9 +11484,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10592,9 +11534,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -10685,7 +11647,11 @@
     "has_permit_link": true,
     "images_count": 13,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "61358599913b92f0",
+     "41c1c2c040435949",
+     "89d5d7888ace5a5e"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10709,6 +11675,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10719,9 +11690,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10754,9 +11740,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -10847,7 +11853,11 @@
     "has_permit_link": true,
     "images_count": 15,
     "thumb_url": null,
-    "photo_hashes": [],
+    "photo_hashes": [
+     "0103131763c38435",
+     "6333392933233139",
+     "2f390313122a7071"
+    ],
     "description": "",
     "transactions": [
      {
@@ -10871,6 +11881,11 @@
       "size_sqft": 1180
      },
      {
+      "date": "2025-10-28",
+      "amount": 2600000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-09-03",
       "amount": 2150000,
       "size_sqft": 1184
@@ -10881,9 +11896,24 @@
       "size_sqft": 1181
      },
      {
+      "date": "2025-02-24",
+      "amount": 2200000,
+      "size_sqft": 1179
+     },
+     {
       "date": "2025-02-18",
       "amount": 2300000,
       "size_sqft": 1181
+     },
+     {
+      "date": "2025-02-12",
+      "amount": 2175000,
+      "size_sqft": 1179
+     },
+     {
+      "date": "2025-01-07",
+      "amount": 2900000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-12-20",
@@ -10916,9 +11946,29 @@
       "size_sqft": 1180
      },
      {
+      "date": "2024-10-01",
+      "amount": 2104000,
+      "size_sqft": 1180
+     },
+     {
       "date": "2024-09-30",
       "amount": 2050000,
       "size_sqft": 1189
+     },
+     {
+      "date": "2024-09-10",
+      "amount": 2700000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-08-19",
+      "amount": 2550000,
+      "size_sqft": 1180
+     },
+     {
+      "date": "2024-06-25",
+      "amount": 2200000,
+      "size_sqft": 1179
      },
      {
       "date": "2024-06-05",
@@ -11068,14 +12118,10 @@
   },
   {
    "listing_id": "142855746",
-   "available": true,
-   "confirmed_price_aed": 120000,
-   "terms": "1 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "162788781",
@@ -11130,14 +12176,10 @@
   },
   {
    "listing_id": "162770873",
-   "available": true,
-   "confirmed_price_aed": 120000,
-   "terms": "1 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "That unit is gone, but I have a similar one at a higher price.",
+   "viewing_slots": []
   },
   {
    "listing_id": "138777963",
@@ -11152,14 +12194,10 @@
   },
   {
    "listing_id": "166541246",
-   "available": true,
-   "confirmed_price_aed": 120000,
-   "terms": "2 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "161881119",
@@ -11174,14 +12212,10 @@
   },
   {
    "listing_id": "131574377",
-   "available": true,
-   "confirmed_price_aed": 120000,
-   "terms": "1 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "That unit is gone, but I have a similar one at a higher price.",
+   "viewing_slots": []
   },
   {
    "listing_id": "141465422",
@@ -11196,14 +12230,10 @@
   },
   {
    "listing_id": "154609767",
-   "available": true,
-   "confirmed_price_aed": 120000,
-   "terms": "4 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "147762008",
@@ -11271,7 +12301,7 @@
    "listing_id": "163694214",
    "available": false,
    "confirmed_price_aed": null,
-   "terms": "Rented last month, sorry. The ad is being removed.",
+   "terms": "That unit is gone, but I have a similar one at a higher price.",
    "viewing_slots": []
   },
   {
@@ -11287,14 +12317,10 @@
   },
   {
    "listing_id": "104675044",
-   "available": true,
-   "confirmed_price_aed": 180000,
-   "terms": "4 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "158224698",
@@ -11309,14 +12335,10 @@
   },
   {
    "listing_id": "161902017",
-   "available": true,
-   "confirmed_price_aed": 109777,
-   "terms": "4 cheques, 5% agency fee, 5% refundable deposit, Ejari by the agency.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "Rented last month, sorry. The ad is being removed.",
+   "viewing_slots": []
   },
   {
    "listing_id": "169247428",
@@ -11496,14 +12518,10 @@
   },
   {
    "listing_id": "144602929",
-   "available": true,
-   "confirmed_price_aed": 2250000,
-   "terms": "Vacant on transfer. Owner open to offers; service charge figure to follow from the owner.",
-   "viewing_slots": [
-    "Sat 10:00",
-    "Sat 16:30",
-    "Sun 11:00"
-   ]
+   "available": false,
+   "confirmed_price_aed": null,
+   "terms": "That unit is gone, but I have a similar one at a higher price.",
+   "viewing_slots": []
   },
   {
    "listing_id": "156936676",

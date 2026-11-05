@@ -1,0 +1,5 @@
+[
+ {"flat": "A", "evidence": "same balcony furniture, living room and kitchen", "listing_ids": ["146425500", "163694214", "147762008", "147781701", "144602929"]},
+ {"flat": "B", "evidence": "same grey sofa, dining table and layout", "listing_ids": ["162788781", "162770873", "98681358"]},
+ {"flat": "C", "evidence": "same dining room and orange painting", "listing_ids": ["131574377", "167007072", "158698070"]}
+]

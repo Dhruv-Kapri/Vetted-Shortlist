@@ -5,7 +5,7 @@ listings that are likely fake or misleading, says why, asks the agent the questi
 otherwise phone round about, and keeps a short list they can trust. It works for renters and buyers.
 The agent stays in the deal.
 
-**Live prototype (open on a phone):** LINK_TBD
+**Live prototype (open on a phone):** https://vetted-shortlist.vercel.app
 
 **Read these first:**
 

@@ -5,6 +5,7 @@ Read-only, one request every 3 s. Output: data/raw/pf/details.json (git-ignored)
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -16,6 +17,8 @@ RAW: Path = Path("data/raw/pf")
 UA: str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130 Safari/537.36"
 NEXT_DATA: re.Pattern[str] = re.compile(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', re.DOTALL)
 SIZE_RANGE: tuple[int, int] = (1181, 1189)
+SLUG: str = os.environ.get("PF_SLUG", "princess_tower")
+DETAILS_FILE: str = "details.json" if SLUG == "princess_tower" else f"{SLUG}_details.json"
 
 
 def in_audit(p: dict) -> bool:
@@ -23,10 +26,10 @@ def in_audit(p: dict) -> bool:
 
 
 def main(everything: bool) -> None:
-    out_path = RAW / "details.json"
+    out_path = RAW / DETAILS_FILE
     details: dict[str, dict] = json.loads(out_path.read_text()) if out_path.exists() else {}
     for offering in ("rent", "sale"):
-        for p in {x["id"]: x for x in json.loads((RAW / f"princess_tower_{offering}.json").read_text())}.values():
+        for p in {x["id"]: x for x in json.loads((RAW / f"{SLUG}_{offering}.json").read_text())}.values():
             lid = str(p["id"])
             if (not everything and not in_audit(p)) or lid in details:
                 continue

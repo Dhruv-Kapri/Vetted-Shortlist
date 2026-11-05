@@ -4,6 +4,7 @@ Read-only, one request per page with a pause. Output goes to data/raw/pf/ (git-i
 """
 
 import json
+import os
 import re
 import sys
 import time
@@ -11,7 +12,8 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-LOCATION_ID: str = "3092"  # Princess Tower, Dubai Marina
+LOCATION_ID: str = os.environ.get("PF_LOCATION_ID", "3092")  # default: Princess Tower, Dubai Marina
+SLUG: str = os.environ.get("PF_SLUG", "princess_tower")
 OFFERINGS: dict[str, str] = {"rent": "c=2&rp=y", "sale": "c=1"}
 UA: str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130 Safari/537.36"
 OUT: Path = Path("data/raw/pf")
@@ -43,7 +45,7 @@ def main(offering: str, max_pages: int) -> None:
             break
         listings.extend(props)
         time.sleep(3)
-    (OUT / f"princess_tower_{offering}.json").write_text(json.dumps(listings, ensure_ascii=False))
+    (OUT / f"{SLUG}_{offering}.json").write_text(json.dumps(listings, ensure_ascii=False))
 
 
 if __name__ == "__main__":

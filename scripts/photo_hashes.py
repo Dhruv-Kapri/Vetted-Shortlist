@@ -6,6 +6,7 @@ hashes to data/raw/pf/photo_hashes.json as {listing_id: [hex hash, ...]}.
 
 import io
 import json
+import os
 import time
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -14,7 +15,8 @@ from PIL import Image
 
 RAW: Path = Path("data/raw/pf")
 IMG: Path = RAW / "img"
-PER_LISTING: int = 3
+PER_LISTING: int = int(os.environ.get("PF_PHOTOS", "3"))
+SLUG: str = os.environ.get("PF_SLUG", "princess_tower")
 PAUSE_S: float = 2.0
 UA: str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/130 Safari/537.36"
 
@@ -28,11 +30,11 @@ def dhash(image: Image.Image) -> str:
 
 def main() -> None:
     IMG.mkdir(parents=True, exist_ok=True)
-    out_path = RAW / "photo_hashes.json"
+    out_path = RAW / ("photo_hashes.json" if SLUG == "princess_tower" else f"{SLUG}_photo_hashes.json")
     hashes: dict[str, list[str]] = json.loads(out_path.read_text()) if out_path.exists() else {}
     seen: set[str] = set()
     for offering in ("rent", "sale"):
-        for p in json.loads((RAW / f"princess_tower_{offering}.json").read_text()):
+        for p in json.loads((RAW / f"{SLUG}_{offering}.json").read_text()):
             lid = str(p["id"])
             if lid in seen or lid in hashes:
                 continue

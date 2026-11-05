@@ -52,3 +52,10 @@ def test_same_photo_on_two_listings_keeps_the_one_with_stronger_proof() -> None:
     verdicts, groups = evaluate([a, b], TODAY)
     assert len(groups) == 1 and groups[0].keep_id == "b" and groups[0].agencies == 2
     assert {v.listing_id: v.status for v in verdicts} == {"a": Status.HIDDEN, "b": Status.SHORTLIST}
+
+
+def test_known_same_flat_groups_listings_the_photo_hash_missed_but_never_mixes_rent_and_sale() -> None:
+    a, b = make("a", 115000, agency="One"), make("b", 118000, agency="Two")  # no shared photo hashes
+    sale = make("s", 2_000_000).model_copy(update={"offering": "sale"})
+    _, groups = evaluate([a, b, sale], TODAY, known_same=[["a", "b", "s"]])
+    assert [sorted(g.listing_ids) for g in groups] == [["a", "b"]]

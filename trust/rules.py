@@ -121,8 +121,13 @@ def permit_flag(listing: Listing) -> Flag | None:
     )
 
 
-def duplicate_groups(listings: Sequence[Listing], today: date) -> list[DuplicateGroup]:
-    """R2: listings of the same size and bedrooms that share a photo are the same flat posted more than once."""
+def duplicate_groups(
+    listings: Sequence[Listing], today: date, known_same: Sequence[Sequence[str]] = ()
+) -> list[DuplicateGroup]:
+    """R2: listings of the same size and bedrooms that share a photo are the same flat posted more than once.
+
+    `known_same` adds groups confirmed another way (in the prototype: by eye; in production: the DLD unit id).
+    """
     parent: dict[str, str] = {x.id: x.id for x in listings}
 
     def root(i: str) -> str:
@@ -135,6 +140,13 @@ def duplicate_groups(listings: Sequence[Listing], today: date) -> list[Duplicate
             same_kind = a.offering == b.offering and a.bedrooms == b.bedrooms and abs(a.size_sqft - b.size_sqft) <= 5
             if same_kind and any(hamming(x, y) <= SAME_PHOTO_BITS for x in a.photo_hashes for y in b.photo_hashes):
                 parent[root(b.id)] = root(a.id)
+    by_id = {x.id: x for x in listings}
+    for ids in known_same:
+        same_offer = [i for i in ids if i in by_id]
+        for o in ("rent", "sale"):
+            members_o = [i for i in same_offer if by_id[i].offering == o]
+            for i in members_o[1:]:
+                parent[root(i)] = root(members_o[0])
 
     members: dict[str, list[Listing]] = {}
     for x in listings:
@@ -177,9 +189,11 @@ def base_questions(listing: Listing) -> list[str]:
     ]
 
 
-def evaluate(listings: Sequence[Listing], today: date) -> tuple[list[Verdict], list[DuplicateGroup]]:
+def evaluate(
+    listings: Sequence[Listing], today: date, known_same: Sequence[Sequence[str]] = ()
+) -> tuple[list[Verdict], list[DuplicateGroup]]:
     """Run every rule. Status: any BLOCK -> hidden; else any WARN -> check; else short list."""
-    groups = duplicate_groups(listings, today)
+    groups = duplicate_groups(listings, today, known_same)
     group_of: dict[str, DuplicateGroup] = {i: g for g in groups for i in g.listing_ids}
     verdicts: list[Verdict] = []
     for x in listings:
@@ -214,7 +228,10 @@ def evaluate(listings: Sequence[Listing], today: date) -> tuple[list[Verdict], l
             else Status.SHORTLIST
         )
         asks = [f.ask_agent for f in flags if f.ask_agent and f.severity != Severity.INFO]
-        questions = list(dict.fromkeys(asks + base_questions(x)))
+        # a flag's question replaces the standard question on the same topic
+        topics = ("available", "full yearly rent", "final asking price")
+        covered = {t for t in topics for a in asks if t in a}
+        questions = asks + [q for q in base_questions(x) if not any(t in q for t in covered)]
         verdicts.append(
             Verdict(
                 listing_id=x.id,
