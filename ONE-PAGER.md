@@ -5,6 +5,13 @@ hides likely fake or misleading ones and says why, and asks agents what the pers
 phone about: is it free, the real price, cheques and fees, a viewing time. Viewing, negotiation and
 contract stay with the agent.
 
+**Who it's for first: renters.** It works for renters and buyers, but renters get the most from it.
+The main lie, a stale "available" date, only exists on rentals. Renters also search more often: DLD
+registered 112K rent contracts against about 12K sales in the same month. For buyers the problem
+is different: asks above what actually sells, so the assistant shows "what it really sold for".
+Agents pay Property Finder, so they are the constraint: the assistant must make honest agents' work
+easier.
+
 ## 1. The problem behind the problem
 
 **The main lie is "available", not the price.** It wears down trust in the whole platform until
@@ -16,16 +23,15 @@ the automatic checks in Binghatti Heights, JVC (267 listings), against registere
 same unit size.
 
 - **Bait prices barely exist, by two sources.** No listing in either building is under 75% of the
-  registered deals on listing pages, or of DLD's own register of new rent contracts (one month,
-  size-matched). Lowest asks: 89% (Princess Tower, 88 of 137 rentals judgeable) and 91% (Binghatti
-  Heights, 95 of 263; DLD has only 27 contracts there). Of the 55 audited, the cheapest 2-bed rental
-  is 7% under the median of 24 recent registered rents (AED 118,500). Against DLD at that size it is
-  13-19% under, on just 2 new and 5 renewed contracts.
+  registered deals shown on listing pages, or of DLD's own register (new rent contracts for the same
+  size, one month). The lowest rent asks are 89% and 91% of DLD's median. Of the 55 audited, the
+  cheapest 2-bed rental is 7% under the median of 24 registered rents (AED 118,500).
 - **"Available" is where it goes wrong.** 13 of the 32 audited rentals show an "available from"
   date over 45 days old, one 489 days old. Across all listings: 47 of 119 rentals in Princess
   Tower, 79 of 218 in Binghatti Heights.
 - **The same flat appears more than once.** By eye, 11 of the 55 audited listings belong to just 3
-  flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies. **It's not fraud: each ad matches its own valid DLD permit, price
+  flats. One 2-bed is for rent at AED 135K, 140K and 150K through three agencies, and for sale
+  through two more listings. **It's not fraud: each ad matches its own valid DLD permit, price
   included.** It's legal and misleading at once, and only a comparison across listings shows it.
 - **Photos may not show the flat in 6 of 55:** views or pool only, reused across unit sizes, or
   staged rooms on a "Furnished" ad. None is disclosed.
@@ -43,15 +49,15 @@ same unit size.
   | International City | 0% | 13% | 25% | 83% |
 
 - **140 more checked by hand** (half random): **0 bait, 19% stale, 10% photos that may not show the
-  flat**. All 22 permits checked match the ad price.
-- **We tried to prove ourselves wrong with government data; it can't settle it.** If stale means
-  gone, stale ads should more often have a new same-size DLD contract in the building. Princess Tower:
-  95% stale vs 100% fresh (strict, rent within 10%: 49% vs 77%, the opposite way). Binghatti Heights:
-  no difference within bedroom counts (1-bed 89% vs 87%, 2-bed 52% vs 47%). It is size-level, one
-  month, no unit numbers. Unit-level Ejari access could settle it.
-- **Buy side is thin at the source:** DLD shows 1 sale per building that month (Princess Tower 1-bed
-  AED 1.23m vs asks of 1.30-2.15m; Binghatti Heights 2-bed AED 1.33m vs 1.39-1.70m). Too few to judge.
-  A longer DLD export could add to this.
+  flat**. All 22 permits checked match the ad price. A second same-flat, two-prices case turned up in
+  Binghatti Heights (AED 69,999 vs 75,000, both with valid permits).
+- **Buyers see high asks, not bait.** Against 53 DLD sales in the two buildings this year, no sale ask
+  is under 75% of the median for its bedroom count; the lowest is 87%. But in Princess Tower 15 of
+  77 two- and three-bed asks are over 125% of what sold.
+- **We tried to prove our core belief wrong, and DLD data can't settle it.** If a stale date means
+  the flat is gone, stale ads should more often have a new same-size DLD contract that month. They
+  don't: Princess Tower 95% stale vs 100% fresh, and Binghatti Heights shows no difference within
+  bedroom counts. DLD has no unit numbers, so this is weak; unit-level Ejari access would settle it.
 
 None is *proven* fake: only the agent can confirm a unit is gone. But **23 of the 55 show at least
 one of these signs.**
@@ -100,9 +106,10 @@ signing, or off-plan, where the developer confirms availability.
 
 **It moves contact-to-viewing up and wasted contacts down.** Stale "available" dates appear on
 **19%** of a random sample across seven places, and on **36-39%** of all rentals in the two towers
-we read in full. Suppose half of those flats are gone (the DLD test above could not confirm this). Then **1 in 10 to 1 in 5 first calls is
-wasted today**, and the assistant removes most of them. Stale dates stay a "check with the agent", never a hide. Rough estimate: **contact-to-viewing
-up 10-25% for people who use it**, with leads per searcher flat or slightly down.
+we read in full. Suppose half of those flats are gone (an assumption the DLD test could not
+confirm). Then **1 in 10 to 1 in 5 first calls is wasted today**, and the assistant removes most of
+them. That's why a stale date means "ask the agent", never "hide". Rough estimate:
+**contact-to-viewing up 10-25% for people who use it**, with leads per searcher flat or slightly down.
 
 ## 6. One number that proves it works
 

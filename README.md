@@ -29,7 +29,11 @@ listings in the common 1,181-1,189 sqft layout: 32 to rent and 23 for sale.
   building is under 75%. The lowest asks are 89% (Princess Tower, 88 of 137 judgeable) and 91%
   (Binghatti Heights, 95 of 263; DLD has 27 contracts there). Of the 55 audited, the cheapest 2-bed
   rental is 7% under the 24 listing-page deals, and 13-19% under DLD at that size, on only 2 new and 5
-  renewed contracts. DLD shows 1 sale per building, too few to judge: the thinness is at the source.
+  renewed contracts.
+- **Sales, Jan to Nov 2026 (53 DLD sales in the two buildings):** no sale ask is under 75% of the DLD
+  median for its bedroom count (lowest 87%). Asks run high instead: in Princess Tower 15 of 77 two-
+  and three-bed asks are over 125% of what sold. The listing pages show 26 of the 31 cleaned Princess
+  Tower sales, so their sample is small per size but not missing.
 - **13 of 32 rentals give an "available from" date more than 45 days old.** The oldest is 489 days.
   Across the building, 47 of 119 do.
 - **53 of 55 listings carry "Verified".**
@@ -107,9 +111,10 @@ Raw pages and photos go to `data/raw/` (git-ignored).
   link, and the registered deals each page shows. We used them for this non-commercial evaluation
   only and keep derived fields, not photos or descriptions. The content remains Property Finder's
   and the advertisers'.
-- **DLD Open Data (dubailand.gov.ae open data):** one month of rent contracts and sales, 4 Oct to 4
-  Nov 2026, used for `research/dld_check.md`. Terms not published. Only aggregates are committed; raw
-  files are git-ignored. A longer export (Jan to Nov 2026) may be added later.
+- **DLD Open Data (dubailand.gov.ae open data):** one month of rent contracts and sales (4 Oct to 4
+  Nov 2026), plus all 2026 sales in Dubai Marina and JVC (1 Jan to 5 Nov), used for
+  `research/dld_check.md`. Terms not published. Only aggregates are committed; raw files are
+  git-ignored. Earlier years are on data.dubai and were not used.
 - **Model answers in `research/ai-checks/`:** generated with Claude for AI-LOG.md.
 
 ## Assumptions, and what would prove this wrong
