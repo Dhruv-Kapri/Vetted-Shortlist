@@ -184,7 +184,14 @@ function dupBlock(g) {
   const list = h("ul", { hidden: true }, others.map((c) =>
     h("li", {}, [`${money(c.listing.price_aed, c.listing.offering)} · ${c.listing.agency} `, h("a", { href: `#/listing/${encodeURIComponent(c.listing.id)}` }, ["view"])])));
   const btn = h("button", { type: "button", onclick: () => { list.hidden = !list.hidden; } },
-    [`Same flat listed by ${g.agencies} agencies at ${money(g.price_min_aed, others[0] ? others[0].listing.offering : "rent")}–${money(g.price_max_aed, others[0] ? others[0].listing.offering : "rent").replace("AED ", "")}`]);
+    [(() => {
+      const off = others[0] ? others[0].listing.offering : "rent";
+      const n = g.listing_ids.length;
+      const price = g.price_min_aed === g.price_max_aed
+        ? `all at ${money(g.price_min_aed, off)}`
+        : `at ${money(g.price_min_aed, off)}–${money(g.price_max_aed, off).replace("AED ", "")}`;
+      return `Same flat listed ${n} times by ${g.agencies} agencies, ${price}`;
+    })()]);
   return h("div", { class: "dup" }, [btn, list]);
 }
 
