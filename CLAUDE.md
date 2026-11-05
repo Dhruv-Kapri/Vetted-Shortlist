@@ -73,8 +73,8 @@ uv run pytest                           # once, at integration
 
 ### Issue tracker
 
-Local markdown: `.scratch/<feature>/spec.md` and one file per ticket in `.scratch/<feature>/issues/`
-(with `Blocked by:` lines). See `docs/agents/issue-tracker.md`.
+GitHub Issues on `Dhruv-Kapri/Vetted-Shortlist`, via `gh`: one issue per ticket, triage state as a
+label, `Blocked by: #N` lines for dependencies. Not local markdown. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
