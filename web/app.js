@@ -130,6 +130,7 @@ function route() {
   let view;
   if (name === "listing" && byId(id)) view = renderListing(byId(id));
   else if (name === "ask" && byId(id)) view = renderAsk(byId(id));
+  else if (name === "agent" && byId(id)) view = renderAgent(byId(id));
   else if (name === "shortlist") view = renderShortlist();
   else view = renderResults(currentMode(q), q.get("hidden") === "1");
   screen.append(view);
@@ -206,9 +207,8 @@ function renderResults(mode, showHidden) {
   const shown = cards.filter((c) => !isFolded(c));
   const short = shown.filter((c) => effectiveStatus(c) === "shortlist");
   const check = shown.filter((c) => effectiveStatus(c) === "check");
-  const hidden = shown.filter((c) => effectiveStatus(c) === "hidden");
-  const hiddenCount = cards.length - short.length - check.length;
-  const folded = cards.length - shown.length;
+  const hidden = cards.filter((c) => effectiveStatus(c) === "hidden");
+  const hiddenCount = hidden.length;
 
   const sw = h("div", { class: "switch" }, [
     h("a", { href: "#/results?mode=rent", class: mode === "rent" ? "on" : "" }, ["Rent"]),
@@ -227,16 +227,43 @@ function renderResults(mode, showHidden) {
   if (!shown.length) view.append(h("p", { class: "muted" }, ["No listings in this mode."]));
   for (const c of [...short, ...check]) view.append(renderCard(c));
   if (showHidden) {
-    view.append(h("h2", {}, [`Hidden (${hiddenCount})`]));
-    if (folded) view.append(h("p", { class: "muted small" }, [`${folded} of these are the same flat posted again; they are folded under the card they duplicate.`]));
+    view.append(h("h2", { id: "hidden-h" }, [`Hidden (${hiddenCount})`]));
     for (const c of hidden) {
-      const card = renderCard(c);
-      const why = c.verdict.flags.filter((f) => f.severity !== "info");
-      for (const f of why) card.append(h("p", { class: "small" }, [h("b", {}, [f.title + ". "]), f.reason]));
+      const card = renderCard(c, false);
+      card.append(...hiddenWhy(c));
       view.append(card);
     }
+    setTimeout(() => { const el = document.getElementById("hidden-h"); if (el) el.scrollIntoView(); }, 0);
   }
   return view;
+}
+
+/** Evidence and the way back, for a hidden card. @param {Card} c @returns {HTMLElement[]} */
+function hiddenWhy(c) {
+  const o = outcomes()[c.listing.id];
+  if (o && o.state === "removed") {
+    return [h("p", { class: "small" }, [h("b", {}, ["Removed. "]), o.reason + "."]), h("p", { class: "small muted" }, ["Removed after the agent's reply."])];
+  }
+  const out = [];
+  const g = groupOf(c);
+  const keep = g && g.keep_id !== c.listing.id ? byId(g.keep_id) : null;
+  if (g && keep) {
+    const off = c.listing.offering;
+    const spread = g.price_min_aed === g.price_max_aed
+      ? `all at ${money(g.price_min_aed, off)}`
+      : `prices ${money(g.price_min_aed, off)} to ${money(g.price_max_aed, off).replace("AED ", "")}`;
+    out.push(h("p", { class: "small" }, [
+      h("b", {}, ["Duplicate. "]), "Same flat as ",
+      h("a", { href: `#/listing/${encodeURIComponent(keep.listing.id)}` }, [`${keep.listing.title} at ${money(keep.listing.price_aed, off)}`]),
+      `. Listed ${g.listing_ids.length} times by ${g.agencies} agencies, ${spread}.`,
+    ]));
+    out.push(h("p", { class: "small muted" }, ["Shown again if the agent confirms it's a different unit."]));
+  }
+  for (const f of c.verdict.flags.filter((x) => x.severity !== "info" && !(keep && x.rule_id === "R2"))) {
+    out.push(h("p", { class: "small" }, [h("b", {}, [f.title + ". "]), f.reason]));
+  }
+  if (!keep) out.push(h("p", { class: "small muted" }, ["Shown again if the agent confirms the details."]));
+  return out;
 }
 
 /** @param {Card} c */
@@ -292,6 +319,7 @@ function renderAsk(c) {
   const existing = outcomes()[l.id];
   if (existing) showReply(body, c, existing.reply, false);
   else showForm(body, c);
+  view.append(h("p", {}, [h("a", { href: `#/agent/${encodeURIComponent(l.id)}` }, ["See what the agent receives →"])]));
   return view;
 }
 
@@ -332,16 +360,21 @@ function decide(c, r) {
   return { state: "shortlist", reason: "" };
 }
 
+/** Store the decided outcome of a reply, as the searcher side reads it. @param {Card} c @param {Reply|null} r */
+function saveOutcome(c, r) {
+  const d = decide(c, r);
+  if (d.state === "wait") return;
+  const all = outcomes();
+  all[c.listing.id] = { state: d.state, reason: d.reason, reply: r };
+  save(OUT_KEY, all);
+  document.getElementById("tab-count").textContent = String(DATA.cards.filter((x) => effectiveStatus(x) === "shortlist").length);
+}
+
 /** @param {HTMLElement} body @param {Card} c @param {Reply|null} r @param {boolean} fresh */
 function showReply(body, c, r, fresh) {
   const l = c.listing;
   const d = decide(c, r);
-  if (fresh && d.state !== "wait") {
-    const all = outcomes();
-    all[l.id] = { state: d.state, reason: d.reason, reply: r };
-    save(OUT_KEY, all);
-    document.getElementById("tab-count").textContent = String(DATA.cards.filter((x) => effectiveStatus(x) === "shortlist").length);
-  }
+  if (fresh) saveOutcome(c, r);
   const kids = [h("span", { class: "demo" }, ["Demo: agent reply is mocked"])];
   if (d.state === "wait") {
     kids.push(h("div", { class: "outcome wait" }, ["Agent hasn't replied yet — we'll notify you in the app"]));
@@ -374,6 +407,101 @@ function bookSlot(c, slot) {
   if (all[c.listing.id]) { all[c.listing.id].slot = slot; save(OUT_KEY, all); }
   toast("Viewing requested for " + slot + " (demo). The agent will confirm in the app.");
   route();
+}
+
+/**
+ * The listing agent's side: what they receive, and one-tap answers that feed the searcher side.
+ * Searcher details are mocked.
+ * @param {Card} c
+ */
+function renderAgent(c) {
+  const l = c.listing;
+  const id = encodeURIComponent(l.id);
+  const rent = l.offering === "rent";
+  const perYear = rent ? " /year" : "";
+  const questions = c.verdict.agent_questions.length ? c.verdict.agent_questions : ["Is this still available?"];
+  const windows = ["Weekdays after 6pm", "Saturday 10am to 1pm"];
+  const mock = replyFor(l.id);
+  const slots = mock && mock.viewing_slots.length ? mock.viewing_slots : ["Thu 6:00pm", "Sat 11:00am"];
+  /** Slots the agent offers. @type {Set<string>} */
+  const offered = new Set(slots);
+
+  const view = h("div", { class: "pad" }, [
+    h("div", { class: "agentbar" }, ["Agent's view"]),
+    backLink(`#/ask/${id}`, "‹ Back to the searcher's view"),
+    h("h1", {}, ["New pre-qualified lead"]),
+    h("span", { class: "demo" }, ["Demo: searcher details are mocked"]),
+  ]);
+
+  const rows = [
+    ["Listing", l.title],
+    ["Listed price", money(l.price_aed, l.offering) + perYear],
+    ["Budget", "Up to " + money(l.price_aed, l.offering) + perYear],
+    ["Move-in", l.available_from ? "From " + l.available_from : "Within 30 days"],
+    rent ? ["Cheques", `Can pay in ${l.cheques || 4}`] : ["Payment", "Mortgage pre-approved"],
+    ["Household", "2 adults"],
+    ["Viewing windows", windows.join(" or ")],
+  ];
+  const dl = h("dl", { class: "facts" });
+  for (const [k, v] of rows) dl.append(h("dt", {}, [k]), h("dd", {}, [v]));
+  view.append(h("div", { class: "card" }, [h("b", {}, ["Searcher requirements"]), dl]));
+  view.append(h("h2", {}, ["Questions sent to you"]), h("ul", {}, questions.map((q) => h("li", {}, [q]))));
+
+  const body = h("div");
+  const draw = () => {
+    const o = outcomes()[l.id];
+    body.replaceChildren(...(o ? [outcomeNote(o)] : []));
+  };
+  /** @param {boolean} available @param {number|null} price */
+  const answer = (available, price) => {
+    /** @type {Reply} */
+    const r = { listing_id: l.id, available, confirmed_price_aed: price, terms: "", viewing_slots: available ? [...offered] : [] };
+    saveOutcome(c, r);
+    toast("Answer sent. The searcher sees it now (demo).");
+    draw();
+  };
+
+  const chips = h("div", {}, slots.map((s) => {
+    const b = h("button", { type: "button", class: "btn slot primary", onclick: () => {
+      if (offered.has(s)) offered.delete(s); else offered.add(s);
+      b.className = "btn slot " + (offered.has(s) ? "primary" : "secondary");
+    } }, [s]);
+    return b;
+  }));
+  const priceIn = h("input", { type: "number", class: "numin", min: "1", placeholder: "New price in AED" });
+  const priceRow = h("div", { class: "row", hidden: true }, [
+    priceIn,
+    h("button", { type: "button", class: "btn primary", onclick: () => {
+      const n = Number(priceIn.value);
+      if (!(n > 0)) { toast("Enter the new price."); return; }
+      answer(true, n);
+    } }, ["Confirm"]),
+  ]);
+  view.append(
+    h("h2", {}, ["Answer in one tap"]),
+    h("div", { class: "small muted" }, ["Viewing slots you offer (tap to switch off):"]), chips,
+    h("div", { class: "actions" }, [
+      h("button", { type: "button", class: "btn primary", onclick: () => answer(true, l.price_aed) }, ["Available at this price"]),
+      h("button", { type: "button", class: "btn secondary", onclick: () => answer(false, null) }, ["Gone / let"]),
+      h("button", { type: "button", class: "btn secondary", onclick: () => { priceRow.hidden = !priceRow.hidden; } }, ["Price changed"]),
+    ]),
+    priceRow, body,
+    h("div", { class: "panel" }, [
+      h("b", {}, ["What this saves you"]),
+      h("p", { class: "small" }, ["Budget, dates and cheques already answered · no viewing for a searcher over budget · one tap instead of a call."]),
+      h("p", { class: "small muted" }, ["A “Gone” answer hides the listing for this searcher only. Please also take the ad down."]),
+    ]),
+    h("p", {}, [h("a", { href: `#/listing/${id}` }, ["See this listing as the searcher →"])]),
+  );
+  draw();
+  return view;
+}
+
+/** @param {{state:string, reason:string}} o */
+function outcomeNote(o) {
+  return o.state === "shortlist"
+    ? h("div", { class: "outcome ok" }, ["Sent. The searcher has it on their short list."])
+    : h("div", { class: "outcome no" }, ["Sent. Listing removed for the searcher (" + o.reason + ")."]);
 }
 
 function renderShortlist() {
